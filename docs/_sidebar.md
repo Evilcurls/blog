@@ -1,6 +1,7 @@
 * **用的**
   * [java的几种模式](use/java.md)
   * [Sping框架](use/spring.md)                  
+  * [Blog实现](use/Blog实现.md)
 * **记的**
   * [吸血鬼对线技巧总结](Notes/吸血鬼对线技巧总结.md)
   * [想看的](Notes/想看的.md)
