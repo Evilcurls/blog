@@ -1,7 +1,3 @@
-# 邪恶小卷毛
-
-> 想到啥写啥
-
 
 > [Gpt4-o]([Home - Coze](https://www.coze.com/home))
 >
@@ -18,3 +14,7 @@
 > [青岛大学教务处 (qdu.edu.cn)](https://jwc.qdu.edu.cn/)
 >
 > [磁力引擎](https://1207fabu.top)
+>
+> ([研究生文献阅读与学术论文服务平台 (cnki.net)](https://cuc.cnki.net/cuc/login))
+>
+> ([研究生院 (cuc.edu.cn)](https://gs.cuc.edu.cn/))
