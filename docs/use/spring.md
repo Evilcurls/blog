@@ -67,7 +67,7 @@ Spring最基础的特性就是创建bean、管理bean之间的依赖关系。下
 
 三种装配方式可依据个人喜好选择使用，无限制。不过应尽可能地使用自动转配机制，因为可以少一大推的配置。在你必须要使用显示配置时，比如要装配一些第三方的bean对象是，可以使用显示的配置。推荐使用类型安全且比xml更加强大的JavaConfig。
 
-## 自动装配bean
+自动装配bean
 
 1、创建bean并添加@Component注解
 
@@ -266,7 +266,7 @@ public class JavaConfigWiredBeanTest {
 海思芯片，计算。。。。。
 ```
 
-## 使用JavaConfig配置bean和依赖关系，具有极大的灵活性，我们只需要在带有@Bean注解的方法上最终产生一个bean实例即可，具体bean实例的产生逻辑只受Java语言自身的限制。**
+使用JavaConfig配置bean和依赖关系，具有极大的灵活性，我们只需要在带有@Bean注解的方法上最终产生一个bean实例即可，具体bean实例的产生逻辑只受Java语言自身的限制。**
 
 比如我们可以这样配置一个bean：
 
@@ -284,7 +284,7 @@ public class JavaConfigWiredBeanTest {
 
 这个CentralProcessUnit 是随机生成HisiCentralProcessUnit芯片或者是GaoTongCentralProcessUnit芯片。
 
-## 使用XML完成bean装配和DI
+使用XML完成bean装配和DI
 
 XML配置的方式是spring最早采用的配置bean、bean之间的依赖关系的方式。
 
@@ -533,7 +533,7 @@ public class TestConditionDataSource {
 
 通过spring的profile机制，我们实现了不同环境dataSource数据源对象的条件化装配。比较简单，就两步：1、使用@Profile注解为不同的bean配置profile（当然这里也可以是xml的方式），2、根据不同环境激活不同的profile。
 
-### 使用@Conditional注解实现条件化的bean
+使用@Conditional注解实现条件化的bean
 
 Spring 4.0引入的新注解@Conditional注解，它可以用到带有@Bean注解的方法上，如果给定的条件计算结果为true，就会创建这个bean，否则不创建。
 
