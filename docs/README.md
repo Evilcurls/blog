@@ -18,3 +18,5 @@
 > ([研究生文献阅读与学术论文服务平台 (cnki.net)](https://cuc.cnki.net/cuc/login))
 >
 > ([研究生院 (cuc.edu.cn)](https://gs.cuc.edu.cn/))
+>
+> [教育服务中心 (cuc.edu.cn)](https://srv.cuc.edu.cn/)
