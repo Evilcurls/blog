@@ -110,3 +110,6 @@
 
 由于老是挂梯子，会在提交时显示“fail to connect to github.com port"，参照([解决使用git时遇到Failed to connect to github.com port 443 after 21090 ms: Couldn‘t connect to server_git couldn't connect to server-CSDN博客](https://blog.csdn.net/qq_40296909/article/details/134285451))
 
+
+
+当传错文件的时候[不小心上传了多余的文件到远程仓库解决方案_git提交了多余的文件-CSDN博客](https://blog.csdn.net/qq_37344125/article/details/104123256)
