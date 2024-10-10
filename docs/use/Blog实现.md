@@ -112,4 +112,4 @@
 
 
 
-当传错文件的时候[不小心上传了多余的文件到远程仓库解决方案_git提交了多余的文件-CSDN博客](https://blog.csdn.net/qq_37344125/article/details/104123256)
+当传错文件的时候[如何在Git中删除错误上传到GitHub的文件夹或文件_gihub如何取消上传在仓库的文件-CSDN博客](https://blog.csdn.net/qq_44723773/article/details/108610802)

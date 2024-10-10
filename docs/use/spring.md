@@ -6,7 +6,7 @@ Spring是一个轻量级的企业级的Java开发框架。主要是用来替代�
 
 Spring发展到现在，已经不仅仅是一个开发框架了，而是一个生态。Spring框架本身提供了大量可集成到应用中组件，SpringBoot通过“约定优于配置的思想”进一步提高了开发效率，成为构建微服务应用的最佳选择，SpringCloud则提供了一套分布式工具组件，让构建分布式系统更加简单。
 
-## Spring就是要简化Java开发
+Spring就是要简化Java开发
 
 Spring一直致力于简化Java开发使命中，为了降低Java开发的复杂性，Spring通过如下4种关键策略来简化Java开发：
 
@@ -59,7 +59,7 @@ Spring一直致力于简化Java开发使命中，为了降低Java开发的复杂
 
 Spring最基础的特性就是创建bean、管理bean之间的依赖关系。下面通过具体实例演示该如何装配我们应用中的bean。
 
-# Spring提供了三种主要的装配机制
+# Spring主要的装配机制
 
 - 在xml中进行显示的配置
 - 在Java中进行显示的配置
@@ -160,7 +160,7 @@ public class HuaweiPhone implements IPhone{
 在HuaweiPhone 对象中自动装配CentralProcessUnit的实例。
 **这里值得注意的是CentralProcessUnit是接口，如果有两个CentralProcessUnit实例，使用自动装配便会产生歧义性，因为spring容器不知道该装配哪个bean了。**
 
-## 使用JavaConfig的显式配置
+使用JavaConfig的显式配置
 
 使用JavaConfig完成bean装配其实就是使用Java代码加spring的注解完成bean的配置、依赖的配置信息。
 
@@ -369,7 +369,7 @@ public class XMLConfigWiredBeanTest {
 海思芯片，计算。。。。。
 ```
 
-## 总结
+总结
 
 本节主要总结了spring装配bean和依赖注入的三种方式：组件扫描和自动装配、JavaConfig注解配置方式、XML配置方式。平时开发中优先使用组件扫描和spring自动发现的机制装配bean，这样可以省去大量配置类或配置文件，其次是使用JavaConfig的方式，一方面，它是类型安全的，另外在配置bean时提供了更大的灵活性。最后选用XML配置文件的方式装配bean。
 
