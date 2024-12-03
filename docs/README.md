@@ -9,7 +9,7 @@
 >
 > [GitHub ](https://github.com/)	||   	[通义tongyi.ai_你的全能AI助手-通义千问 (aliyun.com)](https://tongyi.aliyun.com/?st=null&sessionId=630fad9dbbb042b889a4eca6793ba36d) 	||  	[教程](www.docs.net9.org)
 >
-> [青岛大学教务处 (qdu.edu.cn)](https://jwc.qdu.edu.cn/)	||  	[篮球馆预约](https://workflow.cuc.edu.cn/reservation/fe/site/special/special?id=40&platform_id=19&platform_id=19)  ||		[中国传媒大学研究生应用管理平台](https://dyjs.cuc.edu.cn/gsapp/sys/emaphome/portal/index.do)   ||	[教育服务中心 (cuc.edu.cn)](https://srv.cuc.edu.cn/)
+> [青岛大学教务处 (qdu.edu.cn)](https://jwc.qdu.edu.cn/)	||  	[篮球馆预约](https://workflow.cuc.edu.cn/reservation/fe/site/special/special?id=40&platform_id=19&platform_id=19)  ||		[中国传媒大学研究生应用管理平台](https://gs.cuc.edu.cn/)   ||	[教育服务中心 (cuc.edu.cn)](https://srv.cuc.edu.cn/)
 >
 > [arXiv.org e-Print archive ](https://arxiv.org/)	     ||  	[Google Scholar](https://scholar.google.com/)   ||  [CUC-SCI](https://erums.cuc.edu.cn/https/vpn/2/P7TXE55GPNSXT3LPMNTT6Z5MMF3GT7UBPSTT6Z5P/wos/?Init=Yes&SrcApp=CR&SID=USW2EC0DA6puBaAPqrEMU3ghG6TmA)
 
