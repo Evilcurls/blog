@@ -8,6 +8,7 @@
   * [吸血鬼对线技巧总结](Notes/吸血鬼对线技巧总结.md)
   * [想看的](Notes/想看的.md)
   * [唐朝历史](Notes/唐朝历史.md)
+  * [Latex用法](Notes/Latex/Latex.md)
 * **写的**
   * [近代文学作业](Essays/近代文学作业.md)
   * [本科论文致谢](Essays/本科论文致谢.md)
