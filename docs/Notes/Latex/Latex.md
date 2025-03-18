@@ -60,3 +60,8 @@ $\sum$    $\prod$   $\sum_{i=0} ^n $
 
 
 
+## 大括号
+
+大括号是 起点为\begin{cases}    终点为\end{cases} 
+
+比如$ f 
