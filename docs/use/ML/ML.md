@@ -174,3 +174,112 @@ logstic函数优势在于简单，劣势在于没有是非零中心化的，会�
 
 ​	虽然部分连接决定了某些神经元去处理图像的不同区域，但是比如人脸识别这样的工作，人脸可能在上下左右的任意地方出现，所以可以用一套参数完成任务
 
+![](卷积作用图.png)
+
+### 期中作业 Dog-breed-identifacation
+
+1.读取数据集
+
+2.数据增广
+
+### 加载别人现有的模型
+
+`class Net(torch.nn.module）`继承了torch.nn.module 公式写法
+
+`super().__init__() `使用pytorch设定好的连接方式
+
+`self.mymode=models.resnet50(pretrained=False)` 
+
+self.xx是实例化指自己，有点像c++里面的this指针   self.model是新增一个类里面的一个属性，models是torchvision里面的一个包，models.resnet50是加载了resnet50这个网络的骨架，pretrained=False表示不用加载预训练数据,因为我本地有resnet50的参数，如果选了True就要从网上开始下了
+
+`    self.mymode.load_state_dict(torch.load('resnet50-19c8e357.pth'))` 
+
+​				**`state_dict`** ：
+
+​					在 PyTorch 中，每个模型都有一个 `state_dict`，它是一个 Python 字典，存储了模型的所有可学习参数（如权						重和偏置）。
+
+​					例如，对于一个简单的线性层 `nn.Linear(10, 2)`，其 `state_dict` 可能包含两个键值对：`'weight'` 和 						`'bias'`。
+
+​				**`torch.load`** ：
+
+​						`torch.load` 是 PyTorch 提供的函数，用于从文件中加载保存的模型参数（通常是 `.pth` 或 `.pt` 文件）。
+
+​				**`load_state_dict`** ：
+
+​					这个方法将加载的参数字典应用到当前模型中，从而恢复模型的状态。
+
+### 构建数据集
+
+`class dog_dataset(torch.utils.data.Dataset):`**为什么需要继承 `Dataset`？**
+
+​			PyTorch 的 `DataLoader` 是一个强大的工具，用于高效地加载和批量处理数据。`DataLoader` 的工作依赖于 `Dataset` 类提				供的接口。具体来说：
+
+​				**`Dataset`** ：
+
+​							负责定义如何加载和访问数据。
+
+​					提供了一个统一的接口，使得数据可以被 `DataLoader` 使用。
+
+​				**`	DataLoader`** ：
+
+​					负责将数据分批次加载到模型中。
+
+​					支持多线程、数据打乱、并行处理等功能。 
+
+​					有参数num_worker的时候，在windows下会报错
+
+```   def __init__(self,csvfile,imgdir):
+    def __init__(self,csvfile,imgdir):
+        self.result_csv=pd.read_csv(csvfile)
+        self.imgdir=imgdir
+        self.transform = transforms.Compose([
+            transforms.Resize((224, 224)),  # 调整图片大小
+            transforms.ToTensor(),          # 转换为张量
+            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])  # 归一化
+                ])
+```
+
+ 		`pd.read_csv`:用于读取csv 表格文件
+
+​		 **为什么需要定义这个 `transform`？**
+
+​			在深度学习中，尤其是卷积神经网络（CNN）中，输入数据通常需要满足以下要求：
+
+​			**尺寸一致** ：所有图片的尺寸必须相同，以便可以堆叠成一个批次（batch）。
+
+​			**数值范围一致** ：图片像素值通常被归一化到一个特定的范围（例如 `[0, 1]` 或均值为 0、标准差为 1 的分布），以加速模				型训练并提高收敛性。
+
+​			**格式统一** ：图片需要转换为张量（Tensor）格式，才能被 PyTorch 模型处理。
+
+ 		`transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])  # 归一化`  
+
+​			其中的mean和标准差是通过ImageNet计算而来的  我感觉狗种类识别可以从他训练集里面算			  
+
+`model.train()` 是 PyTorch 中的一个方法，用于将模型设置为**训练模式**
+
+验证集的主要作用是评估模型在**未见过的数据** 上的性能
+
+
+
+假设 `batch_size = 32`，我们来看一个具体的例子：
+
+#### 输入数据：
+
+- `input`: 形状为 `[32, input_dim]` 的张量，表示 32 张图片。
+- `label`: 形状为 `[32]` 的张量，表示这 32 张图片的真实类别标签。
+
+#### 前向传播：
+
+- 模型输出 `output` 的形状为 `[32, num_classes]`，表示每张图片在每个类别上的预测分数。
+- 使用 `_, predicted = output.max(1)` 得到形状为 `[32]` 的张量 `predicted`，表示每张图片的预测类别。
+
+#### 计算正确数：
+
+- 假设 `predicted = [0, 1, 2, ..., 0]`（长度为 32），`label = [0, 1, 3, ..., 0]`。
+- `(predicted == label)` 会生成一个布尔张量 `[True, True, False, ..., True]`。
+- `(predicted == label).sum()` 计算为 28，表示当前 batch 中有 28 张图片预测正确。
+
+#### 计算损失：
+
+- 假设损失函数为交叉熵，计算得到 `loss = 0.5`。
+- `loss.item()` 提取标量值 0.5，并将其累加到 `loss_total` 中。
