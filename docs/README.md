@@ -1,7 +1,7 @@
 
 > [LoL 冠军：所有 LoL 冠军构建、分级表、指南、计数器等 (op.gg)](https://www.op.gg/champions)	||	[3DMGAME_中国单机游戏论坛 - Powered by Discuz!](https://bbs.3dmgame.com/forum.php)
 >
-> [近义词查询_反义词查询_同义词查询 - KM查询 (kmcha.com)](https://kmcha.com/similar)
+> [近义词查询_反义词查询_同义词查询 - KM查询 (kmcha.com)](https://kmcha.com/similar)|| [扇贝](https://web.shanbay.com/wordsweb/#/study/entry) || [朱老师的语文课堂](https://space.bilibili.com/502189349?spm_id_from=333.337.0.0)
 >
 > [漢典](https://www.zdic.net/)	||	[中國哲學書電子化計劃 (ctext.org)](https://ctext.org/zhs#:~:text=中国哲学书电子化)
 >
