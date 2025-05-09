@@ -12,6 +12,8 @@
 > [青岛大学教务处 (qdu.edu.cn)](https://jwc.qdu.edu.cn/)	||   [中国传媒大学研究生应用管理平台](https://gs.cuc.edu.cn/)   ||	[教育服务中心 (cuc.edu.cn)](https://srv.cuc.edu.cn/)  || [中国传媒大学 - 校园邮箱](https://mail.cuc.edu.cn/)
 >
 > [arXiv.org e-Print archive ](https://arxiv.org/)	     ||  	[Google Scholar](https://scholar.google.com/)   ||  [CUC-SCI](https://erums.cuc.edu.cn/https/vpn/2/P7TXE55GPNSXT3LPMNTT6Z5MMF3GT7UBPSTT6Z5P/wos/?Init=Yes&SrcApp=CR&SID=USW2EC0DA6puBaAPqrEMU3ghG6TmA)	||[[中国知网](https://www.cnki.net/)]
+>
+> [计算机工程与应用](http://cea.ceaj.org/CN/1002-8331/home.shtml)
 
 
 
