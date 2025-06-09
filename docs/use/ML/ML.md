@@ -320,3 +320,50 @@ self.xx是实例化指自己，有点像c++里面的this指针   self.model是�
 最终，这些权重用于加权求和 v，生成新的表示。
 ```
 
+
+
+
+
+
+
+## 使用Hugging face
+
+这是一个使用别人提供的训练好的现成模型的网站，就算是我要修改也只能微调，但是这应该符合我的方向，从头训练一个模型太大了，不如选用别人预训练完的模型，在特定任务上微调。
+
+### 运行
+
+使用pipeline函数把别人上传的模型和封装的方法，使得实例化的对象成为一个可以用的函数
+
+` classifier=pipeline('sentiment-analysis')` 
+
+
+
+### Tokenizer
+
+在使用模型时所有这些预处理都需要与模型预训练时的方式完全相同
+
+- 将输入拆分为单词、子单词或符号（如标点符号），称为 **token**（标记）
+- 将每个标记（token）映射到一个数字，称为 **input ID**（inputs ID）
+- 添加模型需要的其他输入，例如特殊标记（如 `[CLS]` 和 `[SEP]` ）,比如下图Input IDs开头的101 代表进行什么任务	
+- - 位置编码：指示每个标记在句子中的位置。
+- - 段落标记：区分不同段落的文本。
+- - 特殊标记：例如 [CLS] 和 [SEP] 标记，用于标识句子的开头和结尾
+
+这些input IDs 组合而成tensor，这正是Transformer模型需要的输入
+
+![pipeline集成步骤](https://huggingface.co/datasets/huggingface-course/documentation-images/resolve/main/en/chapter2/full_nlp_pipeline-dark.svg)
+
+将Tensor输入Transformer模型后得到的是高维向量表示，需要使用Head(任务头)来完成具体的任务，得到logits（对数几率）不能直接反应结果，所以需要进行后序处理，使用Softmax函数得到分布，比如
+
+```
+tensor([[4.0195e-02, 9.5980e-01],
+        [9.9946e-01, 5.4418e-04]], grad_fn=<SoftmaxBackward>)
+```
+
+具体分数和标签的对应关系可以使用模型的` model.config.id2label ` 查看
+
+Tokenizer是一个大的类，里面有许多小的函数，比如raw text -> token 由`tokenize`完成，token->ids 由`convert_tokens_to_ids`完成，由ids->tensor 由`torch.tensor`完成（这一步如果输入单个句子会报错，因为transformer要求输入多个句子，所以在使用tokenizer一次性完成全部操作时如果输入的是一个句子，他会自动给你升维； 然后tensor是一种形状固定的数据结构，所以如果输入长短不一的句子会自动padding)
+
+但padding什么呢？padding的token会引起什么后果呢？解决方法是什么呢？
+
+tokenizer.pad_token_id。注意力层会因为填充的token不同得到不同的高维向量。注意力掩码层。
