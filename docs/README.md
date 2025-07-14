@@ -7,7 +7,7 @@
 >
 > [魔笔小说 | 轻小说 资源收集 (mobinovels.com)](https://mobinovels.com/) 	||   	[磁力引擎](https://1207fabu.top)
 >
-> [GitHub ](https://github.com/)	||   	([Qwen](https://chat.qwenlm.ai/)) 	||  	[教程](www.docs.net9.org)   
+> [GitHub ](https://github.com/)	||   	([Qwen](https://chat.qwenlm.ai/)) 	||  [gemini](https://gemini.google.com/)             ||	[教程](www.docs.net9.org)   
 >
 > [青岛大学教务处 (qdu.edu.cn)](https://jwc.qdu.edu.cn/)	||   [中国传媒大学研究生应用管理平台](https://gs.cuc.edu.cn/)   || [中国传媒大学学工平台](https://sso.cuc.edu.cn/)|| [中国传媒大学 - 校园邮箱](https://mail.cuc.edu.cn/)
 >

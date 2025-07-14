@@ -367,3 +367,47 @@ Tokenizer是一个大的类，里面有许多小的函数，比如raw text -> to
 但padding什么呢？padding的token会引起什么后果呢？解决方法是什么呢？
 
 tokenizer.pad_token_id。注意力层会因为填充的token不同得到不同的高维向量。注意力掩码层。
+
+
+
+
+
+### 开始微调
+
+hugging face提供了一个包datasets能下载想要的数据集，比如下载"glue"中"mrpc"任务的数据集`origin_dataset=datasets.load_dataset("glue","mrpc") `，可以print看看结构方便后续处理。
+
+Transformers 提供了一个 `Trainer` 类，可以帮助你在数据集上微调任何预训练模型。
+
+#### 先开始数据预处理
+
+但是如果我要用自己的数据集去微调，但是我数据集的格式只有很小的概率是符合模型的（就比如要编码），所以我们要对数据集进行预处理以达到预期。
+
+ `map()` 方法的工作原理是使用一个函数处理数据集的每个元素。先定义这个函数
+
+`def tokenize_function(example):
+    return tokenizer(example["sentence1"], example["sentence2"], truncation=True) `
+
+然后在map中使用这个函数一批一批处理数据
+
+`tokenized_datasets = raw_datasets.map(tokenize_function, batched=True) `
+
+众所周知，tensor要求每个句子长度相同，所以我们进行了填充，但是如果将所有句子都填充到数据集最长的那个句子的长度是很浪费空间的，既然输入模型的句子是按batch输入的，所以使用动态填充函数，能将每个batch中的句子自动补全到该batch的最长句子的长度
+
+`data_collator = DataCollatorWithPadding(tokenizer=tokenizer) `
+
+#### 微调
+
+Pytorch是底层训练框架，重新写微调代码还是费劲的，所以Hugging face提供了Trainer函数来完成一键完成。
+
+```
+from transformers import Trainer
+
+trainer = Trainer(
+    model,
+    training_args,
+    train_dataset=tokenized_datasets["train"],
+    eval_dataset=tokenized_datasets["validation"],
+    data_collator=data_collator,
+    tokenizer=tokenizer,
+)
+```
