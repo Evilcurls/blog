@@ -4,6 +4,8 @@
   * [Blog实现](use/Blog实现.md)
   * [声频](use/声频.md)
   * [研一课程机器学习](use/ML/ML.md)
+  * [传统机器学习模型补漏](use/week1.md)
+  * [LLM in Kaggle /Hugging face](use/LKH/LKH.md)
   * [paper1](use/paper1/paper1.md)
   * [制作课题组主页和音色评价网站](use/web/web.md)
 * **记的**
