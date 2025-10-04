@@ -3,8 +3,9 @@
   * [Sping框架](use/spring.md)                  
   * [Blog实现](use/Blog实现.md)
   * [声频](use/声频.md)
-  * [ML](use/ML/ML.md)
+  * [研一课程机器学习](use/ML/ML.md)
   * [paper1](use/paper1/paper1.md)
+  * [制作课题组主页和音色评价网站](use/web/web.md)
 * **记的**
   * [吸血鬼对线技巧总结](Notes/吸血鬼对线技巧总结.md)
   * [想看的](Notes/想看的.md)
