@@ -8,6 +8,7 @@
   * [LLM in Kaggle /Hugging face](use/LKH/LKH.md)
   * [paper1](use/paper1/paper1.md)
   * [制作课题组主页和音色评价网站](use/web/web.md)
+  * [MedicalGPT的理解](use/medicalgpt-read)
 * **记的**
   * [吸血鬼对线技巧总结](Notes/吸血鬼对线技巧总结.md)
   * [想看的](Notes/想看的.md)
