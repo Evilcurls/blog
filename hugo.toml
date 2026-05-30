@@ -73,6 +73,7 @@ theme = "DoIt"
 [params]
   version = "0.4.X"
   defaultTheme = "auto"
+  mainSections = ["posts"]
   dateFormat = "2006-01-02"
   images = ["images/avatar.jpg"]
   enablePWA = false
