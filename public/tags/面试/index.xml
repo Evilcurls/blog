@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>面试 on 邪恶小卷毛</title>
+		<link>http://localhost:65351/tags/%E9%9D%A2%E8%AF%95/</link>
+		<description>Recent content in 面试 on 邪恶小卷毛</description>
+		<generator>Hugo</generator>
+		<language>zh-CN</language>
+		
+		
+		
+		
+			<lastBuildDate>Thu, 13 Nov 2025 16:54:21 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:65351/tags/%E9%9D%A2%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>被问过的几个面试题</title>
+				<link>http://localhost:65351/interview-questions/</link>
+				<pubDate>Thu, 13 Nov 2025 16:54:21 +0800</pubDate>
+				<guid>http://localhost:65351/interview-questions/</guid>
+				<description>&lt;h2 id=&#34;1当矩阵是百万级规模时如何用概率论快速判断-ab--c&#34;&gt;1.当矩阵是百万级规模时，如何用概率论快速判断 (AB = C)？&lt;/h2&gt;&#xA;&lt;p&gt;在大规模矩阵计算的场景中（比如 (n = 10^6)），直接计算矩阵乘积 AB 再与 C 比较是完全不现实的 —— 毕竟 (n^3) 的复杂度会让超级计算机都望而却步。这时候，&lt;strong&gt;概率论方法&lt;/strong&gt;就能帮我们在可接受的时间内，以极高的概率完成判断。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

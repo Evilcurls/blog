@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>项目 on 邪恶小卷毛</title>
+		<link>http://localhost:65351/tags/%E9%A1%B9%E7%9B%AE/</link>
+		<description>Recent content in 项目 on 邪恶小卷毛</description>
+		<generator>Hugo</generator>
+		<language>zh-CN</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 03 Mar 2026 22:15:15 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:65351/tags/%E9%A1%B9%E7%9B%AE/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>MedicalGPT分析</title>
+				<link>http://localhost:65351/medicalgpt-analysis/</link>
+				<pubDate>Tue, 03 Mar 2026 22:15:15 +0800</pubDate>
+				<guid>http://localhost:65351/medicalgpt-analysis/</guid>
+				<description>&lt;h2 id=&#34;项目介绍&#34;&gt;项目介绍&lt;/h2&gt;&#xA;&lt;p&gt;是一个通过PT+SFT+RL在基座模型上对于垂直领域（医疗）的能力进行强化的案例，采用了30w的医疗百科数据与通用数据进行混合以及Lora的训练方法防止灾难性遗忘，RL阶段采用了GRPO  PPO  以及DPO三种算法，使用Ceval测试集配合Opencompass框架完成自动化测试同步在飞书上进行播报。可以尝试寻找数据将其迁移到其余垂直领域如法律交通等。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

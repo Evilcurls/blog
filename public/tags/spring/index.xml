@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Spring on 邪恶小卷毛</title>
+		<link>http://localhost:65351/tags/spring/</link>
+		<description>Recent content in Spring on 邪恶小卷毛</description>
+		<generator>Hugo</generator>
+		<language>zh-CN</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 25 Jun 2024 20:43:41 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:65351/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Spring框架</title>
+				<link>http://localhost:65351/spring-framework/</link>
+				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
+				<guid>http://localhost:65351/spring-framework/</guid>
+				<description>&lt;p&gt;Spring是一个轻量级的企业级的Java开发框架。主要是用来替代原来更加重量级的企业级Java技术，比如EJB(Enterprise JavaBean)、Java数据对象（Java Data Object）等。Spring的出现极大简化了Java开发。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

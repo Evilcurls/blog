@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Tags on 邪恶小卷毛</title>
+		<link>http://localhost:65351/tags/</link>
+		<description>Recent content in Tags on 邪恶小卷毛</description>
+		<generator>Hugo</generator>
+		<language>zh-CN</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 03 Mar 2026 22:15:15 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:65351/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>项目</title>
+				<link>http://localhost:65351/tags/%E9%A1%B9%E7%9B%AE/</link>
+				<pubDate>Tue, 03 Mar 2026 22:15:15 +0800</pubDate>
+				<guid>http://localhost:65351/tags/%E9%A1%B9%E7%9B%AE/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>面试</title>
+				<link>http://localhost:65351/tags/%E9%9D%A2%E8%AF%95/</link>
+				<pubDate>Thu, 13 Nov 2025 16:54:21 +0800</pubDate>
+				<guid>http://localhost:65351/tags/%E9%9D%A2%E8%AF%95/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>LLM</title>
+				<link>http://localhost:65351/tags/llm/</link>
+				<pubDate>Sat, 04 Oct 2025 14:18:49 +0800</pubDate>
+				<guid>http://localhost:65351/tags/llm/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>ML</title>
+				<link>http://localhost:65351/tags/ml/</link>
+				<pubDate>Sat, 04 Oct 2025 14:18:49 +0800</pubDate>
+				<guid>http://localhost:65351/tags/ml/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>论文</title>
+				<link>http://localhost:65351/tags/%E8%AE%BA%E6%96%87/</link>
+				<pubDate>Fri, 18 Jul 2025 14:18:05 +0800</pubDate>
+				<guid>http://localhost:65351/tags/%E8%AE%BA%E6%96%87/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>LaTeX</title>
+				<link>http://localhost:65351/tags/latex/</link>
+				<pubDate>Wed, 05 Mar 2025 21:56:40 +0800</pubDate>
+				<guid>http://localhost:65351/tags/latex/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>音频</title>
+				<link>http://localhost:65351/tags/%E9%9F%B3%E9%A2%91/</link>
+				<pubDate>Mon, 21 Oct 2024 22:10:15 +0800</pubDate>
+				<guid>http://localhost:65351/tags/%E9%9F%B3%E9%A2%91/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>历史</title>
+				<link>http://localhost:65351/tags/%E5%8E%86%E5%8F%B2/</link>
+				<pubDate>Sat, 06 Jul 2024 13:53:26 +0800</pubDate>
+				<guid>http://localhost:65351/tags/%E5%8E%86%E5%8F%B2/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Web</title>
+				<link>http://localhost:65351/tags/web/</link>
+				<pubDate>Wed, 26 Jun 2024 01:30:52 +0800</pubDate>
+				<guid>http://localhost:65351/tags/web/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Java</title>
+				<link>http://localhost:65351/tags/java/</link>
+				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
+				<guid>http://localhost:65351/tags/java/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Spring</title>
+				<link>http://localhost:65351/tags/spring/</link>
+				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
+				<guid>http://localhost:65351/tags/spring/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>生活</title>
+				<link>http://localhost:65351/tags/%E7%94%9F%E6%B4%BB/</link>
+				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
+				<guid>http://localhost:65351/tags/%E7%94%9F%E6%B4%BB/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>声明</title>
+				<link>http://localhost:65351/tags/%E5%A3%B0%E6%98%8E/</link>
+				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
+				<guid>http://localhost:65351/tags/%E5%A3%B0%E6%98%8E/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>随笔</title>
+				<link>http://localhost:65351/tags/%E9%9A%8F%E7%AC%94/</link>
+				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
+				<guid>http://localhost:65351/tags/%E9%9A%8F%E7%AC%94/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>文学</title>
+				<link>http://localhost:65351/tags/%E6%96%87%E5%AD%A6/</link>
+				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
+				<guid>http://localhost:65351/tags/%E6%96%87%E5%AD%A6/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>游戏</title>
+				<link>http://localhost:65351/tags/%E6%B8%B8%E6%88%8F/</link>
+				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
+				<guid>http://localhost:65351/tags/%E6%B8%B8%E6%88%8F/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

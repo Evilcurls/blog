@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>LaTeX on 邪恶小卷毛</title>
+		<link>http://localhost:65351/tags/latex/</link>
+		<description>Recent content in LaTeX on 邪恶小卷毛</description>
+		<generator>Hugo</generator>
+		<language>zh-CN</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 05 Mar 2025 21:56:40 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:65351/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Latex 用法</title>
+				<link>http://localhost:65351/latex-notes/</link>
+				<pubDate>Wed, 05 Mar 2025 21:56:40 +0800</pubDate>
+				<guid>http://localhost:65351/latex-notes/</guid>
+				<description>&lt;p&gt;跟着B站视频[](&lt;a href=&#34;https://www.bilibili.com/video/BV1no4y1U7At/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=3ecda433bad27ee4e395ad1ffebdd84b&#34;&gt;LaTeX公式保姆级教程 (以及其中的各种细节)_哔哩哔哩_bilibili&lt;/a&gt;)练的&lt;/p&gt;&#xA;&lt;h2 id=&#34;希腊字母&#34;&gt;希腊字母&lt;/h2&gt;&#xA;&lt;p&gt;​&#x9;反斜杠+希腊字母的英文名&lt;/p&gt;&#xA;&lt;p&gt;​&#x9;&lt;img src=&#34;https://raw.githubusercontent.com/Evilcurls/image4blog/main/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;上下标&#34;&gt;上下标&lt;/h2&gt;&#xA;&lt;p&gt;​&#x9;与word一致&lt;/p&gt;&#xA;&lt;p&gt;​&#x9;&#x9;a^2  a_i              直立体写法：x_{\text i}&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

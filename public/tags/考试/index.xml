@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>考试 - 标签 - blog</title>
+        <link>http://localhost:51543/tags/%E8%80%83%E8%AF%95/</link>
+        <description>考试 - 标签 - blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 28 Dec 2024 02:42:52 &#43;0800</lastBuildDate><atom:link href="http://localhost:51543/tags/%E8%80%83%E8%AF%95/" rel="self" type="application/rss+xml" /><item>
+    <title>24秋季学期期末考</title>
+    <link>http://localhost:51543/fall-2024-exam/</link>
+    <pubDate>Sat, 28 Dec 2024 02:42:52 &#43;0800</pubDate><author>
+        <name>evilcurls</name>
+    </author><guid>http://localhost:51543/fall-2024-exam/</guid>
+    <description><![CDATA[<h2 id="矩阵论" class="headerLink">
+    <a href="#%e7%9f%a9%e9%98%b5%e8%ae%ba" class="header-mark"></a>矩阵论</h2><h3 id="前情提要" class="headerLink">
+    <a href="#%e5%89%8d%e6%83%85%e6%8f%90%e8%a6%81" class="header-mark"></a>前情提要</h3><p>​		特征向量：存在特征向量a 似的 aX=λX</p>
+<p>​		可以通过解行列式算出特征值</p>
+<p>​		λ1+λ2+....λn=trace(A)           λ1*λ2 *λ3.....λn=|A|</p>]]></description>
+</item></channel>
+</rss>

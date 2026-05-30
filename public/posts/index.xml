@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on 邪恶小卷毛</title>
+		<link>http://localhost:65351/posts/</link>
+		<description>Recent content in Posts on 邪恶小卷毛</description>
+		<generator>Hugo</generator>
+		<language>zh-CN</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 03 Mar 2026 22:15:15 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:65351/posts/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>MedicalGPT分析</title>
+				<link>http://localhost:65351/medicalgpt-analysis/</link>
+				<pubDate>Tue, 03 Mar 2026 22:15:15 +0800</pubDate>
+				<guid>http://localhost:65351/medicalgpt-analysis/</guid>
+				<description>&lt;h2 id=&#34;项目介绍&#34;&gt;项目介绍&lt;/h2&gt;&#xA;&lt;p&gt;是一个通过PT+SFT+RL在基座模型上对于垂直领域（医疗）的能力进行强化的案例，采用了30w的医疗百科数据与通用数据进行混合以及Lora的训练方法防止灾难性遗忘，RL阶段采用了GRPO  PPO  以及DPO三种算法，使用Ceval测试集配合Opencompass框架完成自动化测试同步在飞书上进行播报。可以尝试寻找数据将其迁移到其余垂直领域如法律交通等。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>被问过的几个面试题</title>
+				<link>http://localhost:65351/interview-questions/</link>
+				<pubDate>Thu, 13 Nov 2025 16:54:21 +0800</pubDate>
+				<guid>http://localhost:65351/interview-questions/</guid>
+				<description>&lt;h2 id=&#34;1当矩阵是百万级规模时如何用概率论快速判断-ab--c&#34;&gt;1.当矩阵是百万级规模时，如何用概率论快速判断 (AB = C)？&lt;/h2&gt;&#xA;&lt;p&gt;在大规模矩阵计算的场景中（比如 (n = 10^6)），直接计算矩阵乘积 AB 再与 C 比较是完全不现实的 —— 毕竟 (n^3) 的复杂度会让超级计算机都望而却步。这时候，&lt;strong&gt;概率论方法&lt;/strong&gt;就能帮我们在可接受的时间内，以极高的概率完成判断。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>传统机器学习补漏</title>
+				<link>http://localhost:65351/traditional-ml-models/</link>
+				<pubDate>Sat, 04 Oct 2025 14:18:49 +0800</pubDate>
+				<guid>http://localhost:65351/traditional-ml-models/</guid>
+				<description>&lt;h2 id=&#34;day-1-sklearn包与预处理数据&#34;&gt;Day 1 Sklearn包与预处理数据&lt;/h2&gt;&#xA;&lt;p&gt;回顾线性回归和逻辑回归的工作原理（L1/L2 正则化概念即可）。重点理解它们如何处理特征的权重。&#xA;导入项目数据（如 Kaggle 的房屋数据），使用 Pandas 进行初步探索（.info(), .describe()）。&#x9;完成数据读取，识别缺失值和类别特征。&#xA;使用 Scikit-learn 实现 LinearRegression 或 LogisticRegression（根据项目是回归或分类）。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>使用Hugging face</title>
+				<link>http://localhost:65351/llm-kaggle-huggingface/</link>
+				<pubDate>Sat, 04 Oct 2025 14:18:49 +0800</pubDate>
+				<guid>http://localhost:65351/llm-kaggle-huggingface/</guid>
+				<description>&lt;p&gt;这是一个使用别人提供的训练好的现成模型的网站，就算是我要修改也只能微调，但是这应该符合我的方向，从头训练一个模型太大了，不如选用别人预训练完的模型，在特定任务上微调。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Paper I</title>
+				<link>http://localhost:65351/paper-writing/</link>
+				<pubDate>Fri, 18 Jul 2025 14:18:05 +0800</pubDate>
+				<guid>http://localhost:65351/paper-writing/</guid>
+				<description>&lt;p&gt;记录一下论文的一点碎碎念，和未来自己可能重复利用的经验。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Evilcurls/image4blog/main/photo.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;写&#34;&gt;写&lt;/h2&gt;&#xA;&lt;p&gt;这是我之前抄的一个图，我感觉在工科论文里还是普遍适用的，而比较犯难的就是写下第一段话，所谓“完成比完美重要” 后面还可以再改，重要的是踏出第一步，能新建一个论文的word文档就已经很了不起了，可以奖励自己玩两把炉石了。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Latex 用法</title>
+				<link>http://localhost:65351/latex-notes/</link>
+				<pubDate>Wed, 05 Mar 2025 21:56:40 +0800</pubDate>
+				<guid>http://localhost:65351/latex-notes/</guid>
+				<description>&lt;p&gt;跟着B站视频[](&lt;a href=&#34;https://www.bilibili.com/video/BV1no4y1U7At/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=3ecda433bad27ee4e395ad1ffebdd84b&#34;&gt;LaTeX公式保姆级教程 (以及其中的各种细节)_哔哩哔哩_bilibili&lt;/a&gt;)练的&lt;/p&gt;&#xA;&lt;h2 id=&#34;希腊字母&#34;&gt;希腊字母&lt;/h2&gt;&#xA;&lt;p&gt;​&#x9;反斜杠+希腊字母的英文名&lt;/p&gt;&#xA;&lt;p&gt;​&#x9;&lt;img src=&#34;https://raw.githubusercontent.com/Evilcurls/image4blog/main/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;上下标&#34;&gt;上下标&lt;/h2&gt;&#xA;&lt;p&gt;​&#x9;与word一致&lt;/p&gt;&#xA;&lt;p&gt;​&#x9;&#x9;a^2  a_i              直立体写法：x_{\text i}&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Machine Learning</title>
+				<link>http://localhost:65351/machine-learning/</link>
+				<pubDate>Mon, 03 Mar 2025 22:15:15 +0800</pubDate>
+				<guid>http://localhost:65351/machine-learning/</guid>
+				<description>&lt;h2 id=&#34;基础&#34;&gt;基础&lt;/h2&gt;&#xA;&lt;h3 id=&#34;目标&#34;&gt;目标&lt;/h3&gt;&#xA;&lt;h3 id=&#34;一-机器学习的三要素&#34;&gt;一、 机器学习的三要素&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;模型 (Model)：&lt;/strong&gt; 用于拟合输入与输出关系的函数表达式 $f(x, \theta)$。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;学习准则 (Learning Criterion)：&lt;/strong&gt; 衡量模型预测值与真实值之间差异的评价标准（通常指损失函数或目标函数）。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;优化算法 (Optimization Algorithm)：&lt;/strong&gt; 用于寻找最优模型参数 $\theta$ 的具体计算方法（如梯度下降法）。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;二-三种主要学习算法&#34;&gt;二、 三种主要学习算法&lt;/h3&gt;&#xA;&lt;h4 id=&#34;1-监督学习-supervised-learning&#34;&gt;1. 监督学习 (Supervised Learning)&lt;/h4&gt;&#xA;&lt;p&gt;利用带有明确“标签”的数据进行训练，让模型学会输入到输出的映射。根据标签数据的类型，可分为：&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>声频</title>
+				<link>http://localhost:65351/audio-processing/</link>
+				<pubDate>Mon, 21 Oct 2024 22:10:15 +0800</pubDate>
+				<guid>http://localhost:65351/audio-processing/</guid>
+				<description>&lt;p&gt;声音是波，描述其有多种指标：&lt;/p&gt;&#xA;&lt;p&gt;声强：单位时间内通过单位界面的波的能量流&lt;/p&gt;&#xA;&lt;p&gt;声压：波在传播的时候介质中压强的变化&lt;/p&gt;&#xA;&lt;p&gt;人是万物之灵，声音在给人听的时候主观感受并不是成线性关系的，所以取对数声压级作为指标，也就是常说的db&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>唐朝历史</title>
+				<link>http://localhost:65351/tang-dynasty-history/</link>
+				<pubDate>Sat, 06 Jul 2024 13:53:26 +0800</pubDate>
+				<guid>http://localhost:65351/tang-dynasty-history/</guid>
+				<description>&lt;h2 id=&#34;隋末到神龙政变&#34;&gt;隋末到神龙政变&lt;/h2&gt;&#xA;&lt;h3 id=&#34;杨广&#34;&gt;杨广&lt;/h3&gt;&#xA;&lt;p&gt;后世争议不断的隋炀帝 他爹杨坚建国，他二代继承，也二代而亡。&lt;/p&gt;&#xA;&lt;p&gt;史书中曾用“美姿仪，少聪慧”形容他的少年时期，典型的生于忧患死于安乐。按长子继承的传统本来轮不到他接他爹的班，但在身为皇子期间夹着尾巴做人，野心很大，心术不正，又诡于伎俩，觊觎他哥哥杨勇的皇位并取而代之对他来说是理所应当的事。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Blog实现</title>
+				<link>http://localhost:65351/blog-implementation/</link>
+				<pubDate>Wed, 26 Jun 2024 01:30:52 +0800</pubDate>
+				<guid>http://localhost:65351/blog-implementation/</guid>
+				<description>&lt;p&gt;好记性不如烂笔头，好多碎碎念的东西过了两天就忘得一干二净了属实可惜。&lt;/p&gt;&#xA;&lt;h1 id=&#34;docsify&#34;&gt;docsify&lt;/h1&gt;&#xA;&lt;h2 id=&#34;过程&#34;&gt;过程&lt;/h2&gt;&#xA;&lt;h3 id=&#34;是啥&#34;&gt;是啥&lt;/h3&gt;&#xA;&lt;p&gt;网页是随着主人的意愿制作而成的如同一栋房屋，html是其中的骨架，而docsify是装修公司，他能按照主人的意愿完成房屋的装饰过程。 其实就是把你的一堆markdown文档渲染成一个网页了啦。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>《火车》读后感</title>
+				<link>http://localhost:65351/modern-literature-homework/</link>
+				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
+				<guid>http://localhost:65351/modern-literature-homework/</guid>
+				<description>&lt;h2 id=&#34;火车读后感&#34;&gt;《火车》读后感&lt;/h2&gt;&#xA;&lt;p&gt;“耳鬓厮磨”和”你侬我侬”，是老师在讲《倾城之恋》时常出现的两个词，这两个词一度让我认为张爱玲是位像杜拉斯一样吹捧“情欲孵化着青春，也推动着它的死亡”的纯正爱情作家。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Java的几种设计模式</title>
+				<link>http://localhost:65351/java-patterns/</link>
+				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
+				<guid>http://localhost:65351/java-patterns/</guid>
+				<description>&lt;h1 id=&#34;单例模式&#34;&gt;单例模式&lt;/h1&gt;&#xA;&lt;p&gt;此篇整理了几种常见的单例模式代码示例，再有面试官让手撕单例模式，便能心中有码，下笔有神。&lt;/p&gt;&#xA;&lt;h3 id=&#34;为什么要有单例模式&#34;&gt;为什么要有单例模式&lt;/h3&gt;&#xA;&lt;p&gt;实际编程应用场景中，有一些对象其实我们只需要一个，比如线程池对象、缓存、系统全局配置对象等。这样可以就保证一个在全局使用的类不被频繁地创建与销毁，节省系统资源。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Spring框架</title>
+				<link>http://localhost:65351/spring-framework/</link>
+				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
+				<guid>http://localhost:65351/spring-framework/</guid>
+				<description>&lt;p&gt;Spring是一个轻量级的企业级的Java开发框架。主要是用来替代原来更加重量级的企业级Java技术，比如EJB(Enterprise JavaBean)、Java数据对象（Java Data Object）等。Spring的出现极大简化了Java开发。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>本科毕业论文致谢</title>
+				<link>http://localhost:65351/thesis-acknowledgments/</link>
+				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
+				<guid>http://localhost:65351/thesis-acknowledgments/</guid>
+				<description>&lt;p&gt;​&#x9;   逝者如斯夫！ 不舍昼夜。盛夏不重来，一日难再晨，对于我人生旅途中无法再来的四载本科光阴已走到了尾声。&lt;/p&gt;&#xA;&lt;p&gt;​&#x9;   从剑湖之畔到浮山之麓，承载着我对于青岛大学的种种回忆，回首四年往昔，有“白日放歌须纵酒”的畅快时刻。会发出“自是 人生长恨水长东”的遗憾感慨，体会到“拔剑四顾心茫然”的迷茫心境，但最多的 感受，还是感谢与怀念。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>声明</title>
+				<link>http://localhost:65351/disclaimer/</link>
+				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
+				<guid>http://localhost:65351/disclaimer/</guid>
+				<description>&lt;h2 id=&#34;声明&#34;&gt;声明&lt;/h2&gt;&#xA;&lt;p&gt;我是黑人 但很不幸患有白化病和肝功能障碍引起的黄疸，所以我的肤色是黄色&#xA;其次我患有性别认知障碍 我生理上是男性但认知为女性&#xA;同时我是同性恋 所以我喜欢女性&#xA;而且我是一名有异食癖的素食主义者 所以我只吃肉&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>吸血鬼对线技巧总结</title>
+				<link>http://localhost:65351/vladimir-laning-tips/</link>
+				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
+				<guid>http://localhost:65351/vladimir-laning-tips/</guid>
+				<description>&lt;h2 id=&#34;吸血鬼对线技巧总结&#34;&gt;吸血鬼对线技巧总结&lt;/h2&gt;&#xA;&lt;p&gt;对线劫：同水平下换血劫是有优先权的，一些玩的很稳的劫基本不会给吸血鬼q的距离，并为吸血鬼在前压的时候是很容易被劫weq吃满。总结来说就是只要劫想，就可以在不被压太多补刀的同时避免被消耗，但是吸血鬼在补刀的大部分时间都有被劫消耗的风险，换血主动权是掌握在劫手上的。选择不主动换血 等劫qw或者能量空档期小压，6级前总体战术以保证自身补刀为主，因为这个时候吸血鬼的回复能力还顶不住劫的消耗。对线劫时在确保2v2次数很少时选择点燃换tp，度过六级危险期，天赋以打团为主。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>想看的</title>
+				<link>http://localhost:65351/watchlist/</link>
+				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
+				<guid>http://localhost:65351/watchlist/</guid>
+				<description>&lt;h2 id=&#34;想看的&#34;&gt;想看的&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 石之海&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 赛博朋克边缘行者&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 误杀&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 犬夜叉&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 我不是药神&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 爱乐之城&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 诡秘之主&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 不能说的秘密&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 爆裂鼓手&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 赛马娘&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 阿凡达&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 未闻花名&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 爱、死亡、机器人&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 银河补习班&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 肖申克的救赎&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 五亿探长雷洛&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>制作课题组主页和音色评价网站</title>
+				<link>http://localhost:65351/web-development/</link>
+				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
+				<guid>http://localhost:65351/web-development/</guid>
+				<description>&lt;h1 id=&#34;一般化的网页建立&#34;&gt;一般化的网页建立&lt;/h1&gt;&#xA;&lt;h2 id=&#34;从服务器到域名&#34;&gt;从服务器到域名&lt;/h2&gt;&#xA;&lt;p&gt;​&#x9;当然凡事都有快捷的方法，站在巨人的肩膀上，比如直接将网页布置在第三方网站比如某某博客，githubpages上面，是方便但是受限也不少，比如自定义程度差，网页不设立cdn能不能访问纯是抽奖。以下说的是流程基本靠自己的方法：&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
