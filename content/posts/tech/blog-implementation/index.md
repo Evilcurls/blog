@@ -10,9 +10,7 @@ lightgallery: true
 
 好记性不如烂笔头，好多碎碎念的东西过了两天就忘得一干二净了属实可惜。
 
-# docsify
-
-## 过程
+## docsify
 
 ### 是啥
 
