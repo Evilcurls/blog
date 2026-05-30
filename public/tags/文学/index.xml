@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>文学 on 邪恶小卷毛</title>
-		<link>http://localhost:65351/tags/%E6%96%87%E5%AD%A6/</link>
+		<link>http://localhost:1313/tags/%E6%96%87%E5%AD%A6/</link>
 		<description>Recent content in 文学 on 邪恶小卷毛</description>
 		<generator>Hugo</generator>
 		<language>zh-CN</language>
@@ -12,12 +12,12 @@
 		
 			<lastBuildDate>Tue, 25 Jun 2024 20:43:41 +0800</lastBuildDate>
 		
-			<atom:link href="http://localhost:65351/tags/%E6%96%87%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/%E6%96%87%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>《火车》读后感</title>
-				<link>http://localhost:65351/modern-literature-homework/</link>
+				<link>http://localhost:1313/modern-literature-homework/</link>
 				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
-				<guid>http://localhost:65351/modern-literature-homework/</guid>
+				<guid>http://localhost:1313/modern-literature-homework/</guid>
 				<description>&lt;h2 id=&#34;火车读后感&#34;&gt;《火车》读后感&lt;/h2&gt;&#xA;&lt;p&gt;“耳鬓厮磨”和”你侬我侬”，是老师在讲《倾城之恋》时常出现的两个词，这两个词一度让我认为张爱玲是位像杜拉斯一样吹捧“情欲孵化着青春，也推动着它的死亡”的纯正爱情作家。&lt;/p&gt;</description>
 			</item>
 	</channel>

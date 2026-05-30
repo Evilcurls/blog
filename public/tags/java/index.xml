@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Java on 邪恶小卷毛</title>
-		<link>http://localhost:65351/tags/java/</link>
+		<link>http://localhost:1313/tags/java/</link>
 		<description>Recent content in Java on 邪恶小卷毛</description>
 		<generator>Hugo</generator>
 		<language>zh-CN</language>
@@ -12,19 +12,19 @@
 		
 			<lastBuildDate>Tue, 25 Jun 2024 20:43:41 +0800</lastBuildDate>
 		
-			<atom:link href="http://localhost:65351/tags/java/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/java/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Java的几种设计模式</title>
-				<link>http://localhost:65351/java-patterns/</link>
+				<link>http://localhost:1313/java-patterns/</link>
 				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
-				<guid>http://localhost:65351/java-patterns/</guid>
+				<guid>http://localhost:1313/java-patterns/</guid>
 				<description>&lt;h1 id=&#34;单例模式&#34;&gt;单例模式&lt;/h1&gt;&#xA;&lt;p&gt;此篇整理了几种常见的单例模式代码示例，再有面试官让手撕单例模式，便能心中有码，下笔有神。&lt;/p&gt;&#xA;&lt;h3 id=&#34;为什么要有单例模式&#34;&gt;为什么要有单例模式&lt;/h3&gt;&#xA;&lt;p&gt;实际编程应用场景中，有一些对象其实我们只需要一个，比如线程池对象、缓存、系统全局配置对象等。这样可以就保证一个在全局使用的类不被频繁地创建与销毁，节省系统资源。&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Spring框架</title>
-				<link>http://localhost:65351/spring-framework/</link>
+				<link>http://localhost:1313/spring-framework/</link>
 				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
-				<guid>http://localhost:65351/spring-framework/</guid>
+				<guid>http://localhost:1313/spring-framework/</guid>
 				<description>&lt;p&gt;Spring是一个轻量级的企业级的Java开发框架。主要是用来替代原来更加重量级的企业级Java技术，比如EJB(Enterprise JavaBean)、Java数据对象（Java Data Object）等。Spring的出现极大简化了Java开发。&lt;/p&gt;</description>
 			</item>
 	</channel>

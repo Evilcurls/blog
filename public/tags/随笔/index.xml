@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>随笔 on 邪恶小卷毛</title>
-		<link>http://localhost:65351/tags/%E9%9A%8F%E7%AC%94/</link>
+		<link>http://localhost:1313/tags/%E9%9A%8F%E7%AC%94/</link>
 		<description>Recent content in 随笔 on 邪恶小卷毛</description>
 		<generator>Hugo</generator>
 		<language>zh-CN</language>
@@ -12,12 +12,12 @@
 		
 			<lastBuildDate>Tue, 25 Jun 2024 20:43:41 +0800</lastBuildDate>
 		
-			<atom:link href="http://localhost:65351/tags/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/%E9%9A%8F%E7%AC%94/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>本科毕业论文致谢</title>
-				<link>http://localhost:65351/thesis-acknowledgments/</link>
+				<link>http://localhost:1313/thesis-acknowledgments/</link>
 				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
-				<guid>http://localhost:65351/thesis-acknowledgments/</guid>
+				<guid>http://localhost:1313/thesis-acknowledgments/</guid>
 				<description>&lt;p&gt;​&#x9;   逝者如斯夫！ 不舍昼夜。盛夏不重来，一日难再晨，对于我人生旅途中无法再来的四载本科光阴已走到了尾声。&lt;/p&gt;&#xA;&lt;p&gt;​&#x9;   从剑湖之畔到浮山之麓，承载着我对于青岛大学的种种回忆，回首四年往昔，有“白日放歌须纵酒”的畅快时刻。会发出“自是 人生长恨水长东”的遗憾感慨，体会到“拔剑四顾心茫然”的迷茫心境，但最多的 感受，还是感谢与怀念。&lt;/p&gt;</description>
 			</item>
 	</channel>

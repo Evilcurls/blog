@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>论文 on 邪恶小卷毛</title>
-		<link>http://localhost:65351/tags/%E8%AE%BA%E6%96%87/</link>
+		<link>http://localhost:1313/tags/%E8%AE%BA%E6%96%87/</link>
 		<description>Recent content in 论文 on 邪恶小卷毛</description>
 		<generator>Hugo</generator>
 		<language>zh-CN</language>
@@ -12,12 +12,12 @@
 		
 			<lastBuildDate>Fri, 18 Jul 2025 14:18:05 +0800</lastBuildDate>
 		
-			<atom:link href="http://localhost:65351/tags/%E8%AE%BA%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/%E8%AE%BA%E6%96%87/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Paper I</title>
-				<link>http://localhost:65351/paper-writing/</link>
+				<link>http://localhost:1313/paper-writing/</link>
 				<pubDate>Fri, 18 Jul 2025 14:18:05 +0800</pubDate>
-				<guid>http://localhost:65351/paper-writing/</guid>
+				<guid>http://localhost:1313/paper-writing/</guid>
 				<description>&lt;p&gt;记录一下论文的一点碎碎念，和未来自己可能重复利用的经验。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Evilcurls/image4blog/main/photo.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;写&#34;&gt;写&lt;/h2&gt;&#xA;&lt;p&gt;这是我之前抄的一个图，我感觉在工科论文里还是普遍适用的，而比较犯难的就是写下第一段话，所谓“完成比完美重要” 后面还可以再改，重要的是踏出第一步，能新建一个论文的word文档就已经很了不起了，可以奖励自己玩两把炉石了。&lt;/p&gt;</description>
 			</item>
 	</channel>

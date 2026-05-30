@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>ML on 邪恶小卷毛</title>
-		<link>http://localhost:65351/tags/ml/</link>
+		<link>http://localhost:1313/tags/ml/</link>
 		<description>Recent content in ML on 邪恶小卷毛</description>
 		<generator>Hugo</generator>
 		<language>zh-CN</language>
@@ -12,19 +12,19 @@
 		
 			<lastBuildDate>Sat, 04 Oct 2025 14:18:49 +0800</lastBuildDate>
 		
-			<atom:link href="http://localhost:65351/tags/ml/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/ml/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>传统机器学习补漏</title>
-				<link>http://localhost:65351/traditional-ml-models/</link>
+				<link>http://localhost:1313/traditional-ml-models/</link>
 				<pubDate>Sat, 04 Oct 2025 14:18:49 +0800</pubDate>
-				<guid>http://localhost:65351/traditional-ml-models/</guid>
+				<guid>http://localhost:1313/traditional-ml-models/</guid>
 				<description>&lt;h2 id=&#34;day-1-sklearn包与预处理数据&#34;&gt;Day 1 Sklearn包与预处理数据&lt;/h2&gt;&#xA;&lt;p&gt;回顾线性回归和逻辑回归的工作原理（L1/L2 正则化概念即可）。重点理解它们如何处理特征的权重。&#xA;导入项目数据（如 Kaggle 的房屋数据），使用 Pandas 进行初步探索（.info(), .describe()）。&#x9;完成数据读取，识别缺失值和类别特征。&#xA;使用 Scikit-learn 实现 LinearRegression 或 LogisticRegression（根据项目是回归或分类）。&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Machine Learning</title>
-				<link>http://localhost:65351/machine-learning/</link>
+				<link>http://localhost:1313/machine-learning/</link>
 				<pubDate>Mon, 03 Mar 2025 22:15:15 +0800</pubDate>
-				<guid>http://localhost:65351/machine-learning/</guid>
+				<guid>http://localhost:1313/machine-learning/</guid>
 				<description>&lt;h2 id=&#34;基础&#34;&gt;基础&lt;/h2&gt;&#xA;&lt;h3 id=&#34;目标&#34;&gt;目标&lt;/h3&gt;&#xA;&lt;h3 id=&#34;一-机器学习的三要素&#34;&gt;一、 机器学习的三要素&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;模型 (Model)：&lt;/strong&gt; 用于拟合输入与输出关系的函数表达式 $f(x, \theta)$。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;学习准则 (Learning Criterion)：&lt;/strong&gt; 衡量模型预测值与真实值之间差异的评价标准（通常指损失函数或目标函数）。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;优化算法 (Optimization Algorithm)：&lt;/strong&gt; 用于寻找最优模型参数 $\theta$ 的具体计算方法（如梯度下降法）。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;二-三种主要学习算法&#34;&gt;二、 三种主要学习算法&lt;/h3&gt;&#xA;&lt;h4 id=&#34;1-监督学习-supervised-learning&#34;&gt;1. 监督学习 (Supervised Learning)&lt;/h4&gt;&#xA;&lt;p&gt;利用带有明确“标签”的数据进行训练，让模型学会输入到输出的映射。根据标签数据的类型，可分为：&lt;/p&gt;</description>
 			</item>
 	</channel>

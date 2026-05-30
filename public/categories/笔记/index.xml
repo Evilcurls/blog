@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>笔记 on 邪恶小卷毛</title>
-		<link>http://localhost:65351/categories/%E7%AC%94%E8%AE%B0/</link>
+		<link>http://localhost:1313/categories/%E7%AC%94%E8%AE%B0/</link>
 		<description>Recent content in 笔记 on 邪恶小卷毛</description>
 		<generator>Hugo</generator>
 		<language>zh-CN</language>
@@ -12,40 +12,40 @@
 		
 			<lastBuildDate>Thu, 13 Nov 2025 16:54:21 +0800</lastBuildDate>
 		
-			<atom:link href="http://localhost:65351/categories/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/categories/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>被问过的几个面试题</title>
-				<link>http://localhost:65351/interview-questions/</link>
+				<link>http://localhost:1313/interview-questions/</link>
 				<pubDate>Thu, 13 Nov 2025 16:54:21 +0800</pubDate>
-				<guid>http://localhost:65351/interview-questions/</guid>
+				<guid>http://localhost:1313/interview-questions/</guid>
 				<description>&lt;h2 id=&#34;1当矩阵是百万级规模时如何用概率论快速判断-ab--c&#34;&gt;1.当矩阵是百万级规模时，如何用概率论快速判断 (AB = C)？&lt;/h2&gt;&#xA;&lt;p&gt;在大规模矩阵计算的场景中（比如 (n = 10^6)），直接计算矩阵乘积 AB 再与 C 比较是完全不现实的 —— 毕竟 (n^3) 的复杂度会让超级计算机都望而却步。这时候，&lt;strong&gt;概率论方法&lt;/strong&gt;就能帮我们在可接受的时间内，以极高的概率完成判断。&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Latex 用法</title>
-				<link>http://localhost:65351/latex-notes/</link>
+				<link>http://localhost:1313/latex-notes/</link>
 				<pubDate>Wed, 05 Mar 2025 21:56:40 +0800</pubDate>
-				<guid>http://localhost:65351/latex-notes/</guid>
+				<guid>http://localhost:1313/latex-notes/</guid>
 				<description>&lt;p&gt;跟着B站视频[](&lt;a href=&#34;https://www.bilibili.com/video/BV1no4y1U7At/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=3ecda433bad27ee4e395ad1ffebdd84b&#34;&gt;LaTeX公式保姆级教程 (以及其中的各种细节)_哔哩哔哩_bilibili&lt;/a&gt;)练的&lt;/p&gt;&#xA;&lt;h2 id=&#34;希腊字母&#34;&gt;希腊字母&lt;/h2&gt;&#xA;&lt;p&gt;​&#x9;反斜杠+希腊字母的英文名&lt;/p&gt;&#xA;&lt;p&gt;​&#x9;&lt;img src=&#34;https://raw.githubusercontent.com/Evilcurls/image4blog/main/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;上下标&#34;&gt;上下标&lt;/h2&gt;&#xA;&lt;p&gt;​&#x9;与word一致&lt;/p&gt;&#xA;&lt;p&gt;​&#x9;&#x9;a^2  a_i              直立体写法：x_{\text i}&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>唐朝历史</title>
-				<link>http://localhost:65351/tang-dynasty-history/</link>
+				<link>http://localhost:1313/tang-dynasty-history/</link>
 				<pubDate>Sat, 06 Jul 2024 13:53:26 +0800</pubDate>
-				<guid>http://localhost:65351/tang-dynasty-history/</guid>
+				<guid>http://localhost:1313/tang-dynasty-history/</guid>
 				<description>&lt;h2 id=&#34;隋末到神龙政变&#34;&gt;隋末到神龙政变&lt;/h2&gt;&#xA;&lt;h3 id=&#34;杨广&#34;&gt;杨广&lt;/h3&gt;&#xA;&lt;p&gt;后世争议不断的隋炀帝 他爹杨坚建国，他二代继承，也二代而亡。&lt;/p&gt;&#xA;&lt;p&gt;史书中曾用“美姿仪，少聪慧”形容他的少年时期，典型的生于忧患死于安乐。按长子继承的传统本来轮不到他接他爹的班，但在身为皇子期间夹着尾巴做人，野心很大，心术不正，又诡于伎俩，觊觎他哥哥杨勇的皇位并取而代之对他来说是理所应当的事。&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>吸血鬼对线技巧总结</title>
-				<link>http://localhost:65351/vladimir-laning-tips/</link>
+				<link>http://localhost:1313/vladimir-laning-tips/</link>
 				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
-				<guid>http://localhost:65351/vladimir-laning-tips/</guid>
+				<guid>http://localhost:1313/vladimir-laning-tips/</guid>
 				<description>&lt;h2 id=&#34;吸血鬼对线技巧总结&#34;&gt;吸血鬼对线技巧总结&lt;/h2&gt;&#xA;&lt;p&gt;对线劫：同水平下换血劫是有优先权的，一些玩的很稳的劫基本不会给吸血鬼q的距离，并为吸血鬼在前压的时候是很容易被劫weq吃满。总结来说就是只要劫想，就可以在不被压太多补刀的同时避免被消耗，但是吸血鬼在补刀的大部分时间都有被劫消耗的风险，换血主动权是掌握在劫手上的。选择不主动换血 等劫qw或者能量空档期小压，6级前总体战术以保证自身补刀为主，因为这个时候吸血鬼的回复能力还顶不住劫的消耗。对线劫时在确保2v2次数很少时选择点燃换tp，度过六级危险期，天赋以打团为主。&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>想看的</title>
-				<link>http://localhost:65351/watchlist/</link>
+				<link>http://localhost:1313/watchlist/</link>
 				<pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate>
-				<guid>http://localhost:65351/watchlist/</guid>
+				<guid>http://localhost:1313/watchlist/</guid>
 				<description>&lt;h2 id=&#34;想看的&#34;&gt;想看的&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 石之海&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 赛博朋克边缘行者&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 误杀&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 犬夜叉&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 我不是药神&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 爱乐之城&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 诡秘之主&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 不能说的秘密&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 爆裂鼓手&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 赛马娘&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 阿凡达&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 未闻花名&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 爱、死亡、机器人&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 银河补习班&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 肖申克的救赎&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 五亿探长雷洛&lt;/p&gt;</description>
 			</item>
 	</channel>
