@@ -32,7 +32,7 @@
         {{- end -}}
         "@type": "BlogPosting",
         "headline": {{ .Title | safeHTML }},
-        "inLanguage": "{{ .Site.Language.Locale }}",
+        "inLanguage": "{{ site.Language.LanguageCode }}",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": {{ .Permalink }}
@@ -172,7 +172,7 @@
             {
                 "@type": "WebSite",
                 "url": {{ .Permalink }},
-                {{- with .Site.Language.Locale -}}
+                {{- with site.Language.LanguageCode -}}
                     "inLanguage": "{{ . }}",
                 {{- end -}}
                 {{- with .Site.Params.Author.name -}}
