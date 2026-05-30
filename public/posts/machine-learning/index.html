@@ -1,932 +1,191 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-
-<head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=50052&amp;path=blog/livereload" data-no-instant defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noodp" ><title>Machine Learning - 邪恶小卷毛</title><meta name="Description" content="a place for my output"><meta property="og:url" content="http://localhost:50052/blog/posts/machine-learning/">
-	<meta property="og:site_name" content="邪恶小卷毛">
-	<meta property="og:title" content="Machine Learning">
-	<meta property="og:description" content="基础 目标 一、 机器学习的三要素 模型 (Model)： 用于拟合输入与输出关系的函数表达式 f(x,θ)f(x, \theta)f(x,θ)。 学习准则 (Learning Criterion)： 衡量模型预测值与真实值之间差异的评价标准（通常指损失函数或目标函数）。 优化算法 (Optimization Algorithm)： 用于寻找最优模型参数 θ\thetaθ 的具体计算方法（如梯度下降法）。 二、 三种主要学习算法 1. 监督学习 (Supervised Learning)利用带有明确“标签”的数据进行训练，让模型学会输入到输出的映射。根据标签数据的类型，可分为：">
-	<meta property="og:locale" content="zh_CN">
-	<meta property="og:type" content="article">
-		<meta property="article:section" content="posts">
-		<meta property="article:published_time" content="2025-03-03T22:15:15+08:00">
-		<meta property="article:modified_time" content="2025-03-03T22:15:15+08:00">
-		<meta property="article:tag" content="ML">
-		<meta property="og:image" content="http://localhost:50052/blog/images/avatar.jpg">
-
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content="http://localhost:50052/blog/images/avatar.jpg">
-	<meta name="twitter:title" content="Machine Learning">
-	<meta name="twitter:description" content="基础 目标 一、 机器学习的三要素 模型 (Model)： 用于拟合输入与输出关系的函数表达式 f(x,θ)f(x, \theta)f(x,θ)。 学习准则 (Learning Criterion)： 衡量模型预测值与真实值之间差异的评价标准（通常指损失函数或目标函数）。 优化算法 (Optimization Algorithm)： 用于寻找最优模型参数 θ\thetaθ 的具体计算方法（如梯度下降法）。 二、 三种主要学习算法 1. 监督学习 (Supervised Learning)利用带有明确“标签”的数据进行训练，让模型学会输入到输出的映射。根据标签数据的类型，可分为：">
-<meta name="application-name" content="邪恶小卷毛">
-<meta name="apple-mobile-web-app-title" content="邪恶小卷毛">
-
-<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" >
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
-<link rel="canonical" href="http://localhost:50052/blog/posts/machine-learning/" ><link rel="prev" href="http://localhost:50052/blog/posts/%E5%A3%B0%E9%A2%91/" ><link rel="next" href="http://localhost:50052/blog/posts/latex-%E7%94%A8%E6%B3%95/" >
-<link rel="stylesheet" href="/blog/css/main.min.css"><link rel="stylesheet" href="/blog/css/style.min.css"><script type="application/ld+json">{"@context": "https://schema.org","@type": "BlogPosting",
-        "headline": "Machine Learning",
-        "inLanguage": "zh-CN",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "http://localhost:50052/blog/posts/machine-learning/"
-        },"genre": "posts","keywords":["ML"],"wordcount":  4712 ,
-        "url": "http://localhost:50052/blog/posts/machine-learning/","datePublished": "2025-03-03T22:15:15+08:00","dateModified": "2025-03-03T22:15:15+08:00","publisher": {
-            "@type": "Organization",
-            "name": "evilcurls"},"author": {
-                "@type": "Person",
-                "name": "evilcurls",
-                "url": "/blog/"
-            },"description": ""
-    }</script></head>
-
-
-<body data-instant-intensity="viewport" class="tw:flex tw:min-h-screen tw:flex-col"><script>
-    function setTheme(theme) {
-      document.body.setAttribute('theme', theme); 
-      document.documentElement.className = theme;
-      document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');
-      if (theme === 'light') {
-        document.documentElement.classList.remove('dark')
-      } else {
-        document.documentElement.classList.add('dark')
-      }
-      window.theme = theme;   
-      window.isDark = window.theme !== 'light' 
-    }
-    function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
-    function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
-    if (window.localStorage && localStorage.getItem('theme')) {
-        let theme = localStorage.getItem('theme');
-        if (theme === 'light' || theme === 'dark') {
-        setTheme(theme);
-        } else {
-            if ((window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                setTheme('dark');
-            } else {
-                setTheme('light');
-            }
-        }
-      } else { 
-        if ('auto' === 'light' || 'auto' === 'dark') 
-            setTheme('auto'), saveTheme('auto'); 
-        else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');
-    }
-    let metaColors = {'light': '#f8f8f8','dark': '#161b22'}
-    getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
-    window.switchThemeEventSet = new Set()
-</script><div id="back-to-top"></div>
-    <div id="mask"></div><header class="desktop tw:print:hidden!" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/blog/" title="邪恶小卷毛">邪恶小卷毛</a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item"
-                    href="/blog/posts/" > 文章 </a><a class="menu-item"
-                    href="/blog/tags/" > 标签 </a><a class="menu-item"
-                    href="/blog/categories/" > 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
-                    <input type="text"
-                        placeholder="搜索..."
-                        id="search-input-desktop">
-                    <button class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
-                        <svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
-                    </button>
-                    <button class="search-button search-clear" id="search-clear-desktop" title="清空">
-                        <svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"/></svg>
-                    </button>
-                    <span class="search-button search-loading tw:animate-spin" id="search-loading-desktop">
-                        <svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"/></svg>
-                    </span>
-                </span><button class="menu-item theme-switch" aria-label="切换主题">
-                    <svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/></svg>
-                </button></div>
-        </div>
-    </div>
-</header><header class="mobile tw:print:hidden!" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/blog/" title="邪恶小卷毛">邪恶小卷毛</a>
-            </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
-        </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                <div class="search mobile" id="search-mobile">
-                    <input type="text"
-                        placeholder="搜索..."
-                        id="search-input-mobile">
-                    <button class="search-button search-toggle tw:h-10" id="search-toggle-mobile" title="搜索">
-                        <svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
-                    </button>
-                    <button class="search-button search-clear tw:h-fit" id="search-clear-mobile" title="清空">
-                        <svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"/></svg>
-                    </button>
-                    <span class="search-button search-loading tw:animate-spin" id="search-loading-mobile">
-                        <svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"/></svg>
-                    </span>
-                </div>
-                <button class="search-cancel" id="search-cancel-mobile">
-                    取消
-                </button>
-            </div><a class="menu-item" href="/blog/posts/" title="" >文章</a><a class="menu-item" href="/blog/tags/" title="" >标签</a><a class="menu-item" href="/blog/categories/" title="" >分类</a><button class="menu-item theme-switch tw:w-full" aria-label="切换主题">
-                <svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/></svg>
-            </button></div>
-    </div>
-</header>
-<div class="search-dropdown desktop">
-    <div id="search-dropdown-desktop"></div>
-</div>
-<div class="search-dropdown mobile">
-    <div id="search-dropdown-mobile"></div>
-</div><main class="tw:mx-4 tw:flex-1"><div class="toc tw:print:hidden!" id="toc-auto">
-        <h2 class="toc-title">目录</h2>
-        <div class="toc-content" id="toc-content-auto"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#基础">基础</a>
-      <ul>
-        <li><a href="#目标">目标</a></li>
-        <li><a href="#一-机器学习的三要素">一、 机器学习的三要素</a></li>
-        <li><a href="#二-三种主要学习算法">二、 三种主要学习算法</a>
-          <ul>
-            <li><a href="#1-监督学习-supervised-learning">1. 监督学习 (Supervised Learning)</a></li>
-            <li><a href="#2-无监督学习-unsupervised-learning">2. 无监督学习 (Unsupervised Learning)</a></li>
-            <li><a href="#3-强化学习-reinforcement-learning">3. 强化学习 (Reinforcement Learning)</a></li>
-          </ul>
-        </li>
-        <li><a href="#特征表示">特征表示</a></li>
-        <li><a href="#梯度消失vanishing-gradient"><strong>梯度消失（Vanishing Gradient）</strong></a>
-          <ul>
-            <li><a href="#定义"><strong>定义</strong></a></li>
-            <li><a href="#定义-1"><strong>定义</strong></a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#数据增广">数据增广</a></li>
-    <li><a href="#微调">微调</a></li>
-    <li><a href="#两条定律">两条定律</a></li>
-    <li><a href="#各种问题">各种问题</a>
-      <ul>
-        <li><a href="#一元">一元</a></li>
-        <li><a href="#二分类问题">二分类问题</a></li>
-        <li><a href="#svm-支持向量机">SVM 支持向量机</a></li>
-      </ul>
-    </li>
-    <li><a href="#神经网络">神经网络</a>
-      <ul>
-        <li><a href="#sigmoid函数">sigmoid函数</a></li>
-        <li><a href="#relu函数">Relu函数</a></li>
-        <li><a href="#网络结构">网络结构</a></li>
-        <li><a href="#前馈神经网络">前馈神经网络</a></li>
-        <li><a href="#卷积神经网络">卷积神经网络</a></li>
-      </ul>
-    </li>
-    <li><a href="#期中作业-dog-breed-identifacation">期中作业 Dog-breed-identifacation</a>
-      <ul>
-        <li><a href="#加载别人现有的模型">加载别人现有的模型</a></li>
-        <li><a href="#构建数据集">构建数据集</a></li>
-      </ul>
-    </li>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#输入数据">输入数据：</a></li>
-            <li><a href="#前向传播">前向传播：</a></li>
-            <li><a href="#计算正确数">计算正确数：</a></li>
-            <li><a href="#计算损失">计算损失：</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#注意力机制">注意力机制</a></li>
-  </ul>
-</nav></div>
-    </div><dialog id="toc-dialog" class="tw:max-w-full tw:w-full tw:max-h-full tw:h-full tw:ml-16">
-        <div class="toc tw:mx-4 tw:max-w-full">
-            <h2 class="tw:mx-0 tw:my-6 tw:uppercase tw:text-2xl">目录</h2>
-            <div class="toc-content"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#基础">基础</a>
-      <ul>
-        <li><a href="#目标">目标</a></li>
-        <li><a href="#一-机器学习的三要素">一、 机器学习的三要素</a></li>
-        <li><a href="#二-三种主要学习算法">二、 三种主要学习算法</a>
-          <ul>
-            <li><a href="#1-监督学习-supervised-learning">1. 监督学习 (Supervised Learning)</a></li>
-            <li><a href="#2-无监督学习-unsupervised-learning">2. 无监督学习 (Unsupervised Learning)</a></li>
-            <li><a href="#3-强化学习-reinforcement-learning">3. 强化学习 (Reinforcement Learning)</a></li>
-          </ul>
-        </li>
-        <li><a href="#特征表示">特征表示</a></li>
-        <li><a href="#梯度消失vanishing-gradient"><strong>梯度消失（Vanishing Gradient）</strong></a>
-          <ul>
-            <li><a href="#定义"><strong>定义</strong></a></li>
-            <li><a href="#定义-1"><strong>定义</strong></a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#数据增广">数据增广</a></li>
-    <li><a href="#微调">微调</a></li>
-    <li><a href="#两条定律">两条定律</a></li>
-    <li><a href="#各种问题">各种问题</a>
-      <ul>
-        <li><a href="#一元">一元</a></li>
-        <li><a href="#二分类问题">二分类问题</a></li>
-        <li><a href="#svm-支持向量机">SVM 支持向量机</a></li>
-      </ul>
-    </li>
-    <li><a href="#神经网络">神经网络</a>
-      <ul>
-        <li><a href="#sigmoid函数">sigmoid函数</a></li>
-        <li><a href="#relu函数">Relu函数</a></li>
-        <li><a href="#网络结构">网络结构</a></li>
-        <li><a href="#前馈神经网络">前馈神经网络</a></li>
-        <li><a href="#卷积神经网络">卷积神经网络</a></li>
-      </ul>
-    </li>
-    <li><a href="#期中作业-dog-breed-identifacation">期中作业 Dog-breed-identifacation</a>
-      <ul>
-        <li><a href="#加载别人现有的模型">加载别人现有的模型</a></li>
-        <li><a href="#构建数据集">构建数据集</a></li>
-      </ul>
-    </li>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#输入数据">输入数据：</a></li>
-            <li><a href="#前向传播">前向传播：</a></li>
-            <li><a href="#计算正确数">计算正确数：</a></li>
-            <li><a href="#计算损失">计算损失：</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#注意力机制">注意力机制</a></li>
-  </ul>
-</nav></div>
-        </div>
-    </dialog><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single tw:print:w-full! tw:print:max-w-none! tw:print:m-0! tw:print:p-0!"><h1 class="single-title" data-pagefind-meta="date:2025-03-03" data-pagefind-body>Machine Learning</h1><div class="post-meta">
-            <div class="post-meta-line">
-                <span class="post-author"><img class="tw:inline-block tw:max-h-4 tw:rounded-full tw:translate-y-[-2px] tw:mr-1"  src='images/avatar.jpg'   alt="evilcurls avatar" height="16" width="16"><a href="/blog/" title="Author" rel=" author" class="author">evilcurls</a>
-                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/blog/categories/%E6%8A%80%E6%9C%AF/"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>技术</a></span></div>
-            <div class="post-meta-line"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M148 288h-40c-6.6 0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6 0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v52h48c26.5 0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3 0 6-2.7 6-6z"/></svg>&nbsp;<time datetime="2025-03-03">2025-03-03</time>&nbsp;<svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg>&nbsp;<time datetime="2025-03-03">2025-03-03</time>&nbsp;<svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3 0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9 0l60.1 60.1c18.8 18.7 18.8 49.1 0 67.9zM284.2 99.8L21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3 0-17l-111-111c-4.8-4.7-12.4-4.7-17.1 0zM124.1 339.9c-5.5-5.5-5.5-14.3 0-19.8l154-154c5.5-5.5 14.3-5.5 19.8 0s5.5 14.3 0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8 0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;约 4712 字&nbsp;
-                    <svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;预计阅读 21 分钟&nbsp;</div>
-        </div><div class="details toc tw:print:block!" id="toc-static" data-kept="">
-                <div class="details-summary toc-title">
-                    <span>目录</span>
-                    <span class="details-icon"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#基础">基础</a>
-      <ul>
-        <li><a href="#目标">目标</a></li>
-        <li><a href="#一-机器学习的三要素">一、 机器学习的三要素</a></li>
-        <li><a href="#二-三种主要学习算法">二、 三种主要学习算法</a>
-          <ul>
-            <li><a href="#1-监督学习-supervised-learning">1. 监督学习 (Supervised Learning)</a></li>
-            <li><a href="#2-无监督学习-unsupervised-learning">2. 无监督学习 (Unsupervised Learning)</a></li>
-            <li><a href="#3-强化学习-reinforcement-learning">3. 强化学习 (Reinforcement Learning)</a></li>
-          </ul>
-        </li>
-        <li><a href="#特征表示">特征表示</a></li>
-        <li><a href="#梯度消失vanishing-gradient"><strong>梯度消失（Vanishing Gradient）</strong></a>
-          <ul>
-            <li><a href="#定义"><strong>定义</strong></a></li>
-            <li><a href="#定义-1"><strong>定义</strong></a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#数据增广">数据增广</a></li>
-    <li><a href="#微调">微调</a></li>
-    <li><a href="#两条定律">两条定律</a></li>
-    <li><a href="#各种问题">各种问题</a>
-      <ul>
-        <li><a href="#一元">一元</a></li>
-        <li><a href="#二分类问题">二分类问题</a></li>
-        <li><a href="#svm-支持向量机">SVM 支持向量机</a></li>
-      </ul>
-    </li>
-    <li><a href="#神经网络">神经网络</a>
-      <ul>
-        <li><a href="#sigmoid函数">sigmoid函数</a></li>
-        <li><a href="#relu函数">Relu函数</a></li>
-        <li><a href="#网络结构">网络结构</a></li>
-        <li><a href="#前馈神经网络">前馈神经网络</a></li>
-        <li><a href="#卷积神经网络">卷积神经网络</a></li>
-      </ul>
-    </li>
-    <li><a href="#期中作业-dog-breed-identifacation">期中作业 Dog-breed-identifacation</a>
-      <ul>
-        <li><a href="#加载别人现有的模型">加载别人现有的模型</a></li>
-        <li><a href="#构建数据集">构建数据集</a></li>
-      </ul>
-    </li>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#输入数据">输入数据：</a></li>
-            <li><a href="#前向传播">前向传播：</a></li>
-            <li><a href="#计算正确数">计算正确数：</a></li>
-            <li><a href="#计算损失">计算损失：</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#注意力机制">注意力机制</a></li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content" data-pagefind-body><h2 id="基础" class="headerLink">
-    <a href="#%e5%9f%ba%e7%a1%80" class="header-mark"></a>基础</h2><h3 id="目标" class="headerLink">
-    <a href="#%e7%9b%ae%e6%a0%87" class="header-mark"></a>目标</h3><h3 id="一-机器学习的三要素" class="headerLink">
-    <a href="#%e4%b8%80-%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e7%9a%84%e4%b8%89%e8%a6%81%e7%b4%a0" class="header-mark"></a>一、 机器学习的三要素</h3><ul>
-<li><strong>模型 (Model)：</strong> 用于拟合输入与输出关系的函数表达式 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x, \theta)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span></span></span></span>。</li>
-<li><strong>学习准则 (Learning Criterion)：</strong> 衡量模型预测值与真实值之间差异的评价标准（通常指损失函数或目标函数）。</li>
-<li><strong>优化算法 (Optimization Algorithm)：</strong> 用于寻找最优模型参数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span> 的具体计算方法（如梯度下降法）。</li>
-</ul>
-<h3 id="二-三种主要学习算法" class="headerLink">
-    <a href="#%e4%ba%8c-%e4%b8%89%e7%a7%8d%e4%b8%bb%e8%a6%81%e5%ad%a6%e4%b9%a0%e7%ae%97%e6%b3%95" class="header-mark"></a>二、 三种主要学习算法</h3><h4 id="1-监督学习-supervised-learning" class="headerLink">
-    <a href="#1-%e7%9b%91%e7%9d%a3%e5%ad%a6%e4%b9%a0-supervised-learning" class="header-mark"></a>1. 监督学习 (Supervised Learning)</h4><p>利用带有明确“标签”的数据进行训练，让模型学会输入到输出的映射。根据标签数据的类型，可分为：</p>
-<ul>
-<li><strong>回归问题 (Regression)：</strong> 标签 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> 是连续值，模型 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x, \theta)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span></span></span></span> 的输出也是连续数值（例如：预测房价或气温）。</li>
-<li><strong>分类问题 (Classification)：</strong> 标签 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> 是离散的类别值（例如：判断邮件是否为垃圾邮件）。</li>
-<li><strong>结构化学习问题 (Structured Learning)：</strong> 本质上是复杂的特殊分类问题，其标签 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.22222em;">Y</span></span></span></span> 不是单一的数值或类别，而是结构化的对象，如<strong>序列、树或图</strong>（例如：句子解析、机器翻译）。</li>
-</ul>
-<h4 id="2-无监督学习-unsupervised-learning" class="headerLink">
-    <a href="#2-%e6%97%a0%e7%9b%91%e7%9d%a3%e5%ad%a6%e4%b9%a0-unsupervised-learning" class="header-mark"></a>2. 无监督学习 (Unsupervised Learning)</h4><p>训练样本<strong>不包含目标标签</strong>，模型需要自主从数据中探索和学习有价值的内部结构信息。常见任务包括：</p>
-<ul>
-<li><strong>聚类 (Clustering)：</strong> 将特征相似的样本自动划分到不同的簇中。</li>
-<li><strong>密度估计 (Density Estimation)：</strong> 估计数据在特征空间中的概率分布。</li>
-<li><strong>特征学习与降维 (Feature Learning &amp; Dimensionality Reduction)：</strong> 提取数据的核心特征，去除冗余信息并降低维度。</li>
-</ul>
-<h4 id="3-强化学习-reinforcement-learning" class="headerLink">
-    <a href="#3-%e5%bc%ba%e5%8c%96%e5%ad%a6%e4%b9%a0-reinforcement-learning" class="header-mark"></a>3. 强化学习 (Reinforcement Learning)</h4><p>一种<strong>基于交互</strong>的机器学习算法。它不依赖给定的标签数据，而是智能体（Agent）在与环境（Environment）的不断交互（试错）中进行学习，根据环境给出的反馈（奖励或惩</p>
-<h3 id="特征表示" class="headerLink">
-    <a href="#%e7%89%b9%e5%be%81%e8%a1%a8%e7%a4%ba" class="header-mark"></a>特征表示</h3><p>​	首先机器学习核心应该是数学运算，所以要把各种特征转化为向量来表示，方便计算</p>
-<p>​		图像：M*N的图像 变为 M * N维的向量，每维的数值是灰度，如果是彩色图就RGB三层叠加</p>
-<p>​		文本： 简单方式是用词袋（Bag of words)但好像由于不考虑词序，不能精确表示文本信息</p>
-<p>​		特征学习 又称表示学习   让机器自动学习出有效特征</p>
-<p>​				方式：用人为设计准则  通过准则选出需要的特征</p>
-<h3 id="梯度消失vanishing-gradient" class="headerLink">
-    <a href="#%e6%a2%af%e5%ba%a6%e6%b6%88%e5%a4%b1vanishing-gradient" class="header-mark"></a><strong>梯度消失（Vanishing Gradient）</strong></h3><h4 id="定义" class="headerLink">
-    <a href="#%e5%ae%9a%e4%b9%89" class="header-mark"></a><strong>定义</strong></h4><p>在反向传播时，梯度值随着网络层数增加呈指数级衰减，导致浅层（靠近输入层）的权重几乎不更新，训练停滞</p>
-<p><strong>梯度爆炸（Exploding Gradient）</strong></p>
-<h4 id="定义-1" class="headerLink">
-    <a href="#%e5%ae%9a%e4%b9%89-1" class="header-mark"></a><strong>定义</strong></h4><p>在反向传播时，梯度值随着网络层数增加呈指数级增长，导致权重更新幅度过大，模型参数发散（NaN 或溢出）。</p>
-<h2 id="数据增广" class="headerLink">
-    <a href="#%e6%95%b0%e6%8d%ae%e5%a2%9e%e5%b9%bf" class="header-mark"></a>数据增广</h2><p>扩充数据集：比如对已有图片加入噪声 镜像旋转</p>
-<p>​			可以遇到更加多样化的情况提升降低过拟合风险</p>
-<h2 id="微调" class="headerLink">
-    <a href="#%e5%be%ae%e8%b0%83" class="header-mark"></a>微调</h2><p>通过大数据集训练出来的模型用在小数据集上</p>
-<p>因为大的数据集训练出来的初始模型泛化能力一般会强一点，所以用来初始化参数（反正肯定比随机设参数强）</p>
-<p>那么在复制参数的时候，是不是一模一样复制呢：在神经</p>
-<h2 id="两条定律" class="headerLink">
-    <a href="#%e4%b8%a4%e6%9d%a1%e5%ae%9a%e5%be%8b" class="header-mark"></a>两条定律</h2><p>没有免费午餐定律：炉石传说没有完爆</p>
-<p>奥卡姆剃刀原理：简单的模型泛化能力更强	没必要不要增实体</p>
-<h2 id="各种问题" class="headerLink">
-    <a href="#%e5%90%84%e7%a7%8d%e9%97%ae%e9%a2%98" class="header-mark"></a>各种问题</h2><h3 id="一元" class="headerLink">
-    <a href="#%e4%b8%80%e5%85%83" class="header-mark"></a>一元</h3><p>predict</p>
-<p><img class="tw:inline" loading="lazy" src='https://raw.githubusercontent.com/Evilcurls/image4blog/main/一元模型三要素.png'     ></p>
-<p>​	在计算损失函数的时候，loss=yi-(wxi+b)，由于只是把标签值yi和输入值xi带入了，所以loss是关于两个参数的方程，可以计算最小值梯度等问题，当使用线性模型的时候会出现离群点，损失函数可以换成别的函数均方误差受到的影响太大</p>
-<h3 id="二分类问题" class="headerLink">
-    <a href="#%e4%ba%8c%e5%88%86%e7%b1%bb%e9%97%ae%e9%a2%98" class="header-mark"></a>二分类问题</h3><p>​	样本空间中找到一个超平面 它将特征空间一分为二 一半是我愿意 一半是我拒</p>
-<p><img class="tw:inline" loading="lazy" src='https://raw.githubusercontent.com/Evilcurls/image4blog/main/sigmoid函数.png'     ></p>
-<p>​	在分类问题中不能用线性模型的输出，或者说不能直接用，因为一般线性模型的输出是连续的，所以要将线性模型的输出使用sigmoid函数转化为概率值	 把一整段连续值挤压到空间[0,1]，赋予概率值，0或1哪个超过0.5就分类结果是哪个</p>
-<p>sigmoid函数=<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex"> \frac{1} {1+e^{-x}} </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.2484em;vertical-align:-0.4033em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">+</span><span class="mord mtight"><span class="mord mathnormal mtight">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7027em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathnormal mtight">x</span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4033em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
-<p><img class="tw:inline" loading="lazy" src='https://raw.githubusercontent.com/Evilcurls/image4blog/main/二分类问题.png'     ></p>
-<p>​	像这样的思想可以推广到多分类问题，就像之前那个手写体数字识别，就是用softmax激活函数完成的多分类问题</p>
-<p>​	其中softmax=<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><msubsup><mi>e</mi><mi>i</mi><mi>x</mi></msubsup><mrow><msub><mo>∑</mo><mi>i</mi></msub><msup><mi>e</mi><mrow><mi>x</mi><mi>i</mi></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac {e^x_i} {\sum_i {e^{xi}}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.5972em;vertical-align:-0.57em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0272em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mop mtight"><span class="mop op-symbol small-op mtight" style="position:relative;top:0em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1496em;"><span style="top:-2.1786em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3214em;"><span></span></span></span></span></span></span><span class="mspace mtight" style="margin-right:0.1952em;"></span><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7571em;"><span style="top:-2.786em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="mord mathnormal mtight">i</span></span></span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.5102em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7385em;"><span style="top:-2.214em;margin-left:0em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-2.931em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.57em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
-<h3 id="svm-支持向量机" class="headerLink">
-    <a href="#svm-%e6%94%af%e6%8c%81%e5%90%91%e9%87%8f%e6%9c%ba" class="header-mark"></a>SVM 支持向量机</h3><p>模型＆目的：找一个超平面把标记了正负的样本空间里的样本给一分为二   就是之前的二分类问题，有一个名词叫支持向量，表示距离超平面最近的点，一共有两个，超平面移动到这两个点形成的平面分别叫正负超平面</p>
-<p>如果一次性将所有的点都分开，那么叫做硬间隔，但尽善尽美的事情很少，往往最优的超平面会分出绝大多数的点，但是有那么一两个</p>
-<p>点会分隔异常，所以此时把这些异常的点用损失因子记录，通过考虑损失因子和间隔的收益，这种方法叫做软间隔</p>
-<p>学习准则：最大化间隔    间隔为2/|w|		所以是argmin|w|^2</p>
-<p>优化策略：凸二次优化</p>
-<p>问题：超平面又支持向量决定，支持向量又很少，导致解具有稀疏性</p>
-<h2 id="神经网络" class="headerLink">
-    <a href="#%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c" class="header-mark"></a>神经网络</h2><p>​	神经元是最小单位，有轴突和树突，树突用于获取信息，轴突用于发送信息，神经元只有两种状态 ，激活和抑制</p>
-<p>​	激活函数在模拟神经元的触发机制，当满足某种条件变成激活状态，</p>
-<h3 id="sigmoid函数" class="headerLink">
-    <a href="#sigmoid%e5%87%bd%e6%95%b0" class="header-mark"></a>sigmoid函数</h3><p>​	长得像S型的函数  (两端饱和函数)一般有logstic 和 tanh</p>
-<p>​	logstic函数的长这样   <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mi>e</mi><mi>x</mi><mi>p</mi><mo stretchy="false">(</mo><mo>−</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac 1 {1+exp(-x)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.3651em;vertical-align:-0.52em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8451em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">+</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">x</span><span class="mord mathnormal mtight">p</span><span class="mopen mtight">(</span><span class="mord mtight">−</span><span class="mord mathnormal mtight">x</span><span class="mclose mtight">)</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
-<p>​	tanh函数长这样  <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>e</mi><mi>x</mi><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>e</mi><mi>x</mi><mi>p</mi><mo stretchy="false">(</mo><mo>−</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><mi>e</mi><mi>x</mi><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>e</mi><mi>x</mi><mi>p</mi><mo stretchy="false">(</mo><mo>−</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac {exp(x)-exp(-x)} {exp(x)+exp(-x)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.53em;vertical-align:-0.52em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.01em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">x</span><span class="mord mathnormal mtight">p</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">x</span><span class="mclose mtight">)</span><span class="mbin mtight">+</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">x</span><span class="mord mathnormal mtight">p</span><span class="mopen mtight">(</span><span class="mord mtight">−</span><span class="mord mathnormal mtight">x</span><span class="mclose mtight">)</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.485em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">x</span><span class="mord mathnormal mtight">p</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">x</span><span class="mclose mtight">)</span><span class="mbin mtight">−</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">x</span><span class="mord mathnormal mtight">p</span><span class="mopen mtight">(</span><span class="mord mtight">−</span><span class="mord mathnormal mtight">x</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
-<p><img class="tw:inline" loading="lazy" src='https://raw.githubusercontent.com/Evilcurls/image4blog/main/logistic%26tanh.png'     ></p>
-<p>logstic函数优势在于简单，劣势在于没有是非零中心化的，会影响后来的神经元，有偏置偏移</p>
-<h3 id="relu函数" class="headerLink">
-    <a href="#relu%e5%87%bd%e6%95%b0" class="header-mark"></a>Relu函数</h3><p>长相：
-    
-    \(f(x)=\begin{cases}1     x\ge 0 ，0      x&lt;0 \end{cases}\)</p>
-<p>优点：计算高效，兴奋程度高</p>
-<p>缺点：ReLU函数的输出是非零中心化的，给后一层的神经网络引入偏置偏移， 会影响梯度下降的效率． 此外，ReLU神经元在训练时比较容易“死亡”．在训 练时，如果参数在一次不恰当的更新后，第一个隐藏层中的某个ReLU神经元在 所有的训练数据上都不能被激活，那么这个神经元自身参数的梯度永远都会是 0， 在以后的训练过程中永远不能被激活．这种现象称为死亡ReLU问题</p>
-<p>有好几种变种去解决这些问题：泄露的relu(leaky relu) 带参数的relu(parametric Relu) 还有好多什么ELU，什么GELU</p>
-<h3 id="网络结构" class="headerLink">
-    <a href="#%e7%bd%91%e7%bb%9c%e7%bb%93%e6%9e%84" class="header-mark"></a>网络结构</h3><h3 id="前馈神经网络" class="headerLink">
-    <a href="#%e5%89%8d%e9%a6%88%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c" class="header-mark"></a>前馈神经网络</h3><p>就是拟合一个函数，有向无环，单向传播</p>
-<p><img class="tw:inline" loading="lazy" src='https://raw.githubusercontent.com/Evilcurls/image4blog/main/前馈神经网络.png'     ></p>
-<p>上图示例就是将输入x输入到神经网络<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\phi (x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">ϕ</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span> 中去，分类器的参数是一堆<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span> ,在通过比如softmax分类器 对<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\phi (x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">ϕ</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span>的输出数据分类</p>
-<h3 id="卷积神经网络" class="headerLink">
-    <a href="#%e5%8d%b7%e7%a7%af%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c" class="header-mark"></a>卷积神经网络</h3><p>假设我直接将一个100*100的图片输入到全连接网络</p>
-<p>假设有N个神经元，那么在后续的全连接层中1.输入参数过多不好计算 2.会丢失某些图像特征</p>
-<p>所以卷积应运而生：</p>
-<p>1.部分连接：</p>
-<p>​     在全连接层中，第二层的任意神经元都要连接前面所有的神经元，那么就需（要维数*N+维数）个参数，但在卷积神经网络中，第二层中的所有神经元都各司其职，只与前一层的部分神经元连接</p>
-<p>2.权重共享：</p>
-<p>​	虽然部分连接决定了某些神经元去处理图像的不同区域，但是比如人脸识别这样的工作，人脸可能在上下左右的任意地方出现，所以可以用一套参数完成任务</p>
-<p><img class="tw:inline" loading="lazy" src='https://raw.githubusercontent.com/Evilcurls/image4blog/main/卷积作用图.png'     ></p>
-<h2 id="期中作业-dog-breed-identifacation" class="headerLink">
-    <a href="#%e6%9c%9f%e4%b8%ad%e4%bd%9c%e4%b8%9a-dog-breed-identifacation" class="header-mark"></a>期中作业 Dog-breed-identifacation</h2><p>1.读取数据集</p>
-<p>2.数据增广</p>
-<h3 id="加载别人现有的模型" class="headerLink">
-    <a href="#%e5%8a%a0%e8%bd%bd%e5%88%ab%e4%ba%ba%e7%8e%b0%e6%9c%89%e7%9a%84%e6%a8%a1%e5%9e%8b" class="header-mark"></a>加载别人现有的模型</h3><p><code>class Net(torch.nn.module）</code>继承了torch.nn.module 公式写法</p>
-<p><code>super().__init__() </code>使用pytorch设定好的连接方式</p>
-<p><code>self.mymode=models.resnet50(pretrained=False)</code></p>
-<p>self.xx是实例化指自己，有点像c++里面的this指针   self.model是新增一个类里面的一个属性，models是torchvision里面的一个包，models.resnet50是加载了resnet50这个网络的骨架，pretrained=False表示不用加载预训练数据,因为我本地有resnet50的参数，如果选了True就要从网上开始下了</p>
-<p><code>    self.mymode.load_state_dict(torch.load('resnet50-19c8e357.pth'))</code></p>
-<p>​				<strong><code>state_dict</code></strong> ：</p>
-<p>​					在 PyTorch 中，每个模型都有一个 <code>state_dict</code>，它是一个 Python 字典，存储了模型的所有可学习参数（如权						重和偏置）。</p>
-<p>​					例如，对于一个简单的线性层 <code>nn.Linear(10, 2)</code>，其 <code>state_dict</code> 可能包含两个键值对：<code>'weight'</code> 和 						<code>'bias'</code>。</p>
-<p>​				<strong><code>torch.load</code></strong> ：</p>
-<p>​						<code>torch.load</code> 是 PyTorch 提供的函数，用于从文件中加载保存的模型参数（通常是 <code>.pth</code> 或 <code>.pt</code> 文件）。</p>
-<p>​				<strong><code>load_state_dict</code></strong> ：</p>
-<p>​					这个方法将加载的参数字典应用到当前模型中，从而恢复模型的状态。</p>
-<h3 id="构建数据集" class="headerLink">
-    <a href="#%e6%9e%84%e5%bb%ba%e6%95%b0%e6%8d%ae%e9%9b%86" class="header-mark"></a>构建数据集</h3><p><code>class dog_dataset(torch.utils.data.Dataset):</code><strong>为什么需要继承 <code>Dataset</code>？</strong></p>
-<p>​			PyTorch 的 <code>DataLoader</code> 是一个强大的工具，用于高效地加载和批量处理数据。<code>DataLoader</code> 的工作依赖于 <code>Dataset</code> 类提				供的接口。具体来说：</p>
-<p>​				<strong><code>Dataset</code></strong> ：</p>
-<p>​							负责定义如何加载和访问数据。</p>
-<p>​					提供了一个统一的接口，使得数据可以被 <code>DataLoader</code> 使用。</p>
-<p>​				<strong><code>	DataLoader</code></strong> ：</p>
-<p>​					负责将数据分批次加载到模型中。</p>
-<p>​					支持多线程、数据打乱、并行处理等功能。</p>
-<p>​					有参数num_worker的时候，在windows下会报错</p>
-<div class="code-block highlight is-open show-line-numbers  tw:group tw:my-2">
-  <div class="
-    
-    tw:flex 
-    tw:flex-row
-    tw:flex-1 
-    tw:justify-between 
-    tw:w-full tw:bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        code-block-button
-        tw:mx-2 
-        tw:flex
-        tw:flex-row
-        tw:flex-1"
-      aria-hidden="true">
-          <span class="tw:group-[.is-open]:rotate-90 tw:transition-[transform] tw:duration-500 tw:ease-in-out tw:print:hidden! tw:w-min tw:h-min tw:my-1 tw:mx-1"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></span>
-          <span class="tw:select-none tw:my-1! tw:block">def</span>
-      </button>
-
-   <div class="tw:flex">
-      <button 
-        class="
-          line-number-button
-          tw:mx-2 
-          tw:hidden 
-          tw:group-[.is-open]:block 
-          tw:group-[.show-line-numbers]:text-fgColor-link 
-          tw:print:hidden!" 
-        title="Toggle line numbers"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
-
-      <button 
-        class="
-          wrap-code-button
-          tw:select-none 
-          tw:mx-2 
-          tw:hidden 
-          tw:group-[.is-open]:block 
-          tw:group-[.is-wrap]:text-fgColor-link 
-          tw:print:hidden!" 
-        title="Toggle code wrap"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
-      
-      <button 
-        class="
-          copy-code-button
-          tw:select-none
-          tw:mx-2 
-          tw:hidden
-          tw:group-[.is-open]:block
-          tw:hover:text-fgColor-link 
-          tw:print:hidden!"
-        title="Copy code">
-          <span class="copy-icon tw:block"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
-          <span class="check-icon tw:hidden"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
-      </button>
-        
-      <button 
-        class="
-          tw:select-none 
-          tw:mx-2 
-          tw:block 
-          tw:group-[.is-open]:hidden 
-          tw:print:hidden!" 
-        disabled
-        aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
-    </div>
-  </div>
-  <pre style="counter-reset: codeblock;" class="tw:block tw:m-0 tw:p-0"><code 
-    id="codeblock-id-1" 
-    class="
-      chroma 
-      tw:block! 
-      tw:p-0
-      tw:m-0
-      tw:transition-[max-height] 
-      tw:duration-500 
-      tw:ease-in-out 
-      tw:group-[.is-closed]:max-h-0! 
-      tw:group-[.is-wrap]:text-wrap
-      tw:overflow-y-hidden
-      tw:overflow-x-auto
-      tw:scrollbar-thin
-      "><span class="line"><span class="cl">    <span class="n">def</span> <span class="n">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="n">csvfile</span><span class="p">,</span><span class="n">imgdir</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">        <span class="n">self</span><span class="p">.</span><span class="n">result_csv</span><span class="o">=</span><span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csvfile</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">self</span><span class="p">.</span><span class="n">imgdir</span><span class="o">=</span><span class="n">imgdir</span>
-</span></span><span class="line"><span class="cl">        <span class="n">self</span><span class="p">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="p">.</span><span class="n">Compose</span><span class="p">([</span>
-</span></span><span class="line"><span class="cl">            <span class="n">transforms</span><span class="p">.</span><span class="n">Resize</span><span class="p">((</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)),</span>  <span class="o">#</span> <span class="err">调整图片大小</span>
-</span></span><span class="line"><span class="cl">            <span class="n">transforms</span><span class="p">.</span><span class="n">ToTensor</span><span class="p">(),</span>          <span class="o">#</span> <span class="err">转换为张量</span>
-</span></span><span class="line"><span class="cl">            <span class="n">transforms</span><span class="p">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="p">[</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">],</span> <span class="n">std</span><span class="o">=</span><span class="p">[</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">])</span>  <span class="o">#</span> <span class="err">归一化</span>
-</span></span><span class="line"><span class="cl">                <span class="p">])</span></span></span></code></pre>
-</div>
-<pre><code>	`pd.read_csv`:用于读取csv 表格文件
-</code></pre>
-<p>​		 <strong>为什么需要定义这个 <code>transform</code>？</strong></p>
-<p>​			在深度学习中，尤其是卷积神经网络（CNN）中，输入数据通常需要满足以下要求：</p>
-<p>​			<strong>尺寸一致</strong> ：所有图片的尺寸必须相同，以便可以堆叠成一个批次（batch）。</p>
-<p>​			<strong>数值范围一致</strong> ：图片像素值通常被归一化到一个特定的范围（例如 <code>[0, 1]</code> 或均值为 0、标准差为 1 的分布），以加速模				型训练并提高收敛性。</p>
-<p>​			<strong>格式统一</strong> ：图片需要转换为张量（Tensor）格式，才能被 PyTorch 模型处理。</p>
-<pre><code>	`transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])  # 归一化`  
-</code></pre>
-<p>​			其中的mean和标准差是通过ImageNet计算而来的  我感觉狗种类识别可以从他训练集里面算</p>
-<h2 id="" class="headerLink">
-    <a href="#" class="header-mark"></a></h2><p><code>model.train()</code> 是 PyTorch 中的一个方法，用于将模型设置为<strong>训练模式</strong></p>
-<p>验证集的主要作用是评估模型在<strong>未见过的数据</strong> 上的性能</p>
-<p>假设 <code>batch_size = 32</code>，我们来看一个具体的例子：</p>
-<h4 id="输入数据" class="headerLink">
-    <a href="#%e8%be%93%e5%85%a5%e6%95%b0%e6%8d%ae" class="header-mark"></a>输入数据：</h4><ul>
-<li><code>input</code>: 形状为 <code>[32, input_dim]</code> 的张量，表示 32 张图片。</li>
-<li><code>label</code>: 形状为 <code>[32]</code> 的张量，表示这 32 张图片的真实类别标签。</li>
-</ul>
-<h4 id="前向传播" class="headerLink">
-    <a href="#%e5%89%8d%e5%90%91%e4%bc%a0%e6%92%ad" class="header-mark"></a>前向传播：</h4><ul>
-<li>模型输出 <code>output</code> 的形状为 <code>[32, num_classes]</code>，表示每张图片在每个类别上的预测分数。</li>
-<li>使用 <code>_, predicted = output.max(1)</code> 得到形状为 <code>[32]</code> 的张量 <code>predicted</code>，表示每张图片的预测类别。</li>
-</ul>
-<h4 id="计算正确数" class="headerLink">
-    <a href="#%e8%ae%a1%e7%ae%97%e6%ad%a3%e7%a1%ae%e6%95%b0" class="header-mark"></a>计算正确数：</h4><ul>
-<li>假设 <code>predicted = [0, 1, 2, ..., 0]</code>（长度为 32），<code>label = [0, 1, 3, ..., 0]</code>。</li>
-<li><code>(predicted == label)</code> 会生成一个布尔张量 <code>[True, True, False, ..., True]</code>。</li>
-<li><code>(predicted == label).sum()</code> 计算为 28，表示当前 batch 中有 28 张图片预测正确。</li>
-</ul>
-<h4 id="计算损失" class="headerLink">
-    <a href="#%e8%ae%a1%e7%ae%97%e6%8d%9f%e5%a4%b1" class="header-mark"></a>计算损失：</h4><ul>
-<li>假设损失函数为交叉熵，计算得到 <code>loss = 0.5</code>。</li>
-<li><code>loss.item()</code> 提取标量值 0.5，并将其累加到 <code>loss_total</code> 中。</li>
-</ul>
-<h2 id="注意力机制" class="headerLink">
-    <a href="#%e6%b3%a8%e6%84%8f%e5%8a%9b%e6%9c%ba%e5%88%b6" class="header-mark"></a>注意力机制</h2><p>一般分为两种：</p>
-<p>​	聚焦式注意力，要去完成某种特定任务：比如在人群中寻找某个人就开始注意脸部，统计人数时就注意轮廓</p>
-<p>​	显著式的注意力：比如在正常任务时，被某种刺激所导致的开始聚焦  （上课突然有人开始狗叫 大家都看向狗叫的人）</p>
-<p>对于这两种注意力 也就催生出了两种自注意力的实现方式 ，主要集中在Q值（query）的来源上</p>
-<p>​	当q是我们设定（即外部提供的） 就是我们想要聚焦某种特征，比如在seq2seq中 解码器通过一个注意力分布来选择性的观察编码器生成的隐藏状态</p>
-<div class="code-block highlight is-open show-line-numbers  tw:group tw:my-2">
-  <div class="
-    
-    tw:flex 
-    tw:flex-row
-    tw:flex-1 
-    tw:justify-between 
-    tw:w-full tw:bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        code-block-button
-        tw:mx-2 
-        tw:flex
-        tw:flex-row
-        tw:flex-1"
-      aria-hidden="true">
-          <span class="tw:group-[.is-open]:rotate-90 tw:transition-[transform] tw:duration-500 tw:ease-in-out tw:print:hidden! tw:w-min tw:h-min tw:my-1 tw:mx-1"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></span>
-          <span class="tw:select-none tw:my-1! tw:block">text</span>
-      </button>
-
-   <div class="tw:flex">
-      <button 
-        class="
-          line-number-button
-          tw:mx-2 
-          tw:hidden 
-          tw:group-[.is-open]:block 
-          tw:group-[.show-line-numbers]:text-fgColor-link 
-          tw:print:hidden!" 
-        title="Toggle line numbers"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
-
-      <button 
-        class="
-          wrap-code-button
-          tw:select-none 
-          tw:mx-2 
-          tw:hidden 
-          tw:group-[.is-open]:block 
-          tw:group-[.is-wrap]:text-fgColor-link 
-          tw:print:hidden!" 
-        title="Toggle code wrap"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
-      
-      <button 
-        class="
-          copy-code-button
-          tw:select-none
-          tw:mx-2 
-          tw:hidden
-          tw:group-[.is-open]:block
-          tw:hover:text-fgColor-link 
-          tw:print:hidden!"
-        title="Copy code">
-          <span class="copy-icon tw:block"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
-          <span class="check-icon tw:hidden"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
-      </button>
-        
-      <button 
-        class="
-          tw:select-none 
-          tw:mx-2 
-          tw:block 
-          tw:group-[.is-open]:hidden 
-          tw:print:hidden!" 
-        disabled
-        aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
-    </div>
-  </div>
-  <pre style="counter-reset: codeblock;" class="tw:block tw:m-0 tw:p-0"><code 
-    id="codeblock-id-2" 
-    class="
-      chroma 
-      tw:block! 
-      tw:p-0
-      tw:m-0
-      tw:transition-[max-height] 
-      tw:duration-500 
-      tw:ease-in-out 
-      tw:group-[.is-closed]:max-h-0! 
-      tw:group-[.is-wrap]:text-wrap
-      tw:overflow-y-hidden
-      tw:overflow-x-auto
-      tw:scrollbar-thin
-      "><span class="line"><span class="cl">假设我们有一个翻译任务，目标是将英语句子翻译成法语。在解码阶段：
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">解码器生成一个查询向量 q，表示当前需要翻译的单词。
-</span></span><span class="line"><span class="cl">编码器生成一组键值对 (k,v)，表示源语言句子中的每个单词。
-</span></span><span class="line"><span class="cl">解码器通过计算 q 和 k 的相似性来决定应该关注源语言句子中的哪些单词。</span></span></code></pre>
-</div>
-<p>​	当显著式也就是自动生成q时：比如transformer就会计算元素与元素之间的相关性，可以动态决定应该关注哪些部分。特点就是qkv都是根据输入数据生成的（比如线性变换），</p>
-<div class="code-block highlight is-open show-line-numbers  tw:group tw:my-2">
-  <div class="
-    
-    tw:flex 
-    tw:flex-row
-    tw:flex-1 
-    tw:justify-between 
-    tw:w-full tw:bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        code-block-button
-        tw:mx-2 
-        tw:flex
-        tw:flex-row
-        tw:flex-1"
-      aria-hidden="true">
-          <span class="tw:group-[.is-open]:rotate-90 tw:transition-[transform] tw:duration-500 tw:ease-in-out tw:print:hidden! tw:w-min tw:h-min tw:my-1 tw:mx-1"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></span>
-          <span class="tw:select-none tw:my-1! tw:block">text</span>
-      </button>
-
-   <div class="tw:flex">
-      <button 
-        class="
-          line-number-button
-          tw:mx-2 
-          tw:hidden 
-          tw:group-[.is-open]:block 
-          tw:group-[.show-line-numbers]:text-fgColor-link 
-          tw:print:hidden!" 
-        title="Toggle line numbers"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
-
-      <button 
-        class="
-          wrap-code-button
-          tw:select-none 
-          tw:mx-2 
-          tw:hidden 
-          tw:group-[.is-open]:block 
-          tw:group-[.is-wrap]:text-fgColor-link 
-          tw:print:hidden!" 
-        title="Toggle code wrap"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
-      
-      <button 
-        class="
-          copy-code-button
-          tw:select-none
-          tw:mx-2 
-          tw:hidden
-          tw:group-[.is-open]:block
-          tw:hover:text-fgColor-link 
-          tw:print:hidden!"
-        title="Copy code">
-          <span class="copy-icon tw:block"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
-          <span class="check-icon tw:hidden"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
-      </button>
-        
-      <button 
-        class="
-          tw:select-none 
-          tw:mx-2 
-          tw:block 
-          tw:group-[.is-open]:hidden 
-          tw:print:hidden!" 
-        disabled
-        aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
-    </div>
-  </div>
-  <pre style="counter-reset: codeblock;" class="tw:block tw:m-0 tw:p-0"><code 
-    id="codeblock-id-3" 
-    class="
-      chroma 
-      tw:block! 
-      tw:p-0
-      tw:m-0
-      tw:transition-[max-height] 
-      tw:duration-500 
-      tw:ease-in-out 
-      tw:group-[.is-closed]:max-h-0! 
-      tw:group-[.is-wrap]:text-wrap
-      tw:overflow-y-hidden
-      tw:overflow-x-auto
-      tw:scrollbar-thin
-      "><span class="line"><span class="cl">在 Transformer 模型中：
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">输入序列中的每个 token 会通过线性变换生成自己的 q、k 和 v。
-</span></span><span class="line"><span class="cl">每个 token 的 q 会与其他所有 token 的 k 计算相似性，得到注意力权重。
-</span></span><span class="line"><span class="cl">最终，这些权重用于加权求和 v，生成新的表示。</span></span></code></pre>
-</div>
-</div>
-
-        
-
-
-<h2>相关内容</h2>
-<div class="related-container">
-    <div class="related-item-container">
-            <h2 class="related-title">
-                <a href="/blog/posts/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%A1%A5%E6%BC%8F/">传统机器学习补漏</a>
-            </h2>
-        </div>
-    
-
-</div>
-
-<div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>更新于 2025-03-03</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
-        <div class="post-info-line tw:print:hidden!">
-            <div class="post-info-md"></div>
-            <div class="post-info-share"></div>
-        </div>
-    </div>
-
-    <div class="post-info-more">
-        <div class="post-tags"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/></svg>&nbsp;<a href="/blog/tags/ml/">ML</a></div>
-        <div class="tw:print:hidden!">
-            <span><button class="tw:text-fgColor-link-muted tw:hover:text-fgColor-link-muted-hover" onclick="window.history.back();">返回</button></span>&nbsp;|&nbsp;<span><a href="/blog/">主页</a></span>
-        </div>
-    </div>
-
-    <div class="post-nav tw:print:hidden"><a href="/blog/posts/%E5%A3%B0%E9%A2%91/" class="prev" rel="prev" title="声频"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>声频</a>
-            <a href="/blog/posts/latex-%E7%94%A8%E6%B3%95/" class="next" rel="next" title="Latex 用法">Latex 用法<svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a></div>
-</div>
-</article></main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">
-                    由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" title="Hugo 0.162.1">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/HEIGE-PCloud/DoIt" target="_blank" rel="noopener noreferrer" title="DoIt 1.0.2"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1 0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7 0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174L402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7l-43.2-43.2c-4.1-4.1-10.8-4.1-14.8 0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg> DoIt</a>
-                </div><div class="footer-line"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 448c-110.532 0-200-89.451-200-200 0-110.531 89.451-200 200-200 110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200zm107.351-101.064c-9.614 9.712-45.53 41.396-104.065 41.396-82.43 0-140.484-61.425-140.484-141.567 0-79.152 60.275-139.401 139.762-139.401 55.531 0 88.738 26.62 97.593 34.779a11.965 11.965 0 0 1 1.936 15.322l-18.155 28.113c-3.841 5.95-11.966 7.282-17.499 2.921-8.595-6.776-31.814-22.538-61.708-22.538-48.303 0-77.916 35.33-77.916 80.082 0 41.589 26.888 83.692 78.277 83.692 32.657 0 56.843-19.039 65.726-27.225 5.27-4.857 13.596-4.039 17.82 1.738l19.865 27.17a11.947 11.947 0 0 1-1.152 15.518z"/></svg>2025 - 2026<span class="author">&nbsp;<a href="/blog/" target="_blank" rel="noopener noreferrer">evilcurls</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
-            <div class="footer-line"></div>
-            <div class="footer-line">
-            </div>
-        </div></footer><div class="tw:print:hidden! tw:flex tw:flex-col tw:fixed tw:right-4 tw:bottom-4 tw:gap-2"><a href="#back-to-top" id="back-to-top-button" class="tw:transition-opacity tw:opacity-0 tw:block tw:bg-bgColor-secondary tw:rounded-full" style="padding: 0.6rem; line-height: 1.3rem; font-size: 1rem;" title="回到顶部">
-      <svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg>
-  </a>
-
-  <button id="toc-drawer-button" class="tw:block tw:bg-bgColor-secondary tw:rounded-full tw:md:hidden" style="padding: 0.6rem; line-height: 1.3rem; font-size: 1rem;">
-      <svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
-  </button></div>
-<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/blog/lib/lightgallery/lightgallery.min.css">
-        <noscript><link rel="stylesheet" href="/blog/lib/lightgallery/lightgallery.min.css"></noscript><link rel="stylesheet" href="/blog/lib/katex/katex.min.css"><link rel="stylesheet" href="/blog/lib/katex/katex.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/blog/lib/katex/copy-tex.min.css">
-        <noscript><link rel="stylesheet" href="/blog/lib/katex/copy-tex.min.css"></noscript>
-<script>window.config={"autocomplete.min.js":"/blog/lib/autocomplete/autocomplete.min.js","comment":{},"fuse.min.js":"/blog/lib/fuse/fuse.min.js","lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/blog/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":true,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.1,"type":"fuse","useExtendedSearch":false}};</script><script
-    src="/blog/lib/lightgallery/lightgallery.min.js"
-    
-      defer
-    
-  ></script><script
-    src="/blog/lib/lightgallery/lg-thumbnail.min.js"
-    
-      defer
-    
-  ></script><script
-    src="/blog/lib/lightgallery/lg-zoom.min.js"
-    
-      defer
-    
-  ></script><script
-    src="/blog/lib/katex/katex.min.js"
-    
-      defer
-    
-  ></script><script
-    src="/blog/lib/katex/auto-render.min.js"
-    
-      defer
-    
-  ></script><script
-    src="/blog/lib/katex/copy-tex.min.js"
-    
-      defer
-    
-  ></script><script
-    src="/blog/lib/katex/mhchem.min.js"
-    
-      defer
-    
-  ></script><script
-    src="/blog/js/katex.min.js"
-    
-      defer
-    
-  ></script><script
-    src="/blog/js/theme.min.js"
-    
-      defer
-    
-  ></script>
-
-<script type="speculationrules">
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>Machine Learning - 邪恶小卷毛</title><meta name=Description content="a place for my output"><meta property="og:url" content="https://evilcurls.github.io/blog/posts/machine-learning/"><meta property="og:site_name" content="邪恶小卷毛"><meta property="og:title" content="Machine Learning"><meta property="og:description" content="基础 目标 一、 机器学习的三要素 模型 (Model)： 用于拟合输入与输出关系的函数表达式 f(x,θ)f(x, \theta)f(x,θ)。 学习准则 (Learning Criterion)： 衡量模型预测值与真实值之间差异的评价标准（通常指损失函数或目标函数）。 优化算法 (Optimization Algorithm)： 用于寻找最优模型参数 θ\thetaθ 的具体计算方法（如梯度下降法）。 二、 三种主要学习算法 1. 监督学习 (Supervised Learning)利用带有明确“标签”的数据进行训练，让模型学会输入到输出的映射。根据标签数据的类型，可分为："><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-03-03T22:15:15+08:00"><meta property="article:modified_time" content="2025-03-03T22:15:15+08:00"><meta property="article:tag" content="ML"><meta property="og:image" content="https://evilcurls.github.io/blog/images/avatar.jpg"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://evilcurls.github.io/blog/images/avatar.jpg"><meta name=twitter:title content="Machine Learning"><meta name=twitter:description content="基础 目标 一、 机器学习的三要素 模型 (Model)： 用于拟合输入与输出关系的函数表达式 f(x,θ)f(x, \theta)f(x,θ)。 学习准则 (Learning Criterion)： 衡量模型预测值与真实值之间差异的评价标准（通常指损失函数或目标函数）。 优化算法 (Optimization Algorithm)： 用于寻找最优模型参数 θ\thetaθ 的具体计算方法（如梯度下降法）。 二、 三种主要学习算法 1. 监督学习 (Supervised Learning)利用带有明确“标签”的数据进行训练，让模型学会输入到输出的映射。根据标签数据的类型，可分为："><meta name=application-name content="邪恶小卷毛"><meta name=apple-mobile-web-app-title content="邪恶小卷毛"><meta name=theme-color content="#f8f8f8"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=canonical href=https://evilcurls.github.io/blog/posts/machine-learning/><link rel=prev href=https://evilcurls.github.io/blog/posts/%E5%A3%B0%E9%A2%91/><link rel=next href=https://evilcurls.github.io/blog/posts/latex-%E7%94%A8%E6%B3%95/><link rel=stylesheet href=/blog/css/main.min.css><link rel=stylesheet href=/blog/css/style.min.css><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Machine Learning","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://evilcurls.github.io/blog/posts/machine-learning/"},"genre":"posts","keywords":["ML"],"wordcount":4712,"url":"https://evilcurls.github.io/blog/posts/machine-learning/","datePublished":"2025-03-03T22:15:15+08:00","dateModified":"2025-03-03T22:15:15+08:00","publisher":{"@type":"Organization","name":"evilcurls"},"author":{"@type":"Person","name":"evilcurls","url":"/blog/"},"description":""}</script></head><body data-instant-intensity=viewport class="tw:flex tw:min-h-screen tw:flex-col"><script>function setTheme(e){document.body.setAttribute("theme",e),document.documentElement.className=e,document.documentElement.style.setProperty("color-scheme",e==="light"?"light":"dark"),e==="light"?document.documentElement.classList.remove("dark"):document.documentElement.classList.add("dark"),window.theme=e,window.isDark=window.theme!=="light"}function saveTheme(e){window.localStorage&&localStorage.setItem("theme",e)}function getMeta(e){const t=document.getElementsByTagName("meta");for(let n=0;n<t.length;n++)if(t[n].getAttribute("name")===e)return t[n];return""}if(window.localStorage&&localStorage.getItem("theme")){let e=localStorage.getItem("theme");e==="light"||e==="dark"?setTheme(e):setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}else"auto"==="light"||"auto"==="dark"?(setTheme("auto"),saveTheme("auto")):(saveTheme("auto"),setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));let metaColors={light:"#f8f8f8",dark:"#161b22"};getMeta("theme-color").content=metaColors[document.body.getAttribute("theme")],window.switchThemeEventSet=new Set</script><div id=back-to-top></div><div id=mask></div><header class="desktop tw:print:hidden!" id=header-desktop><div class=header-wrapper><div class=header-title><a href=/blog/ title=邪恶小卷毛>邪恶小卷毛</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/blog/posts/>文章 </a><a class=menu-item href=/blog/tags/>标签 </a><a class=menu-item href=/blog/categories/>分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜索... id=search-input-desktop>
+<button class="search-button search-toggle" id=search-toggle-desktop title=搜索>
+<svg class="icon" viewBox="0 0 512 512"><path d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</button>
+<button class="search-button search-clear" id=search-clear-desktop title=清空>
+<svg class="icon" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3.0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3.0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3.0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3.0 17L312 256l65.6 65.1z"/></svg>
+</button>
+<span class="search-button search-loading tw:animate-spin" id=search-loading-desktop><svg class="icon" viewBox="0 0 512 512"><path d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49.0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156.0c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"/></svg>
+</span></span><button class="menu-item theme-switch" aria-label=切换主题>
+<svg class="icon" viewBox="0 0 512 512"><path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705.0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/></svg></button></div></div></div></header><header class="mobile tw:print:hidden!" id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/blog/ title=邪恶小卷毛>邪恶小卷毛</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索... id=search-input-mobile>
+<button class="search-button search-toggle tw:h-10" id=search-toggle-mobile title=搜索>
+<svg class="icon" viewBox="0 0 512 512"><path d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</button>
+<button class="search-button search-clear tw:h-fit" id=search-clear-mobile title=清空>
+<svg class="icon" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3.0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3.0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3.0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3.0 17L312 256l65.6 65.1z"/></svg>
+</button>
+<span class="search-button search-loading tw:animate-spin" id=search-loading-mobile><svg class="icon" viewBox="0 0 512 512"><path d="M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49.0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156.0c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51.0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z"/></svg></span></div><button class=search-cancel id=search-cancel-mobile>
+取消</button></div><a class=menu-item href=/blog/posts/ title>文章</a><a class=menu-item href=/blog/tags/ title>标签</a><a class=menu-item href=/blog/categories/ title>分类</a><button class="menu-item theme-switch tw:w-full" aria-label=切换主题>
+<svg class="icon" viewBox="0 0 512 512"><path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705.0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/></svg></button></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class="tw:mx-4 tw:flex-1"><div class="toc tw:print:hidden!" id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto><nav id=TableOfContents><ul><li><a href=#基础>基础</a><ul><li><a href=#目标>目标</a></li><li><a href=#一-机器学习的三要素>一、 机器学习的三要素</a></li><li><a href=#二-三种主要学习算法>二、 三种主要学习算法</a><ul><li><a href=#1-监督学习-supervised-learning>1. 监督学习 (Supervised Learning)</a></li><li><a href=#2-无监督学习-unsupervised-learning>2. 无监督学习 (Unsupervised Learning)</a></li><li><a href=#3-强化学习-reinforcement-learning>3. 强化学习 (Reinforcement Learning)</a></li></ul></li><li><a href=#特征表示>特征表示</a></li><li><a href=#梯度消失vanishing-gradient><strong>梯度消失（Vanishing Gradient）</strong></a><ul><li><a href=#定义><strong>定义</strong></a></li><li><a href=#定义-1><strong>定义</strong></a></li></ul></li></ul></li><li><a href=#数据增广>数据增广</a></li><li><a href=#微调>微调</a></li><li><a href=#两条定律>两条定律</a></li><li><a href=#各种问题>各种问题</a><ul><li><a href=#一元>一元</a></li><li><a href=#二分类问题>二分类问题</a></li><li><a href=#svm-支持向量机>SVM 支持向量机</a></li></ul></li><li><a href=#神经网络>神经网络</a><ul><li><a href=#sigmoid函数>sigmoid函数</a></li><li><a href=#relu函数>Relu函数</a></li><li><a href=#网络结构>网络结构</a></li><li><a href=#前馈神经网络>前馈神经网络</a></li><li><a href=#卷积神经网络>卷积神经网络</a></li></ul></li><li><a href=#期中作业-dog-breed-identifacation>期中作业 Dog-breed-identifacation</a><ul><li><a href=#加载别人现有的模型>加载别人现有的模型</a></li><li><a href=#构建数据集>构建数据集</a></li></ul></li><li><ul><li><ul><li><a href=#输入数据>输入数据：</a></li><li><a href=#前向传播>前向传播：</a></li><li><a href=#计算正确数>计算正确数：</a></li><li><a href=#计算损失>计算损失：</a></li></ul></li></ul></li><li><a href=#注意力机制>注意力机制</a></li></ul></nav></div></div><dialog id=toc-dialog class="tw:max-w-full tw:w-full tw:max-h-full tw:h-full tw:ml-16"><div class="toc tw:mx-4 tw:max-w-full"><h2 class="tw:mx-0 tw:my-6 tw:uppercase tw:text-2xl">目录</h2><div class=toc-content><nav id=TableOfContents><ul><li><a href=#基础>基础</a><ul><li><a href=#目标>目标</a></li><li><a href=#一-机器学习的三要素>一、 机器学习的三要素</a></li><li><a href=#二-三种主要学习算法>二、 三种主要学习算法</a><ul><li><a href=#1-监督学习-supervised-learning>1. 监督学习 (Supervised Learning)</a></li><li><a href=#2-无监督学习-unsupervised-learning>2. 无监督学习 (Unsupervised Learning)</a></li><li><a href=#3-强化学习-reinforcement-learning>3. 强化学习 (Reinforcement Learning)</a></li></ul></li><li><a href=#特征表示>特征表示</a></li><li><a href=#梯度消失vanishing-gradient><strong>梯度消失（Vanishing Gradient）</strong></a><ul><li><a href=#定义><strong>定义</strong></a></li><li><a href=#定义-1><strong>定义</strong></a></li></ul></li></ul></li><li><a href=#数据增广>数据增广</a></li><li><a href=#微调>微调</a></li><li><a href=#两条定律>两条定律</a></li><li><a href=#各种问题>各种问题</a><ul><li><a href=#一元>一元</a></li><li><a href=#二分类问题>二分类问题</a></li><li><a href=#svm-支持向量机>SVM 支持向量机</a></li></ul></li><li><a href=#神经网络>神经网络</a><ul><li><a href=#sigmoid函数>sigmoid函数</a></li><li><a href=#relu函数>Relu函数</a></li><li><a href=#网络结构>网络结构</a></li><li><a href=#前馈神经网络>前馈神经网络</a></li><li><a href=#卷积神经网络>卷积神经网络</a></li></ul></li><li><a href=#期中作业-dog-breed-identifacation>期中作业 Dog-breed-identifacation</a><ul><li><a href=#加载别人现有的模型>加载别人现有的模型</a></li><li><a href=#构建数据集>构建数据集</a></li></ul></li><li><ul><li><ul><li><a href=#输入数据>输入数据：</a></li><li><a href=#前向传播>前向传播：</a></li><li><a href=#计算正确数>计算正确数：</a></li><li><a href=#计算损失>计算损失：</a></li></ul></li></ul></li><li><a href=#注意力机制>注意力机制</a></li></ul></nav></div></div></dialog><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single tw:print:w-full! tw:print:max-w-none! tw:print:m-0! tw:print:p-0!"><h1 class=single-title data-pagefind-meta=date:2025-03-03 data-pagefind-body>Machine Learning</h1><div class=post-meta><div class=post-meta-line><span class=post-author><img class="tw:inline-block tw:max-h-4 tw:rounded-full tw:translate-y-[-2px] tw:mr-1" src=/blog/images/avatar.jpg alt="evilcurls avatar" height=16 width=16><a href=/blog/ title=Author rel=author class=author>evilcurls</a>
+</span>&nbsp;<span class=post-category>收录于 </span>&nbsp;<span class=post-category>类别 <a href=/blog/categories/%E6%8A%80%E6%9C%AF/><svg class="icon" viewBox="0 0 512 512"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49.0 112v288c0 26.51 21.49 48 48 48h416c26.51.0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>技术</a></span></div><div class=post-meta-line><svg class="icon" viewBox="0 0 448 512"><path d="M148 288h-40c-6.6.0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5.0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v52h48c26.5.0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3.0 6-2.7 6-6z"/></svg>&nbsp;<time datetime=2025-03-03>2025-03-03</time>&nbsp;<svg class="icon" viewBox="0 0 576 512"><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5.0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1.0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7.0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174 402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7-43.2-43.2c-4.1-4.1-10.8-4.1-14.8.0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg>&nbsp;<time datetime=2025-03-03>2025-03-03</time>&nbsp;<svg class="icon" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3.0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9.0l60.1 60.1c18.8 18.7 18.8 49.1.0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3.0-17l-111-111c-4.8-4.7-12.4-4.7-17.1.0zM124.1 339.9c-5.5-5.5-5.5-14.3.0-19.8l154-154c5.5-5.5 14.3-5.5 19.8.0s5.5 14.3.0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8.0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;约 4712 字&nbsp;
+<svg class="icon" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5.0-2e2-89.5-2e2-2e2S145.5 56 256 56s2e2 89.5 2e2 2e2-89.5 2e2-2e2 2e2zm61.8-104.4-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6.0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;预计阅读 21 分钟&nbsp;</div></div><div class="details toc tw:print:block!" id=toc-static data-kept><div class="details-summary toc-title"><span>目录</span>
+<span class=details-icon><svg class="icon" viewBox="0 0 256 512"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9.0l-22.6-22.6c-9.4-9.4-9.4-24.6.0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6.0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9.0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#基础>基础</a><ul><li><a href=#目标>目标</a></li><li><a href=#一-机器学习的三要素>一、 机器学习的三要素</a></li><li><a href=#二-三种主要学习算法>二、 三种主要学习算法</a><ul><li><a href=#1-监督学习-supervised-learning>1. 监督学习 (Supervised Learning)</a></li><li><a href=#2-无监督学习-unsupervised-learning>2. 无监督学习 (Unsupervised Learning)</a></li><li><a href=#3-强化学习-reinforcement-learning>3. 强化学习 (Reinforcement Learning)</a></li></ul></li><li><a href=#特征表示>特征表示</a></li><li><a href=#梯度消失vanishing-gradient><strong>梯度消失（Vanishing Gradient）</strong></a><ul><li><a href=#定义><strong>定义</strong></a></li><li><a href=#定义-1><strong>定义</strong></a></li></ul></li></ul></li><li><a href=#数据增广>数据增广</a></li><li><a href=#微调>微调</a></li><li><a href=#两条定律>两条定律</a></li><li><a href=#各种问题>各种问题</a><ul><li><a href=#一元>一元</a></li><li><a href=#二分类问题>二分类问题</a></li><li><a href=#svm-支持向量机>SVM 支持向量机</a></li></ul></li><li><a href=#神经网络>神经网络</a><ul><li><a href=#sigmoid函数>sigmoid函数</a></li><li><a href=#relu函数>Relu函数</a></li><li><a href=#网络结构>网络结构</a></li><li><a href=#前馈神经网络>前馈神经网络</a></li><li><a href=#卷积神经网络>卷积神经网络</a></li></ul></li><li><a href=#期中作业-dog-breed-identifacation>期中作业 Dog-breed-identifacation</a><ul><li><a href=#加载别人现有的模型>加载别人现有的模型</a></li><li><a href=#构建数据集>构建数据集</a></li></ul></li><li><ul><li><ul><li><a href=#输入数据>输入数据：</a></li><li><a href=#前向传播>前向传播：</a></li><li><a href=#计算正确数>计算正确数：</a></li><li><a href=#计算损失>计算损失：</a></li></ul></li></ul></li><li><a href=#注意力机制>注意力机制</a></li></ul></nav></div></div><div class=content id=content data-pagefind-body><h2 id=基础 class=headerLink><a href=#%e5%9f%ba%e7%a1%80 class=header-mark></a>基础</h2><h3 id=目标 class=headerLink><a href=#%e7%9b%ae%e6%a0%87 class=header-mark></a>目标</h3><h3 id=一-机器学习的三要素 class=headerLink><a href=#%e4%b8%80-%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e7%9a%84%e4%b8%89%e8%a6%81%e7%b4%a0 class=header-mark></a>一、 机器学习的三要素</h3><ul><li><strong>模型 (Model)：</strong> 用于拟合输入与输出关系的函数表达式 <span class=katex><span class=katex-mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x, \theta)</annotation></semantics></math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut style=height:1em;vertical-align:-.25em></span><span class="mord mathnormal" style=margin-right:.10764em>f</span><span class=mopen>(</span><span class="mord mathnormal">x</span><span class=mpunct>,</span><span class=mspace style=margin-right:.1667em></span><span class="mord mathnormal" style=margin-right:.02778em>θ</span><span class=mclose>)</span></span></span></span>。</li><li><strong>学习准则 (Learning Criterion)：</strong> 衡量模型预测值与真实值之间差异的评价标准（通常指损失函数或目标函数）。</li><li><strong>优化算法 (Optimization Algorithm)：</strong> 用于寻找最优模型参数 <span class=katex><span class=katex-mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut style=height:.6944em></span><span class="mord mathnormal" style=margin-right:.02778em>θ</span></span></span></span> 的具体计算方法（如梯度下降法）。</li></ul><h3 id=二-三种主要学习算法 class=headerLink><a href=#%e4%ba%8c-%e4%b8%89%e7%a7%8d%e4%b8%bb%e8%a6%81%e5%ad%a6%e4%b9%a0%e7%ae%97%e6%b3%95 class=header-mark></a>二、 三种主要学习算法</h3><h4 id=1-监督学习-supervised-learning class=headerLink><a href=#1-%e7%9b%91%e7%9d%a3%e5%ad%a6%e4%b9%a0-supervised-learning class=header-mark></a>1. 监督学习 (Supervised Learning)</h4><p>利用带有明确“标签”的数据进行训练，让模型学会输入到输出的映射。根据标签数据的类型，可分为：</p><ul><li><strong>回归问题 (Regression)：</strong> 标签 <span class=katex><span class=katex-mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut style=height:.625em;vertical-align:-.1944em></span><span class="mord mathnormal" style=margin-right:.03588em>y</span></span></span></span> 是连续值，模型 <span class=katex><span class=katex-mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x, \theta)</annotation></semantics></math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut style=height:1em;vertical-align:-.25em></span><span class="mord mathnormal" style=margin-right:.10764em>f</span><span class=mopen>(</span><span class="mord mathnormal">x</span><span class=mpunct>,</span><span class=mspace style=margin-right:.1667em></span><span class="mord mathnormal" style=margin-right:.02778em>θ</span><span class=mclose>)</span></span></span></span> 的输出也是连续数值（例如：预测房价或气温）。</li><li><strong>分类问题 (Classification)：</strong> 标签 <span class=katex><span class=katex-mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut style=height:.625em;vertical-align:-.1944em></span><span class="mord mathnormal" style=margin-right:.03588em>y</span></span></span></span> 是离散的类别值（例如：判断邮件是否为垃圾邮件）。</li><li><strong>结构化学习问题 (Structured Learning)：</strong> 本质上是复杂的特殊分类问题，其标签 <span class=katex><span class=katex-mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut style=height:.6833em></span><span class="mord mathnormal" style=margin-right:.22222em>Y</span></span></span></span> 不是单一的数值或类别，而是结构化的对象，如<strong>序列、树或图</strong>（例如：句子解析、机器翻译）。</li></ul><h4 id=2-无监督学习-unsupervised-learning class=headerLink><a href=#2-%e6%97%a0%e7%9b%91%e7%9d%a3%e5%ad%a6%e4%b9%a0-unsupervised-learning class=header-mark></a>2. 无监督学习 (Unsupervised Learning)</h4><p>训练样本<strong>不包含目标标签</strong>，模型需要自主从数据中探索和学习有价值的内部结构信息。常见任务包括：</p><ul><li><strong>聚类 (Clustering)：</strong> 将特征相似的样本自动划分到不同的簇中。</li><li><strong>密度估计 (Density Estimation)：</strong> 估计数据在特征空间中的概率分布。</li><li><strong>特征学习与降维 (Feature Learning & Dimensionality Reduction)：</strong> 提取数据的核心特征，去除冗余信息并降低维度。</li></ul><h4 id=3-强化学习-reinforcement-learning class=headerLink><a href=#3-%e5%bc%ba%e5%8c%96%e5%ad%a6%e4%b9%a0-reinforcement-learning class=header-mark></a>3. 强化学习 (Reinforcement Learning)</h4><p>一种<strong>基于交互</strong>的机器学习算法。它不依赖给定的标签数据，而是智能体（Agent）在与环境（Environment）的不断交互（试错）中进行学习，根据环境给出的反馈（奖励或惩</p><h3 id=特征表示 class=headerLink><a href=#%e7%89%b9%e5%be%81%e8%a1%a8%e7%a4%ba class=header-mark></a>特征表示</h3><p>​ 首先机器学习核心应该是数学运算，所以要把各种特征转化为向量来表示，方便计算</p><p>​ 图像：M*N的图像 变为 M * N维的向量，每维的数值是灰度，如果是彩色图就RGB三层叠加</p><p>​ 文本： 简单方式是用词袋（Bag of words)但好像由于不考虑词序，不能精确表示文本信息</p><p>​ 特征学习 又称表示学习 让机器自动学习出有效特征</p><p>​ 方式：用人为设计准则 通过准则选出需要的特征</p><h3 id=梯度消失vanishing-gradient class=headerLink><a href=#%e6%a2%af%e5%ba%a6%e6%b6%88%e5%a4%b1vanishing-gradient class=header-mark></a><strong>梯度消失（Vanishing Gradient）</strong></h3><h4 id=定义 class=headerLink><a href=#%e5%ae%9a%e4%b9%89 class=header-mark></a><strong>定义</strong></h4><p>在反向传播时，梯度值随着网络层数增加呈指数级衰减，导致浅层（靠近输入层）的权重几乎不更新，训练停滞</p><p><strong>梯度爆炸（Exploding Gradient）</strong></p><h4 id=定义-1 class=headerLink><a href=#%e5%ae%9a%e4%b9%89-1 class=header-mark></a><strong>定义</strong></h4><p>在反向传播时，梯度值随着网络层数增加呈指数级增长，导致权重更新幅度过大，模型参数发散（NaN 或溢出）。</p><h2 id=数据增广 class=headerLink><a href=#%e6%95%b0%e6%8d%ae%e5%a2%9e%e5%b9%bf class=header-mark></a>数据增广</h2><p>扩充数据集：比如对已有图片加入噪声 镜像旋转</p><p>​ 可以遇到更加多样化的情况提升降低过拟合风险</p><h2 id=微调 class=headerLink><a href=#%e5%be%ae%e8%b0%83 class=header-mark></a>微调</h2><p>通过大数据集训练出来的模型用在小数据集上</p><p>因为大的数据集训练出来的初始模型泛化能力一般会强一点，所以用来初始化参数（反正肯定比随机设参数强）</p><p>那么在复制参数的时候，是不是一模一样复制呢：在神经</p><h2 id=两条定律 class=headerLink><a href=#%e4%b8%a4%e6%9d%a1%e5%ae%9a%e5%be%8b class=header-mark></a>两条定律</h2><p>没有免费午餐定律：炉石传说没有完爆</p><p>奥卡姆剃刀原理：简单的模型泛化能力更强 没必要不要增实体</p><h2 id=各种问题 class=headerLink><a href=#%e5%90%84%e7%a7%8d%e9%97%ae%e9%a2%98 class=header-mark></a>各种问题</h2><h3 id=一元 class=headerLink><a href=#%e4%b8%80%e5%85%83 class=header-mark></a>一元</h3><p>predict</p><p><img class=tw:inline loading=lazy src=https://raw.githubusercontent.com/Evilcurls/image4blog/main/一元模型三要素.png></p><p>​ 在计算损失函数的时候，loss=yi-(wxi+b)，由于只是把标签值yi和输入值xi带入了，所以loss是关于两个参数的方程，可以计算最小值梯度等问题，当使用线性模型的时候会出现离群点，损失函数可以换成别的函数均方误差受到的影响太大</p><h3 id=二分类问题 class=headerLink><a href=#%e4%ba%8c%e5%88%86%e7%b1%bb%e9%97%ae%e9%a2%98 class=header-mark></a>二分类问题</h3><p>​ 样本空间中找到一个超平面 它将特征空间一分为二 一半是我愿意 一半是我拒</p><p><img class=tw:inline loading=lazy src=https://raw.githubusercontent.com/Evilcurls/image4blog/main/sigmoid函数.png></p><p>​ 在分类问题中不能用线性模型的输出，或者说不能直接用，因为一般线性模型的输出是连续的，所以要将线性模型的输出使用sigmoid函数转化为概率值 把一整段连续值挤压到空间[0,1]，赋予概率值，0或1哪个超过0.5就分类结果是哪个</p><p>sigmoid函数=<span class=katex><span class=katex-mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex"> \frac{1} {1+e^{-x}} </annotation></semantics></math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut style=height:1.2484em;vertical-align:-.4033em></span><span class=mord><span class="mopen nulldelimiter"></span><span class=mfrac><span class="vlist-t vlist-t2"><span class=vlist-r><span class=vlist style=height:.8451em><span style=top:-2.655em><span class=pstrut style=height:3em></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">+</span><span class="mord mtight"><span class="mord mathnormal mtight">e</span><span class=msupsub><span class=vlist-t><span class=vlist-r><span class=vlist style=height:.7027em><span style=top:-2.786em;margin-right:.0714em><span class=pstrut style=height:2.5em></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mathnormal mtight">x</span></span></span></span></span></span></span></span></span></span></span></span><span style=top:-3.23em><span class=pstrut style=height:3em></span><span class=frac-line style=border-bottom-width:.04em></span></span><span style=top:-3.394em><span class=pstrut style=height:3em></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class=vlist-s>​</span></span><span class=vlist-r><span class=vlist style=height:.4033em><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p><p><img class=tw:inline loading=lazy src=https://raw.githubusercontent.com/Evilcurls/image4blog/main/二分类问题.png></p><p>​ 像这样的思想可以推广到多分类问题，就像之前那个手写体数字识别，就是用softmax激活函数完成的多分类问题</p><p>​ 其中softmax=<span class=katex><span class=katex-mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><msubsup><mi>e</mi><mi>i</mi><mi>x</mi></msubsup><mrow><msub><mo>∑</mo><mi>i</mi></msub><msup><mi>e</mi><mrow><mi>x</mi><mi>i</mi></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac {e^x_i} {\sum_i {e^{xi}}}</annotation></semantics></math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut style=height:1.5972em;vertical-align:-.57em></span><span class=mord><span class="mopen nulldelimiter"></span><span class=mfrac><span class="vlist-t vlist-t2"><span class=vlist-r><span class=vlist style=height:1.0272em><span style=top:-2.655em><span class=pstrut style=height:3em></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mop mtight"><span class="mop op-symbol small-op mtight" style=position:relative;top:0>∑</span><span class=msupsub><span class="vlist-t vlist-t2"><span class=vlist-r><span class=vlist style=height:.1496em><span style=top:-2.1786em;margin-left:0;margin-right:.0714em><span class=pstrut style=height:2.5em></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class=vlist-s>​</span></span><span class=vlist-r><span class=vlist style=height:.3214em><span></span></span></span></span></span></span><span class="mspace mtight" style=margin-right:.1952em></span><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">e</span><span class=msupsub><span class=vlist-t><span class=vlist-r><span class=vlist style=height:.7571em><span style=top:-2.786em;margin-right:.0714em><span class=pstrut style=height:2.5em></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="mord mathnormal mtight">i</span></span></span></span></span></span></span></span></span></span></span></span></span><span style=top:-3.23em><span class=pstrut style=height:3em></span><span class=frac-line style=border-bottom-width:.04em></span></span><span style=top:-3.5102em><span class=pstrut style=height:3em></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">e</span><span class=msupsub><span class="vlist-t vlist-t2"><span class=vlist-r><span class=vlist style=height:.7385em><span style=top:-2.214em;margin-left:0;margin-right:.0714em><span class=pstrut style=height:2.5em></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style=top:-2.931em;margin-right:.0714em><span class=pstrut style=height:2.5em></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class=vlist-s>​</span></span><span class=vlist-r><span class=vlist style=height:.286em><span></span></span></span></span></span></span></span></span></span></span><span class=vlist-s>​</span></span><span class=vlist-r><span class=vlist style=height:.57em><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p><h3 id=svm-支持向量机 class=headerLink><a href=#svm-%e6%94%af%e6%8c%81%e5%90%91%e9%87%8f%e6%9c%ba class=header-mark></a>SVM 支持向量机</h3><p>模型＆目的：找一个超平面把标记了正负的样本空间里的样本给一分为二 就是之前的二分类问题，有一个名词叫支持向量，表示距离超平面最近的点，一共有两个，超平面移动到这两个点形成的平面分别叫正负超平面</p><p>如果一次性将所有的点都分开，那么叫做硬间隔，但尽善尽美的事情很少，往往最优的超平面会分出绝大多数的点，但是有那么一两个</p><p>点会分隔异常，所以此时把这些异常的点用损失因子记录，通过考虑损失因子和间隔的收益，这种方法叫做软间隔</p><p>学习准则：最大化间隔 间隔为2/|w| 所以是argmin|w|^2</p><p>优化策略：凸二次优化</p><p>问题：超平面又支持向量决定，支持向量又很少，导致解具有稀疏性</p><h2 id=神经网络 class=headerLink><a href=#%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c class=header-mark></a>神经网络</h2><p>​ 神经元是最小单位，有轴突和树突，树突用于获取信息，轴突用于发送信息，神经元只有两种状态 ，激活和抑制</p><p>​ 激活函数在模拟神经元的触发机制，当满足某种条件变成激活状态，</p><h3 id=sigmoid函数 class=headerLink><a href=#sigmoid%e5%87%bd%e6%95%b0 class=header-mark></a>sigmoid函数</h3><p>​ 长得像S型的函数 (两端饱和函数)一般有logstic 和 tanh</p><p>​ logstic函数的长这样 <span class=katex><span class=katex-mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><mi>e</mi><mi>x</mi><mi>p</mi><mo stretchy="false">(</mo><mo>−</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac 1 {1+exp(-x)}</annotation></semantics></math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut style=height:1.3651em;vertical-align:-.52em></span><span class=mord><span class="mopen nulldelimiter"></span><span class=mfrac><span class="vlist-t vlist-t2"><span class=vlist-r><span class=vlist style=height:.8451em><span style=top:-2.655em><span class=pstrut style=height:3em></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">+</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">x</span><span class="mord mathnormal mtight">p</span><span class="mopen mtight">(</span><span class="mord mtight">−</span><span class="mord mathnormal mtight">x</span><span class="mclose mtight">)</span></span></span></span><span style=top:-3.23em><span class=pstrut style=height:3em></span><span class=frac-line style=border-bottom-width:.04em></span></span><span style=top:-3.394em><span class=pstrut style=height:3em></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class=vlist-s>​</span></span><span class=vlist-r><span class=vlist style=height:.52em><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p><p>​ tanh函数长这样 <span class=katex><span class=katex-mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mrow><mi>e</mi><mi>x</mi><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>−</mo><mi>e</mi><mi>x</mi><mi>p</mi><mo stretchy="false">(</mo><mo>−</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mrow><mi>e</mi><mi>x</mi><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>+</mo><mi>e</mi><mi>x</mi><mi>p</mi><mo stretchy="false">(</mo><mo>−</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac {exp(x)-exp(-x)} {exp(x)+exp(-x)}</annotation></semantics></math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut style=height:1.53em;vertical-align:-.52em></span><span class=mord><span class="mopen nulldelimiter"></span><span class=mfrac><span class="vlist-t vlist-t2"><span class=vlist-r><span class=vlist style=height:1.01em><span style=top:-2.655em><span class=pstrut style=height:3em></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">x</span><span class="mord mathnormal mtight">p</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">x</span><span class="mclose mtight">)</span><span class="mbin mtight">+</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">x</span><span class="mord mathnormal mtight">p</span><span class="mopen mtight">(</span><span class="mord mtight">−</span><span class="mord mathnormal mtight">x</span><span class="mclose mtight">)</span></span></span></span><span style=top:-3.23em><span class=pstrut style=height:3em></span><span class=frac-line style=border-bottom-width:.04em></span></span><span style=top:-3.485em><span class=pstrut style=height:3em></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">x</span><span class="mord mathnormal mtight">p</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">x</span><span class="mclose mtight">)</span><span class="mbin mtight">−</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">x</span><span class="mord mathnormal mtight">p</span><span class="mopen mtight">(</span><span class="mord mtight">−</span><span class="mord mathnormal mtight">x</span><span class="mclose mtight">)</span></span></span></span></span><span class=vlist-s>​</span></span><span class=vlist-r><span class=vlist style=height:.52em><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p><p><img class=tw:inline loading=lazy src=https://raw.githubusercontent.com/Evilcurls/image4blog/main/logistic%26tanh.png></p><p>logstic函数优势在于简单，劣势在于没有是非零中心化的，会影响后来的神经元，有偏置偏移</p><h3 id=relu函数 class=headerLink><a href=#relu%e5%87%bd%e6%95%b0 class=header-mark></a>Relu函数</h3><p>长相：
+\(f(x)=\begin{cases}1 x\ge 0 ，0 x&lt;0 \end{cases}\)</p><p>优点：计算高效，兴奋程度高</p><p>缺点：ReLU函数的输出是非零中心化的，给后一层的神经网络引入偏置偏移， 会影响梯度下降的效率． 此外，ReLU神经元在训练时比较容易“死亡”．在训 练时，如果参数在一次不恰当的更新后，第一个隐藏层中的某个ReLU神经元在 所有的训练数据上都不能被激活，那么这个神经元自身参数的梯度永远都会是 0， 在以后的训练过程中永远不能被激活．这种现象称为死亡ReLU问题</p><p>有好几种变种去解决这些问题：泄露的relu(leaky relu) 带参数的relu(parametric Relu) 还有好多什么ELU，什么GELU</p><h3 id=网络结构 class=headerLink><a href=#%e7%bd%91%e7%bb%9c%e7%bb%93%e6%9e%84 class=header-mark></a>网络结构</h3><h3 id=前馈神经网络 class=headerLink><a href=#%e5%89%8d%e9%a6%88%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c class=header-mark></a>前馈神经网络</h3><p>就是拟合一个函数，有向无环，单向传播</p><p><img class=tw:inline loading=lazy src=https://raw.githubusercontent.com/Evilcurls/image4blog/main/前馈神经网络.png></p><p>上图示例就是将输入x输入到神经网络<span class=katex><span class=katex-mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\phi (x)</annotation></semantics></math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut style=height:1em;vertical-align:-.25em></span><span class="mord mathnormal">ϕ</span><span class=mopen>(</span><span class="mord mathnormal">x</span><span class=mclose>)</span></span></span></span> 中去，分类器的参数是一堆<span class=katex><span class=katex-mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut style=height:.6944em></span><span class="mord mathnormal" style=margin-right:.02778em>θ</span></span></span></span> ,在通过比如softmax分类器 对<span class=katex><span class=katex-mathml><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϕ</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\phi (x)</annotation></semantics></math></span><span class=katex-html aria-hidden=true><span class=base><span class=strut style=height:1em;vertical-align:-.25em></span><span class="mord mathnormal">ϕ</span><span class=mopen>(</span><span class="mord mathnormal">x</span><span class=mclose>)</span></span></span></span>的输出数据分类</p><h3 id=卷积神经网络 class=headerLink><a href=#%e5%8d%b7%e7%a7%af%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c class=header-mark></a>卷积神经网络</h3><p>假设我直接将一个100*100的图片输入到全连接网络</p><p>假设有N个神经元，那么在后续的全连接层中1.输入参数过多不好计算 2.会丢失某些图像特征</p><p>所以卷积应运而生：</p><p>1.部分连接：</p><p>​ 在全连接层中，第二层的任意神经元都要连接前面所有的神经元，那么就需（要维数*N+维数）个参数，但在卷积神经网络中，第二层中的所有神经元都各司其职，只与前一层的部分神经元连接</p><p>2.权重共享：</p><p>​ 虽然部分连接决定了某些神经元去处理图像的不同区域，但是比如人脸识别这样的工作，人脸可能在上下左右的任意地方出现，所以可以用一套参数完成任务</p><p><img class=tw:inline loading=lazy src=https://raw.githubusercontent.com/Evilcurls/image4blog/main/卷积作用图.png></p><h2 id=期中作业-dog-breed-identifacation class=headerLink><a href=#%e6%9c%9f%e4%b8%ad%e4%bd%9c%e4%b8%9a-dog-breed-identifacation class=header-mark></a>期中作业 Dog-breed-identifacation</h2><p>1.读取数据集</p><p>2.数据增广</p><h3 id=加载别人现有的模型 class=headerLink><a href=#%e5%8a%a0%e8%bd%bd%e5%88%ab%e4%ba%ba%e7%8e%b0%e6%9c%89%e7%9a%84%e6%a8%a1%e5%9e%8b class=header-mark></a>加载别人现有的模型</h3><p><code>class Net(torch.nn.module）</code>继承了torch.nn.module 公式写法</p><p><code>super().__init__() </code>使用pytorch设定好的连接方式</p><p><code>self.mymode=models.resnet50(pretrained=False)</code></p><p>self.xx是实例化指自己，有点像c++里面的this指针 self.model是新增一个类里面的一个属性，models是torchvision里面的一个包，models.resnet50是加载了resnet50这个网络的骨架，pretrained=False表示不用加载预训练数据,因为我本地有resnet50的参数，如果选了True就要从网上开始下了</p><p><code>self.mymode.load_state_dict(torch.load('resnet50-19c8e357.pth'))</code></p><p>​ <strong><code>state_dict</code></strong> ：</p><p>​ 在 PyTorch 中，每个模型都有一个 <code>state_dict</code>，它是一个 Python 字典，存储了模型的所有可学习参数（如权 重和偏置）。</p><p>​ 例如，对于一个简单的线性层 <code>nn.Linear(10, 2)</code>，其 <code>state_dict</code> 可能包含两个键值对：<code>'weight'</code> 和 <code>'bias'</code>。</p><p>​ <strong><code>torch.load</code></strong> ：</p><p>​ <code>torch.load</code> 是 PyTorch 提供的函数，用于从文件中加载保存的模型参数（通常是 <code>.pth</code> 或 <code>.pt</code> 文件）。</p><p>​ <strong><code>load_state_dict</code></strong> ：</p><p>​ 这个方法将加载的参数字典应用到当前模型中，从而恢复模型的状态。</p><h3 id=构建数据集 class=headerLink><a href=#%e6%9e%84%e5%bb%ba%e6%95%b0%e6%8d%ae%e9%9b%86 class=header-mark></a>构建数据集</h3><p><code>class dog_dataset(torch.utils.data.Dataset):</code><strong>为什么需要继承 <code>Dataset</code>？</strong></p><p>​ PyTorch 的 <code>DataLoader</code> 是一个强大的工具，用于高效地加载和批量处理数据。<code>DataLoader</code> 的工作依赖于 <code>Dataset</code> 类提 供的接口。具体来说：</p><p>​ <strong><code>Dataset</code></strong> ：</p><p>​ 负责定义如何加载和访问数据。</p><p>​ 提供了一个统一的接口，使得数据可以被 <code>DataLoader</code> 使用。</p><p>​ <strong><code>DataLoader</code></strong> ：</p><p>​ 负责将数据分批次加载到模型中。</p><p>​ 支持多线程、数据打乱、并行处理等功能。</p><p>​ 有参数num_worker的时候，在windows下会报错</p><div class="code-block highlight is-open show-line-numbers tw:group tw:my-2"><div class="tw:flex
+tw:flex-row
+tw:flex-1
+tw:justify-between
+tw:w-full tw:bg-bgColor-secondary"><button class="code-block-button
+tw:mx-2
+tw:flex
+tw:flex-row
+tw:flex-1" aria-hidden=true>
+<span class="tw:group-[.is-open]:rotate-90 tw:transition-[transform] tw:duration-500 tw:ease-in-out tw:print:hidden! tw:w-min tw:h-min tw:my-1 tw:mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></span>
+<span class="tw:select-none tw:my-1! tw:block">def</span></button><div class=tw:flex><button class="line-number-button
+tw:mx-2
+tw:hidden
+tw:group-[.is-open]:block
+tw:group-[.show-line-numbers]:text-fgColor-link
+tw:print:hidden!" title="Toggle line numbers"><svg class="icon" viewBox="0 0 512 512"><path d="M61.77 401l17.5-20.15a19.92 19.92.0 005.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 00-8 8v16a8 8 0 008 8h22.83a157.41 157.41.0 00-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33.0 15.94 2.44 15.94 9.09.0 4.72-4.2 8.22-14.36 8.22a41.54 41.54.0 01-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16.0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zm0-160H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16V80a16 16 0 00-16-16zm0 320H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zM16 160h64a8 8 0 008-8v-16a8 8 0 00-8-8H64V40a8 8 0 00-8-8H32a8 8 0 00-7.14 4.42l-8 16A8 8 0 0024 64h8v64H16a8 8 0 00-8 8v16a8 8 0 008 8zm-3.91 160H80a8 8 0 008-8v-16a8 8 0 00-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44.0-29.06-25-39.56-44.47-39.56-21.36.0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44.0 019.46-3.84c3.33.0 9.28 1.56 9.28 8.75C51 248.19.0 257.31.0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+<button class="wrap-code-button
+tw:select-none
+tw:mx-2
+tw:hidden
+tw:group-[.is-open]:block
+tw:group-[.is-wrap]:text-fgColor-link
+tw:print:hidden!" title="Toggle code wrap"><svg class="icon" viewBox="0 0 448 512"><path d="M16 132h416c8.837.0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163.0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+<button class="copy-code-button
+tw:select-none
+tw:mx-2
+tw:hidden
+tw:group-[.is-open]:block
+tw:hover:text-fgColor-link
+tw:print:hidden!" title="Copy code">
+<span class="copy-icon tw:block"><svg class="icon" viewBox="0 0 448 512"><path d="M433.941 65.941l-51.882-51.882A48 48 0 00348.118.0H176c-26.51.0-48 21.49-48 48v48H48c-26.51.0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51.0 48-21.49 48-48v-48h80c26.51.0 48-21.49 48-48V99.882a48 48 0 00-14.059-33.941zM266 464H54a6 6 0 01-6-6V150a6 6 0 016-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 01-6 6zm128-96H182a6 6 0 01-6-6V54a6 6 0 016-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 01-6 6zm6-256h-64V48h9.632c1.591.0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 011.757 4.243V112z"/></svg></span>
+<span class="check-icon tw:hidden"><svg class="icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206.0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204.0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204.0l36.203 36.204c9.997 9.997 9.997 26.206.0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+</button>
+<button class="tw:select-none
+tw:mx-2
+tw:block
+tw:group-[.is-open]:hidden
+tw:print:hidden!" disabled aria-hidden=true><svg class="icon" viewBox="0 0 512 512"><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button></div></div><pre style=counter-reset:codeblock class="tw:block tw:m-0 tw:p-0"><code id=codeblock-id-1 class="chroma
+tw:block!
+tw:p-0
+tw:m-0
+tw:transition-[max-height]
+tw:duration-500
+tw:ease-in-out
+tw:group-[.is-closed]:max-h-0!
+tw:group-[.is-wrap]:text-wrap
+tw:overflow-y-hidden
+tw:overflow-x-auto
+tw:scrollbar-thin"><span class=line><span class=cl>    <span class=n>def</span> <span class=n>__init__</span><span class=p>(</span><span class=n>self</span><span class=p>,</span><span class=n>csvfile</span><span class=p>,</span><span class=n>imgdir</span><span class=p>):</span>
+</span></span><span class=line><span class=cl>        <span class=n>self</span><span class=p>.</span><span class=n>result_csv</span><span class=o>=</span><span class=n>pd</span><span class=p>.</span><span class=n>read_csv</span><span class=p>(</span><span class=n>csvfile</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>        <span class=n>self</span><span class=p>.</span><span class=n>imgdir</span><span class=o>=</span><span class=n>imgdir</span>
+</span></span><span class=line><span class=cl>        <span class=n>self</span><span class=p>.</span><span class=n>transform</span> <span class=o>=</span> <span class=n>transforms</span><span class=p>.</span><span class=n>Compose</span><span class=p>([</span>
+</span></span><span class=line><span class=cl>            <span class=n>transforms</span><span class=p>.</span><span class=n>Resize</span><span class=p>((</span><span class=mi>224</span><span class=p>,</span> <span class=mi>224</span><span class=p>)),</span>  <span class=o>#</span> <span class=err>调整图片大小</span>
+</span></span><span class=line><span class=cl>            <span class=n>transforms</span><span class=p>.</span><span class=n>ToTensor</span><span class=p>(),</span>          <span class=o>#</span> <span class=err>转换为张量</span>
+</span></span><span class=line><span class=cl>            <span class=n>transforms</span><span class=p>.</span><span class=n>Normalize</span><span class=p>(</span><span class=n>mean</span><span class=o>=</span><span class=p>[</span><span class=mf>0.485</span><span class=p>,</span> <span class=mf>0.456</span><span class=p>,</span> <span class=mf>0.406</span><span class=p>],</span> <span class=n>std</span><span class=o>=</span><span class=p>[</span><span class=mf>0.229</span><span class=p>,</span> <span class=mf>0.224</span><span class=p>,</span> <span class=mf>0.225</span><span class=p>])</span>  <span class=o>#</span> <span class=err>归一化</span>
+</span></span><span class=line><span class=cl>                <span class=p>])</span></span></span></code></pre></div><pre><code>	`pd.read_csv`:用于读取csv 表格文件
+</code></pre><p>​ <strong>为什么需要定义这个 <code>transform</code>？</strong></p><p>​ 在深度学习中，尤其是卷积神经网络（CNN）中，输入数据通常需要满足以下要求：</p><p>​ <strong>尺寸一致</strong> ：所有图片的尺寸必须相同，以便可以堆叠成一个批次（batch）。</p><p>​ <strong>数值范围一致</strong> ：图片像素值通常被归一化到一个特定的范围（例如 <code>[0, 1]</code> 或均值为 0、标准差为 1 的分布），以加速模 型训练并提高收敛性。</p><p>​ <strong>格式统一</strong> ：图片需要转换为张量（Tensor）格式，才能被 PyTorch 模型处理。</p><pre><code>	`transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])  # 归一化`  
+</code></pre><p>​ 其中的mean和标准差是通过ImageNet计算而来的 我感觉狗种类识别可以从他训练集里面算</p><h2 class=headerLink><a href=# class=header-mark></a></h2><p><code>model.train()</code> 是 PyTorch 中的一个方法，用于将模型设置为<strong>训练模式</strong></p><p>验证集的主要作用是评估模型在<strong>未见过的数据</strong> 上的性能</p><p>假设 <code>batch_size = 32</code>，我们来看一个具体的例子：</p><h4 id=输入数据 class=headerLink><a href=#%e8%be%93%e5%85%a5%e6%95%b0%e6%8d%ae class=header-mark></a>输入数据：</h4><ul><li><code>input</code>: 形状为 <code>[32, input_dim]</code> 的张量，表示 32 张图片。</li><li><code>label</code>: 形状为 <code>[32]</code> 的张量，表示这 32 张图片的真实类别标签。</li></ul><h4 id=前向传播 class=headerLink><a href=#%e5%89%8d%e5%90%91%e4%bc%a0%e6%92%ad class=header-mark></a>前向传播：</h4><ul><li>模型输出 <code>output</code> 的形状为 <code>[32, num_classes]</code>，表示每张图片在每个类别上的预测分数。</li><li>使用 <code>_, predicted = output.max(1)</code> 得到形状为 <code>[32]</code> 的张量 <code>predicted</code>，表示每张图片的预测类别。</li></ul><h4 id=计算正确数 class=headerLink><a href=#%e8%ae%a1%e7%ae%97%e6%ad%a3%e7%a1%ae%e6%95%b0 class=header-mark></a>计算正确数：</h4><ul><li>假设 <code>predicted = [0, 1, 2, ..., 0]</code>（长度为 32），<code>label = [0, 1, 3, ..., 0]</code>。</li><li><code>(predicted == label)</code> 会生成一个布尔张量 <code>[True, True, False, ..., True]</code>。</li><li><code>(predicted == label).sum()</code> 计算为 28，表示当前 batch 中有 28 张图片预测正确。</li></ul><h4 id=计算损失 class=headerLink><a href=#%e8%ae%a1%e7%ae%97%e6%8d%9f%e5%a4%b1 class=header-mark></a>计算损失：</h4><ul><li>假设损失函数为交叉熵，计算得到 <code>loss = 0.5</code>。</li><li><code>loss.item()</code> 提取标量值 0.5，并将其累加到 <code>loss_total</code> 中。</li></ul><h2 id=注意力机制 class=headerLink><a href=#%e6%b3%a8%e6%84%8f%e5%8a%9b%e6%9c%ba%e5%88%b6 class=header-mark></a>注意力机制</h2><p>一般分为两种：</p><p>​ 聚焦式注意力，要去完成某种特定任务：比如在人群中寻找某个人就开始注意脸部，统计人数时就注意轮廓</p><p>​ 显著式的注意力：比如在正常任务时，被某种刺激所导致的开始聚焦 （上课突然有人开始狗叫 大家都看向狗叫的人）</p><p>对于这两种注意力 也就催生出了两种自注意力的实现方式 ，主要集中在Q值（query）的来源上</p><p>​ 当q是我们设定（即外部提供的） 就是我们想要聚焦某种特征，比如在seq2seq中 解码器通过一个注意力分布来选择性的观察编码器生成的隐藏状态</p><div class="code-block highlight is-open show-line-numbers tw:group tw:my-2"><div class="tw:flex
+tw:flex-row
+tw:flex-1
+tw:justify-between
+tw:w-full tw:bg-bgColor-secondary"><button class="code-block-button
+tw:mx-2
+tw:flex
+tw:flex-row
+tw:flex-1" aria-hidden=true>
+<span class="tw:group-[.is-open]:rotate-90 tw:transition-[transform] tw:duration-500 tw:ease-in-out tw:print:hidden! tw:w-min tw:h-min tw:my-1 tw:mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></span>
+<span class="tw:select-none tw:my-1! tw:block">text</span></button><div class=tw:flex><button class="line-number-button
+tw:mx-2
+tw:hidden
+tw:group-[.is-open]:block
+tw:group-[.show-line-numbers]:text-fgColor-link
+tw:print:hidden!" title="Toggle line numbers"><svg class="icon" viewBox="0 0 512 512"><path d="M61.77 401l17.5-20.15a19.92 19.92.0 005.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 00-8 8v16a8 8 0 008 8h22.83a157.41 157.41.0 00-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33.0 15.94 2.44 15.94 9.09.0 4.72-4.2 8.22-14.36 8.22a41.54 41.54.0 01-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16.0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zm0-160H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16V80a16 16 0 00-16-16zm0 320H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zM16 160h64a8 8 0 008-8v-16a8 8 0 00-8-8H64V40a8 8 0 00-8-8H32a8 8 0 00-7.14 4.42l-8 16A8 8 0 0024 64h8v64H16a8 8 0 00-8 8v16a8 8 0 008 8zm-3.91 160H80a8 8 0 008-8v-16a8 8 0 00-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44.0-29.06-25-39.56-44.47-39.56-21.36.0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44.0 019.46-3.84c3.33.0 9.28 1.56 9.28 8.75C51 248.19.0 257.31.0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+<button class="wrap-code-button
+tw:select-none
+tw:mx-2
+tw:hidden
+tw:group-[.is-open]:block
+tw:group-[.is-wrap]:text-fgColor-link
+tw:print:hidden!" title="Toggle code wrap"><svg class="icon" viewBox="0 0 448 512"><path d="M16 132h416c8.837.0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163.0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+<button class="copy-code-button
+tw:select-none
+tw:mx-2
+tw:hidden
+tw:group-[.is-open]:block
+tw:hover:text-fgColor-link
+tw:print:hidden!" title="Copy code">
+<span class="copy-icon tw:block"><svg class="icon" viewBox="0 0 448 512"><path d="M433.941 65.941l-51.882-51.882A48 48 0 00348.118.0H176c-26.51.0-48 21.49-48 48v48H48c-26.51.0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51.0 48-21.49 48-48v-48h80c26.51.0 48-21.49 48-48V99.882a48 48 0 00-14.059-33.941zM266 464H54a6 6 0 01-6-6V150a6 6 0 016-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 01-6 6zm128-96H182a6 6 0 01-6-6V54a6 6 0 016-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 01-6 6zm6-256h-64V48h9.632c1.591.0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 011.757 4.243V112z"/></svg></span>
+<span class="check-icon tw:hidden"><svg class="icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206.0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204.0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204.0l36.203 36.204c9.997 9.997 9.997 26.206.0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+</button>
+<button class="tw:select-none
+tw:mx-2
+tw:block
+tw:group-[.is-open]:hidden
+tw:print:hidden!" disabled aria-hidden=true><svg class="icon" viewBox="0 0 512 512"><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button></div></div><pre style=counter-reset:codeblock class="tw:block tw:m-0 tw:p-0"><code id=codeblock-id-2 class="chroma
+tw:block!
+tw:p-0
+tw:m-0
+tw:transition-[max-height]
+tw:duration-500
+tw:ease-in-out
+tw:group-[.is-closed]:max-h-0!
+tw:group-[.is-wrap]:text-wrap
+tw:overflow-y-hidden
+tw:overflow-x-auto
+tw:scrollbar-thin"><span class=line><span class=cl>假设我们有一个翻译任务，目标是将英语句子翻译成法语。在解码阶段：
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>解码器生成一个查询向量 q，表示当前需要翻译的单词。
+</span></span><span class=line><span class=cl>编码器生成一组键值对 (k,v)，表示源语言句子中的每个单词。
+</span></span><span class=line><span class=cl>解码器通过计算 q 和 k 的相似性来决定应该关注源语言句子中的哪些单词。</span></span></code></pre></div><p>​ 当显著式也就是自动生成q时：比如transformer就会计算元素与元素之间的相关性，可以动态决定应该关注哪些部分。特点就是qkv都是根据输入数据生成的（比如线性变换），</p><div class="code-block highlight is-open show-line-numbers tw:group tw:my-2"><div class="tw:flex
+tw:flex-row
+tw:flex-1
+tw:justify-between
+tw:w-full tw:bg-bgColor-secondary"><button class="code-block-button
+tw:mx-2
+tw:flex
+tw:flex-row
+tw:flex-1" aria-hidden=true>
+<span class="tw:group-[.is-open]:rotate-90 tw:transition-[transform] tw:duration-500 tw:ease-in-out tw:print:hidden! tw:w-min tw:h-min tw:my-1 tw:mx-1"><svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></span>
+<span class="tw:select-none tw:my-1! tw:block">text</span></button><div class=tw:flex><button class="line-number-button
+tw:mx-2
+tw:hidden
+tw:group-[.is-open]:block
+tw:group-[.show-line-numbers]:text-fgColor-link
+tw:print:hidden!" title="Toggle line numbers"><svg class="icon" viewBox="0 0 512 512"><path d="M61.77 401l17.5-20.15a19.92 19.92.0 005.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 00-8 8v16a8 8 0 008 8h22.83a157.41 157.41.0 00-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33.0 15.94 2.44 15.94 9.09.0 4.72-4.2 8.22-14.36 8.22a41.54 41.54.0 01-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16.0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zm0-160H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16V80a16 16 0 00-16-16zm0 320H176a16 16 0 00-16 16v32a16 16 0 0016 16h320a16 16 0 0016-16v-32a16 16 0 00-16-16zM16 160h64a8 8 0 008-8v-16a8 8 0 00-8-8H64V40a8 8 0 00-8-8H32a8 8 0 00-7.14 4.42l-8 16A8 8 0 0024 64h8v64H16a8 8 0 00-8 8v16a8 8 0 008 8zm-3.91 160H80a8 8 0 008-8v-16a8 8 0 00-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44.0-29.06-25-39.56-44.47-39.56-21.36.0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44.0 019.46-3.84c3.33.0 9.28 1.56 9.28 8.75C51 248.19.0 257.31.0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+<button class="wrap-code-button
+tw:select-none
+tw:mx-2
+tw:hidden
+tw:group-[.is-open]:block
+tw:group-[.is-wrap]:text-fgColor-link
+tw:print:hidden!" title="Toggle code wrap"><svg class="icon" viewBox="0 0 448 512"><path d="M16 132h416c8.837.0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163.0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+<button class="copy-code-button
+tw:select-none
+tw:mx-2
+tw:hidden
+tw:group-[.is-open]:block
+tw:hover:text-fgColor-link
+tw:print:hidden!" title="Copy code">
+<span class="copy-icon tw:block"><svg class="icon" viewBox="0 0 448 512"><path d="M433.941 65.941l-51.882-51.882A48 48 0 00348.118.0H176c-26.51.0-48 21.49-48 48v48H48c-26.51.0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51.0 48-21.49 48-48v-48h80c26.51.0 48-21.49 48-48V99.882a48 48 0 00-14.059-33.941zM266 464H54a6 6 0 01-6-6V150a6 6 0 016-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 01-6 6zm128-96H182a6 6 0 01-6-6V54a6 6 0 016-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 01-6 6zm6-256h-64V48h9.632c1.591.0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 011.757 4.243V112z"/></svg></span>
+<span class="check-icon tw:hidden"><svg class="icon" viewBox="0 0 512 512"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206.0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204.0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204.0l36.203 36.204c9.997 9.997 9.997 26.206.0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+</button>
+<button class="tw:select-none
+tw:mx-2
+tw:block
+tw:group-[.is-open]:hidden
+tw:print:hidden!" disabled aria-hidden=true><svg class="icon" viewBox="0 0 512 512"><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8.0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button></div></div><pre style=counter-reset:codeblock class="tw:block tw:m-0 tw:p-0"><code id=codeblock-id-3 class="chroma
+tw:block!
+tw:p-0
+tw:m-0
+tw:transition-[max-height]
+tw:duration-500
+tw:ease-in-out
+tw:group-[.is-closed]:max-h-0!
+tw:group-[.is-wrap]:text-wrap
+tw:overflow-y-hidden
+tw:overflow-x-auto
+tw:scrollbar-thin"><span class=line><span class=cl>在 Transformer 模型中：
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>输入序列中的每个 token 会通过线性变换生成自己的 q、k 和 v。
+</span></span><span class=line><span class=cl>每个 token 的 q 会与其他所有 token 的 k 计算相似性，得到注意力权重。
+</span></span><span class=line><span class=cl>最终，这些权重用于加权求和 v，生成新的表示。</span></span></code></pre></div></div><h2>相关内容</h2><div class=related-container><div class=related-item-container><h2 class=related-title><a href=/blog/posts/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%A1%A5%E6%BC%8F/>传统机器学习补漏</a></h2></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2025-03-03</span></div><div class=post-info-license></div></div><div class="post-info-line tw:print:hidden!"><div class=post-info-md></div><div class=post-info-share></div></div></div><div class=post-info-more><div class=post-tags><svg class="icon" viewBox="0 0 640 512"><path d="M497.941 225.941 286.059 14.059A48 48 0 00252.118.0H48C21.49.0.0 21.49.0 48v204.118a48 48 0 0014.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882.0l204.118-204.118c18.745-18.745 18.745-49.137.0-67.882zM112 160c-26.51.0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882.0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397.0h48.721a48 48 0 0133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137.0 67.882z"/></svg>&nbsp;<a href=/blog/tags/ml/>ML</a></div><div class=tw:print:hidden!><span><button class="tw:text-fgColor-link-muted tw:hover:text-fgColor-link-muted-hover" onclick=window.history.back()>返回</button></span>&nbsp;|&nbsp;<span><a href=/blog/>主页</a></span></div></div><div class="post-nav tw:print:hidden"><a href=/blog/posts/%E5%A3%B0%E9%A2%91/ class=prev rel=prev title=声频><svg class="icon" viewBox="0 0 256 512"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9.0l22.6 22.6c9.4 9.4 9.4 24.6.0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6.0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9.0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>声频</a>
+<a href=/blog/posts/latex-%E7%94%A8%E6%B3%95/ class=next rel=next title="Latex 用法">Latex 用法<svg class="icon" viewBox="0 0 256 512"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9.0l-22.6-22.6c-9.4-9.4-9.4-24.6.0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6.0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9.0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a></div></div></article></main><footer class=footer><div class=footer-container><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreferrer" title="Hugo 0.162.1">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href=https://github.com/HEIGE-PCloud/DoIt target=_blank rel="noopener noreferrer" title="DoIt 1.0.2"><svg class="icon" viewBox="0 0 576 512"><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5.0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1.0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7.0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174 402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7-43.2-43.2c-4.1-4.1-10.8-4.1-14.8.0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg> DoIt</a></div><div class=footer-line><svg class="icon" viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 448c-110.532.0-2e2-89.451-2e2-2e2.0-110.531 89.451-2e2 2e2-2e2 110.532.0 2e2 89.451 2e2 2e2.0 110.532-89.451 2e2-2e2 2e2zm107.351-101.064c-9.614 9.712-45.53 41.396-104.065 41.396-82.43.0-140.484-61.425-140.484-141.567.0-79.152 60.275-139.401 139.762-139.401 55.531.0 88.738 26.62 97.593 34.779a11.965 11.965.0 011.936 15.322l-18.155 28.113c-3.841 5.95-11.966 7.282-17.499 2.921-8.595-6.776-31.814-22.538-61.708-22.538-48.303.0-77.916 35.33-77.916 80.082.0 41.589 26.888 83.692 78.277 83.692 32.657.0 56.843-19.039 65.726-27.225 5.27-4.857 13.596-4.039 17.82 1.738l19.865 27.17a11.947 11.947.0 01-1.152 15.518z"/></svg>2025 - 2026<span class=author>&nbsp;<a href=/blog/ target=_blank rel="noopener noreferrer">evilcurls</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreferrer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div><div class=footer-line></div><div class=footer-line></div></div></footer><div class="tw:print:hidden! tw:flex tw:flex-col tw:fixed tw:right-4 tw:bottom-4 tw:gap-2"><a href=#back-to-top id=back-to-top-button class="tw:transition-opacity tw:opacity-0 tw:block tw:bg-bgColor-secondary tw:rounded-full" style=padding:.6rem;line-height:1.3rem;font-size:1rem title=回到顶部><svg class="icon" viewBox="0 0 448 512"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6.0-33.9L207 39c9.4-9.4 24.6-9.4 33.9.0l194.3 194.3c9.4 9.4 9.4 24.6.0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3.0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg>
+</a><button id=toc-drawer-button class="tw:block tw:bg-bgColor-secondary tw:rounded-full tw:md:hidden" style=padding:.6rem;line-height:1.3rem;font-size:1rem>
+<svg class="icon" viewBox="0 0 448 512"><path d="M16 132h416c8.837.0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163.0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837.0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837.0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button></div><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/blog/lib/lightgallery/lightgallery.min.css><noscript><link rel=stylesheet href=/blog/lib/lightgallery/lightgallery.min.css></noscript><link rel=stylesheet href=/blog/lib/katex/katex.min.css><link rel=stylesheet href=/blog/lib/katex/katex.min.css><link rel=preload as=style onload='this.onload=null,this.rel="stylesheet"' href=/blog/lib/katex/copy-tex.min.css><noscript><link rel=stylesheet href=/blog/lib/katex/copy-tex.min.css></noscript><script>window.config={"autocomplete.min.js":"/blog/lib/autocomplete/autocomplete.min.js",comment:{},"fuse.min.js":"/blog/lib/fuse/fuse.min.js",lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{distance:100,findAllMatches:!1,fuseIndexURL:"/blog/index.json",highlightTag:"em",ignoreFieldNorm:!1,ignoreLocation:!0,isCaseSensitive:!1,location:0,maxResultLength:10,minMatchCharLength:2,noResultsFound:"没有找到结果",snippetLength:50,threshold:.1,type:"fuse",useExtendedSearch:!1}}</script><script src=/blog/lib/lightgallery/lightgallery.min.js defer></script><script src=/blog/lib/lightgallery/lg-thumbnail.min.js defer></script><script src=/blog/lib/lightgallery/lg-zoom.min.js defer></script><script src=/blog/lib/katex/katex.min.js defer></script><script src=/blog/lib/katex/auto-render.min.js defer></script><script src=/blog/lib/katex/copy-tex.min.js defer></script><script src=/blog/lib/katex/mhchem.min.js defer></script><script src=/blog/js/katex.min.js defer></script><script src=/blog/js/theme.min.js defer></script><script type=speculationrules>
   {
     "prerender": [
       {
@@ -935,7 +194,4 @@
       }
     ]
   }
-</script>
-</body>
-
-</html>
+</script></body></html>

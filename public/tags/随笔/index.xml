@@ -1,15 +1,2 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>随笔 - 标签 - 邪恶小卷毛</title>
-        <link>http://localhost:50052/blog/tags/%E9%9A%8F%E7%AC%94/</link>
-        <description>随笔 - 标签 - 邪恶小卷毛</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</lastBuildDate><atom:link href="http://localhost:50052/blog/tags/%E9%9A%8F%E7%AC%94/" rel="self" type="application/rss+xml" /><item>
-    <title>本科毕业论文致谢</title>
-    <link>http://localhost:50052/blog/posts/%E6%9C%AC%E7%A7%91%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E8%87%B4%E8%B0%A2/</link>
-    <pubDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:50052/blog/posts/%E6%9C%AC%E7%A7%91%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E8%87%B4%E8%B0%A2/</guid>
-    <description><![CDATA[<p>​	   逝者如斯夫！ 不舍昼夜。盛夏不重来，一日难再晨，对于我人生旅途中无法再来的四载本科光阴已走到了尾声。</p>
-<p>​	   从剑湖之畔到浮山之麓，承载着我对于青岛大学的种种回忆，回首四年往昔，有“白日放歌须纵酒”的畅快时刻。会发出“自是 人生长恨水长东”的遗憾感慨，体会到“拔剑四顾心茫然”的迷茫心境，但最多的 感受，还是感谢与怀念。</p>]]></description>
-</item></channel>
-</rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>随笔 - 标签 - 邪恶小卷毛</title><link>https://evilcurls.github.io/blog/tags/%E9%9A%8F%E7%AC%94/</link><description>随笔 - 标签 - 邪恶小卷毛</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Jun 2024 20:43:41 +0800</lastBuildDate><atom:link href="https://evilcurls.github.io/blog/tags/%E9%9A%8F%E7%AC%94/" rel="self" type="application/rss+xml"/><item><title>本科毕业论文致谢</title><link>https://evilcurls.github.io/blog/posts/%E6%9C%AC%E7%A7%91%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E8%87%B4%E8%B0%A2/</link><pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/%E6%9C%AC%E7%A7%91%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E8%87%B4%E8%B0%A2/</guid><description>&lt;p>​	   逝者如斯夫！ 不舍昼夜。盛夏不重来，一日难再晨，对于我人生旅途中无法再来的四载本科光阴已走到了尾声。&lt;/p>
+&lt;p>​	   从剑湖之畔到浮山之麓，承载着我对于青岛大学的种种回忆，回首四年往昔，有“白日放歌须纵酒”的畅快时刻。会发出“自是 人生长恨水长东”的遗憾感慨，体会到“拔剑四顾心茫然”的迷茫心境，但最多的 感受，还是感谢与怀念。&lt;/p></description></item></channel></rss>

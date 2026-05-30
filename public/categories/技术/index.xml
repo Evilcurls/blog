@@ -1,50 +1,11 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>技术 - 分类 - 邪恶小卷毛</title>
-        <link>http://localhost:50052/blog/categories/%E6%8A%80%E6%9C%AF/</link>
-        <description>技术 - 分类 - 邪恶小卷毛</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 03 Mar 2026 22:15:15 &#43;0800</lastBuildDate><atom:link href="http://localhost:50052/blog/categories/%E6%8A%80%E6%9C%AF/" rel="self" type="application/rss+xml" /><item>
-    <title>MedicalGPT分析</title>
-    <link>http://localhost:50052/blog/posts/medicalgpt%E5%88%86%E6%9E%90/</link>
-    <pubDate>Tue, 03 Mar 2026 22:15:15 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:50052/blog/posts/medicalgpt%E5%88%86%E6%9E%90/</guid>
-    <description><![CDATA[<h2 id="项目介绍" class="headerLink">
-    <a href="#%e9%a1%b9%e7%9b%ae%e4%bb%8b%e7%bb%8d" class="header-mark"></a>项目介绍</h2><p>是一个通过PT+SFT+RL在基座模型上对于垂直领域（医疗）的能力进行强化的案例，采用了30w的医疗百科数据与通用数据进行混合以及Lora的训练方法防止灾难性遗忘，RL阶段采用了GRPO  PPO  以及DPO三种算法，使用Ceval测试集配合Opencompass框架完成自动化测试同步在飞书上进行播报。可以尝试寻找数据将其迁移到其余垂直领域如法律交通等。</p>]]></description>
-</item><item>
-    <title>传统机器学习补漏</title>
-    <link>http://localhost:50052/blog/posts/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%A1%A5%E6%BC%8F/</link>
-    <pubDate>Sat, 04 Oct 2025 14:18:49 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:50052/blog/posts/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%A1%A5%E6%BC%8F/</guid>
-    <description><![CDATA[<h2 id="day-1-sklearn包与预处理数据" class="headerLink">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>技术 - 分类 - 邪恶小卷毛</title><link>https://evilcurls.github.io/blog/categories/%E6%8A%80%E6%9C%AF/</link><description>技术 - 分类 - 邪恶小卷毛</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 03 Mar 2026 22:15:15 +0800</lastBuildDate><atom:link href="https://evilcurls.github.io/blog/categories/%E6%8A%80%E6%9C%AF/" rel="self" type="application/rss+xml"/><item><title>MedicalGPT分析</title><link>https://evilcurls.github.io/blog/posts/medicalgpt%E5%88%86%E6%9E%90/</link><pubDate>Tue, 03 Mar 2026 22:15:15 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/medicalgpt%E5%88%86%E6%9E%90/</guid><description><![CDATA[<h2 id="项目介绍" class="headerLink">
+    <a href="#%e9%a1%b9%e7%9b%ae%e4%bb%8b%e7%bb%8d" class="header-mark"></a>项目介绍</h2><p>是一个通过PT+SFT+RL在基座模型上对于垂直领域（医疗）的能力进行强化的案例，采用了30w的医疗百科数据与通用数据进行混合以及Lora的训练方法防止灾难性遗忘，RL阶段采用了GRPO  PPO  以及DPO三种算法，使用Ceval测试集配合Opencompass框架完成自动化测试同步在飞书上进行播报。可以尝试寻找数据将其迁移到其余垂直领域如法律交通等。</p>]]></description></item><item><title>传统机器学习补漏</title><link>https://evilcurls.github.io/blog/posts/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%A1%A5%E6%BC%8F/</link><pubDate>Sat, 04 Oct 2025 14:18:49 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%A1%A5%E6%BC%8F/</guid><description><![CDATA[<h2 id="day-1-sklearn包与预处理数据" class="headerLink">
     <a href="#day-1-sklearn%e5%8c%85%e4%b8%8e%e9%a2%84%e5%a4%84%e7%90%86%e6%95%b0%e6%8d%ae" class="header-mark"></a>Day 1 Sklearn包与预处理数据</h2><p>回顾线性回归和逻辑回归的工作原理（L1/L2 正则化概念即可）。重点理解它们如何处理特征的权重。
 导入项目数据（如 Kaggle 的房屋数据），使用 Pandas 进行初步探索（.info(), .describe()）。	完成数据读取，识别缺失值和类别特征。
-使用 Scikit-learn 实现 LinearRegression 或 LogisticRegression（根据项目是回归或分类）。</p>]]></description>
-</item><item>
-    <title>使用Hugging face</title>
-    <link>http://localhost:50052/blog/posts/%E4%BD%BF%E7%94%A8hugging-face/</link>
-    <pubDate>Sat, 04 Oct 2025 14:18:49 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:50052/blog/posts/%E4%BD%BF%E7%94%A8hugging-face/</guid>
-    <description><![CDATA[<p>这是一个使用别人提供的训练好的现成模型的网站，就算是我要修改也只能微调，但是这应该符合我的方向，从头训练一个模型太大了，不如选用别人预训练完的模型，在特定任务上微调。</p>]]></description>
-</item><item>
-    <title>Paper I</title>
-    <link>http://localhost:50052/blog/posts/paper-i/</link>
-    <pubDate>Fri, 18 Jul 2025 14:18:05 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:50052/blog/posts/paper-i/</guid>
-    <description><![CDATA[<p>记录一下论文的一点碎碎念，和未来自己可能重复利用的经验。</p>
+使用 Scikit-learn 实现 LinearRegression 或 LogisticRegression（根据项目是回归或分类）。</p>]]></description></item><item><title>使用Hugging face</title><link>https://evilcurls.github.io/blog/posts/%E4%BD%BF%E7%94%A8hugging-face/</link><pubDate>Sat, 04 Oct 2025 14:18:49 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/%E4%BD%BF%E7%94%A8hugging-face/</guid><description>&lt;p>这是一个使用别人提供的训练好的现成模型的网站，就算是我要修改也只能微调，但是这应该符合我的方向，从头训练一个模型太大了，不如选用别人预训练完的模型，在特定任务上微调。&lt;/p></description></item><item><title>Paper I</title><link>https://evilcurls.github.io/blog/posts/paper-i/</link><pubDate>Fri, 18 Jul 2025 14:18:05 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/paper-i/</guid><description><![CDATA[<p>记录一下论文的一点碎碎念，和未来自己可能重复利用的经验。</p>
 <p><img class="tw:inline" loading="lazy" src='https://raw.githubusercontent.com/Evilcurls/image4blog/main/photo.png'     ></p>
 <h2 id="写" class="headerLink">
-    <a href="#%e5%86%99" class="header-mark"></a>写</h2><p>这是我之前抄的一个图，我感觉在工科论文里还是普遍适用的，而比较犯难的就是写下第一段话，所谓“完成比完美重要” 后面还可以再改，重要的是踏出第一步，能新建一个论文的word文档就已经很了不起了，可以奖励自己玩两把炉石了。</p>]]></description>
-</item><item>
-    <title>Machine Learning</title>
-    <link>http://localhost:50052/blog/posts/machine-learning/</link>
-    <pubDate>Mon, 03 Mar 2025 22:15:15 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:50052/blog/posts/machine-learning/</guid>
-    <description><![CDATA[<h2 id="基础" class="headerLink">
+    <a href="#%e5%86%99" class="header-mark"></a>写</h2><p>这是我之前抄的一个图，我感觉在工科论文里还是普遍适用的，而比较犯难的就是写下第一段话，所谓“完成比完美重要” 后面还可以再改，重要的是踏出第一步，能新建一个论文的word文档就已经很了不起了，可以奖励自己玩两把炉石了。</p>]]></description></item><item><title>Machine Learning</title><link>https://evilcurls.github.io/blog/posts/machine-learning/</link><pubDate>Mon, 03 Mar 2025 22:15:15 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/machine-learning/</guid><description><![CDATA[<h2 id="基础" class="headerLink">
     <a href="#%e5%9f%ba%e7%a1%80" class="header-mark"></a>基础</h2><h3 id="目标" class="headerLink">
     <a href="#%e7%9b%ae%e6%a0%87" class="header-mark"></a>目标</h3><h3 id="一-机器学习的三要素" class="headerLink">
     <a href="#%e4%b8%80-%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e7%9a%84%e4%b8%89%e8%a6%81%e7%b4%a0" class="header-mark"></a>一、 机器学习的三要素</h3><ul>
@@ -54,35 +15,14 @@
 </ul>
 <h3 id="二-三种主要学习算法" class="headerLink">
     <a href="#%e4%ba%8c-%e4%b8%89%e7%a7%8d%e4%b8%bb%e8%a6%81%e5%ad%a6%e4%b9%a0%e7%ae%97%e6%b3%95" class="header-mark"></a>二、 三种主要学习算法</h3><h4 id="1-监督学习-supervised-learning" class="headerLink">
-    <a href="#1-%e7%9b%91%e7%9d%a3%e5%ad%a6%e4%b9%a0-supervised-learning" class="header-mark"></a>1. 监督学习 (Supervised Learning)</h4><p>利用带有明确“标签”的数据进行训练，让模型学会输入到输出的映射。根据标签数据的类型，可分为：</p>]]></description>
-</item><item>
-    <title>声频</title>
-    <link>http://localhost:50052/blog/posts/%E5%A3%B0%E9%A2%91/</link>
-    <pubDate>Mon, 21 Oct 2024 22:10:15 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:50052/blog/posts/%E5%A3%B0%E9%A2%91/</guid>
-    <description><![CDATA[<p>声音是波，描述其有多种指标：</p>
+    <a href="#1-%e7%9b%91%e7%9d%a3%e5%ad%a6%e4%b9%a0-supervised-learning" class="header-mark"></a>1. 监督学习 (Supervised Learning)</h4><p>利用带有明确“标签”的数据进行训练，让模型学会输入到输出的映射。根据标签数据的类型，可分为：</p>]]></description></item><item><title>声频</title><link>https://evilcurls.github.io/blog/posts/%E5%A3%B0%E9%A2%91/</link><pubDate>Mon, 21 Oct 2024 22:10:15 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/%E5%A3%B0%E9%A2%91/</guid><description><![CDATA[<p>声音是波，描述其有多种指标：</p>
 <p>声强：单位时间内通过单位界面的波的能量流</p>
 <p>声压：波在传播的时候介质中压强的变化</p>
-<p>人是万物之灵，声音在给人听的时候主观感受并不是成线性关系的，所以取对数声压级作为指标，也就是常说的db</p>]]></description>
-</item><item>
-    <title>Blog实现</title>
-    <link>http://localhost:50052/blog/posts/blog%E5%AE%9E%E7%8E%B0/</link>
-    <pubDate>Wed, 26 Jun 2024 01:30:52 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:50052/blog/posts/blog%E5%AE%9E%E7%8E%B0/</guid>
-    <description><![CDATA[<p>好记性不如烂笔头，好多碎碎念的东西过了两天就忘得一干二净了属实可惜。</p>
+<p>人是万物之灵，声音在给人听的时候主观感受并不是成线性关系的，所以取对数声压级作为指标，也就是常说的db</p>]]></description></item><item><title>Blog实现</title><link>https://evilcurls.github.io/blog/posts/blog%E5%AE%9E%E7%8E%B0/</link><pubDate>Wed, 26 Jun 2024 01:30:52 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/blog%E5%AE%9E%E7%8E%B0/</guid><description><![CDATA[<p>好记性不如烂笔头，好多碎碎念的东西过了两天就忘得一干二净了属实可惜。</p>
 <h2 id="docsify" class="headerLink">
     <a href="#docsify" class="header-mark"></a>docsify</h2><h3 id="是啥" class="headerLink">
     <a href="#%e6%98%af%e5%95%a5" class="header-mark"></a>是啥</h3><p>网页是随着主人的意愿制作而成的如同一栋房屋，html是其中的骨架，而docsify是装修公司，他能按照主人的意愿完成房屋的装饰过程。 其实就是把你的一堆markdown文档渲染成一个网页了啦。</p>
-<p>抄了个介绍，优点轻/易/主题多</p>]]></description>
-</item><item>
-    <title>Java的几种设计模式</title>
-    <link>http://localhost:50052/blog/posts/java%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:50052/blog/posts/java%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[<h1 id="单例模式" class="headerLink">
+<p>抄了个介绍，优点轻/易/主题多</p>]]></description></item><item><title>Java的几种设计模式</title><link>https://evilcurls.github.io/blog/posts/java%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link><pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/java%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid><description><![CDATA[<h1 id="单例模式" class="headerLink">
     <a href="#%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f" class="header-mark"></a>单例模式</h1><p>此篇整理了几种常见的单例模式代码示例，再有面试官让手撕单例模式，便能心中有码，下笔有神。</p>
 <h3 id="为什么要有单例模式" class="headerLink">
     <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e6%9c%89%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f" class="header-mark"></a>为什么要有单例模式</h3><p>实际编程应用场景中，有一些对象其实我们只需要一个，比如线程池对象、缓存、系统全局配置对象等。这样可以就保证一个在全局使用的类不被频繁地创建与销毁，节省系统资源。</p>
@@ -194,22 +134,6 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre>
 </div>
-<p>类加载时就初始化实例，避免了多线程同步问题。天然线程安全。</p>]]></description>
-</item><item>
-    <title>Spring框架</title>
-    <link>http://localhost:50052/blog/posts/spring%E6%A1%86%E6%9E%B6/</link>
-    <pubDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:50052/blog/posts/spring%E6%A1%86%E6%9E%B6/</guid>
-    <description><![CDATA[<p>Spring是一个轻量级的企业级的Java开发框架。主要是用来替代原来更加重量级的企业级Java技术，比如EJB(Enterprise JavaBean)、Java数据对象（Java Data Object）等。Spring的出现极大简化了Java开发。</p>]]></description>
-</item><item>
-    <title>制作课题组主页和音色评价网站</title>
-    <link>http://localhost:50052/blog/posts/%E5%88%B6%E4%BD%9C%E8%AF%BE%E9%A2%98%E7%BB%84%E4%B8%BB%E9%A1%B5%E5%92%8C%E9%9F%B3%E8%89%B2%E8%AF%84%E4%BB%B7%E7%BD%91%E7%AB%99/</link>
-    <pubDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:50052/blog/posts/%E5%88%B6%E4%BD%9C%E8%AF%BE%E9%A2%98%E7%BB%84%E4%B8%BB%E9%A1%B5%E5%92%8C%E9%9F%B3%E8%89%B2%E8%AF%84%E4%BB%B7%E7%BD%91%E7%AB%99/</guid>
-    <description><![CDATA[<h1 id="一般化的网页建立" class="headerLink">
+<p>类加载时就初始化实例，避免了多线程同步问题。天然线程安全。</p>]]></description></item><item><title>Spring框架</title><link>https://evilcurls.github.io/blog/posts/spring%E6%A1%86%E6%9E%B6/</link><pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/spring%E6%A1%86%E6%9E%B6/</guid><description>&lt;p>Spring是一个轻量级的企业级的Java开发框架。主要是用来替代原来更加重量级的企业级Java技术，比如EJB(Enterprise JavaBean)、Java数据对象（Java Data Object）等。Spring的出现极大简化了Java开发。&lt;/p></description></item><item><title>制作课题组主页和音色评价网站</title><link>https://evilcurls.github.io/blog/posts/%E5%88%B6%E4%BD%9C%E8%AF%BE%E9%A2%98%E7%BB%84%E4%B8%BB%E9%A1%B5%E5%92%8C%E9%9F%B3%E8%89%B2%E8%AF%84%E4%BB%B7%E7%BD%91%E7%AB%99/</link><pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/%E5%88%B6%E4%BD%9C%E8%AF%BE%E9%A2%98%E7%BB%84%E4%B8%BB%E9%A1%B5%E5%92%8C%E9%9F%B3%E8%89%B2%E8%AF%84%E4%BB%B7%E7%BD%91%E7%AB%99/</guid><description><![CDATA[<h1 id="一般化的网页建立" class="headerLink">
     <a href="#%e4%b8%80%e8%88%ac%e5%8c%96%e7%9a%84%e7%bd%91%e9%a1%b5%e5%bb%ba%e7%ab%8b" class="header-mark"></a>一般化的网页建立</h1><h2 id="从服务器到域名" class="headerLink">
-    <a href="#%e4%bb%8e%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%88%b0%e5%9f%9f%e5%90%8d" class="header-mark"></a>从服务器到域名</h2><p>​	当然凡事都有快捷的方法，站在巨人的肩膀上，比如直接将网页布置在第三方网站比如某某博客，githubpages上面，是方便但是受限也不少，比如自定义程度差，网页不设立cdn能不能访问纯是抽奖。以下说的是流程基本靠自己的方法：</p>]]></description>
-</item></channel>
-</rss>
+    <a href="#%e4%bb%8e%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%88%b0%e5%9f%9f%e5%90%8d" class="header-mark"></a>从服务器到域名</h2><p>​	当然凡事都有快捷的方法，站在巨人的肩膀上，比如直接将网页布置在第三方网站比如某某博客，githubpages上面，是方便但是受限也不少，比如自定义程度差，网页不设立cdn能不能访问纯是抽奖。以下说的是流程基本靠自己的方法：</p>]]></description></item></channel></rss>

@@ -58,4 +58,4 @@ Disallow: /
 User-agent: *
 Allow: /
 
-Sitemap: http://localhost:50052/sitemap.xml
+Sitemap: https://evilcurls.github.io/sitemap.xml

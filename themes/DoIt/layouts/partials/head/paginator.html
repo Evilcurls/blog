@@ -5,7 +5,8 @@
         {{- if .Site.Params.page.hiddenFromHomePage -}}
             {{- $pages = where $pages "Params.hiddenfromhomepage" false -}}
         {{- else -}}
-            {{- $pages = where $pages "Params.hiddenfromhomepage" "!=" true -}}
+            {{- $hidden := where $pages "Params.hiddenfromhomepage" true -}}
+            {{- $pages = $pages | complement $hidden -}}
         {{- end -}}
         {{- with $posts.paginate | default .Site.Params.paginate -}}
             {{- $pages = $.Paginate $pages . -}}

@@ -1,15 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Java - 标签 - 邪恶小卷毛</title>
-        <link>http://localhost:50052/blog/tags/java/</link>
-        <description>Java - 标签 - 邪恶小卷毛</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</lastBuildDate><atom:link href="http://localhost:50052/blog/tags/java/" rel="self" type="application/rss+xml" /><item>
-    <title>Java的几种设计模式</title>
-    <link>http://localhost:50052/blog/posts/java%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
-    <pubDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:50052/blog/posts/java%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
-    <description><![CDATA[<h1 id="单例模式" class="headerLink">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Java - 标签 - 邪恶小卷毛</title><link>https://evilcurls.github.io/blog/tags/java/</link><description>Java - 标签 - 邪恶小卷毛</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Jun 2024 20:43:41 +0800</lastBuildDate><atom:link href="https://evilcurls.github.io/blog/tags/java/" rel="self" type="application/rss+xml"/><item><title>Java的几种设计模式</title><link>https://evilcurls.github.io/blog/posts/java%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link><pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/java%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid><description><![CDATA[<h1 id="单例模式" class="headerLink">
     <a href="#%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f" class="header-mark"></a>单例模式</h1><p>此篇整理了几种常见的单例模式代码示例，再有面试官让手撕单例模式，便能心中有码，下笔有神。</p>
 <h3 id="为什么要有单例模式" class="headerLink">
     <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e6%9c%89%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f" class="header-mark"></a>为什么要有单例模式</h3><p>实际编程应用场景中，有一些对象其实我们只需要一个，比如线程池对象、缓存、系统全局配置对象等。这样可以就保证一个在全局使用的类不被频繁地创建与销毁，节省系统资源。</p>
@@ -121,13 +110,4 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
 </span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre>
 </div>
-<p>类加载时就初始化实例，避免了多线程同步问题。天然线程安全。</p>]]></description>
-</item><item>
-    <title>Spring框架</title>
-    <link>http://localhost:50052/blog/posts/spring%E6%A1%86%E6%9E%B6/</link>
-    <pubDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:50052/blog/posts/spring%E6%A1%86%E6%9E%B6/</guid>
-    <description><![CDATA[<p>Spring是一个轻量级的企业级的Java开发框架。主要是用来替代原来更加重量级的企业级Java技术，比如EJB(Enterprise JavaBean)、Java数据对象（Java Data Object）等。Spring的出现极大简化了Java开发。</p>]]></description>
-</item></channel>
-</rss>
+<p>类加载时就初始化实例，避免了多线程同步问题。天然线程安全。</p>]]></description></item><item><title>Spring框架</title><link>https://evilcurls.github.io/blog/posts/spring%E6%A1%86%E6%9E%B6/</link><pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/spring%E6%A1%86%E6%9E%B6/</guid><description>&lt;p>Spring是一个轻量级的企业级的Java开发框架。主要是用来替代原来更加重量级的企业级Java技术，比如EJB(Enterprise JavaBean)、Java数据对象（Java Data Object）等。Spring的出现极大简化了Java开发。&lt;/p></description></item></channel></rss>
