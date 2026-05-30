@@ -1,72 +1,60 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>笔记 - 分类 - 邪恶小卷毛</title><link>https://evilcurls.github.io/blog/categories/%E7%AC%94%E8%AE%B0/</link><description>笔记 - 分类 - 邪恶小卷毛</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 13 Nov 2025 16:54:21 +0800</lastBuildDate><atom:link href="https://evilcurls.github.io/blog/categories/%E7%AC%94%E8%AE%B0/" rel="self" type="application/rss+xml"/><item><title>被问过的几个面试题</title><link>https://evilcurls.github.io/blog/posts/%E8%A2%AB%E9%97%AE%E8%BF%87%E7%9A%84%E5%87%A0%E4%B8%AA%E9%9D%A2%E8%AF%95%E9%A2%98/</link><pubDate>Thu, 13 Nov 2025 16:54:21 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/%E8%A2%AB%E9%97%AE%E8%BF%87%E7%9A%84%E5%87%A0%E4%B8%AA%E9%9D%A2%E8%AF%95%E9%A2%98/</guid><description><![CDATA[<h2 id="1当矩阵是百万级规模时如何用概率论快速判断-ab--c" class="headerLink">
-    <a href="#1%e5%bd%93%e7%9f%a9%e9%98%b5%e6%98%af%e7%99%be%e4%b8%87%e7%ba%a7%e8%a7%84%e6%a8%a1%e6%97%b6%e5%a6%82%e4%bd%95%e7%94%a8%e6%a6%82%e7%8e%87%e8%ae%ba%e5%bf%ab%e9%80%9f%e5%88%a4%e6%96%ad-ab--c" class="header-mark"></a>1.当矩阵是百万级规模时，如何用概率论快速判断 (AB = C)？</h2><p>在大规模矩阵计算的场景中（比如 (n = 10^6)），直接计算矩阵乘积 AB 再与 C 比较是完全不现实的 —— 毕竟 (n^3) 的复杂度会让超级计算机都望而却步。这时候，<strong>概率论方法</strong>就能帮我们在可接受的时间内，以极高的概率完成判断。</p>]]></description></item><item><title>Latex 用法</title><link>https://evilcurls.github.io/blog/posts/latex-%E7%94%A8%E6%B3%95/</link><pubDate>Wed, 05 Mar 2025 21:56:40 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/latex-%E7%94%A8%E6%B3%95/</guid><description><![CDATA[<p>跟着B站视频[](<a href="https://www.bilibili.com/video/BV1no4y1U7At/?spm_id_from=333.337.search-card.all.click&amp;vd_source=3ecda433bad27ee4e395ad1ffebdd84b" target="_blank" rel="noopener noreferrer">LaTeX公式保姆级教程 (以及其中的各种细节)_哔哩哔哩_bilibili</a>)练的</p>
-<h2 id="希腊字母" class="headerLink">
-    <a href="#%e5%b8%8c%e8%85%8a%e5%ad%97%e6%af%8d" class="header-mark"></a>希腊字母</h2><p>​	反斜杠+希腊字母的英文名</p>]]></description></item><item><title>唐朝历史</title><link>https://evilcurls.github.io/blog/posts/%E5%94%90%E6%9C%9D%E5%8E%86%E5%8F%B2/</link><pubDate>Sat, 06 Jul 2024 13:53:26 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/%E5%94%90%E6%9C%9D%E5%8E%86%E5%8F%B2/</guid><description><![CDATA[<h2 id="隋末到神龙政变" class="headerLink">
-    <a href="#%e9%9a%8b%e6%9c%ab%e5%88%b0%e7%a5%9e%e9%be%99%e6%94%bf%e5%8f%98" class="header-mark"></a>隋末到神龙政变</h2><h3 id="杨广" class="headerLink">
-    <a href="#%e6%9d%a8%e5%b9%bf" class="header-mark"></a>杨广</h3><p>后世争议不断的隋炀帝 他爹杨坚建国，他二代继承，也二代而亡。</p>
-<p>史书中曾用“美姿仪，少聪慧”形容他的少年时期，典型的生于忧患死于安乐。按长子继承的传统本来轮不到他接他爹的班，但在身为皇子期间夹着尾巴做人，野心很大，心术不正，又诡于伎俩，觊觎他哥哥杨勇的皇位并取而代之对他来说是理所应当的事。</p>]]></description></item><item><title>吸血鬼对线技巧总结</title><link>https://evilcurls.github.io/blog/posts/%E5%90%B8%E8%A1%80%E9%AC%BC%E5%AF%B9%E7%BA%BF%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</link><pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/%E5%90%B8%E8%A1%80%E9%AC%BC%E5%AF%B9%E7%BA%BF%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</guid><description><![CDATA[<h2 id="吸血鬼对线技巧总结" class="headerLink">
-    <a href="#%e5%90%b8%e8%a1%80%e9%ac%bc%e5%af%b9%e7%ba%bf%e6%8a%80%e5%b7%a7%e6%80%bb%e7%bb%93" class="header-mark"></a>吸血鬼对线技巧总结</h2><p>对线劫：同水平下换血劫是有优先权的，一些玩的很稳的劫基本不会给吸血鬼q的距离，并为吸血鬼在前压的时候是很容易被劫weq吃满。总结来说就是只要劫想，就可以在不被压太多补刀的同时避免被消耗，但是吸血鬼在补刀的大部分时间都有被劫消耗的风险，换血主动权是掌握在劫手上的。选择不主动换血 等劫qw或者能量空档期小压，6级前总体战术以保证自身补刀为主，因为这个时候吸血鬼的回复能力还顶不住劫的消耗。对线劫时在确保2v2次数很少时选择点燃换tp，度过六级危险期，天赋以打团为主。</p>]]></description></item><item><title>想看的</title><link>https://evilcurls.github.io/blog/posts/%E6%83%B3%E7%9C%8B%E7%9A%84/</link><pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate><author><name>evilcurls</name></author><guid>https://evilcurls.github.io/blog/posts/%E6%83%B3%E7%9C%8B%E7%9A%84/</guid><description><![CDATA[<h2 id="想看的" class="headerLink">
-    <a href="#%e6%83%b3%e7%9c%8b%e7%9a%84" class="header-mark"></a>想看的</h2><ul>
-<li>
-<p><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm0 400H48V80h352v352zm-35.864-241.724L191.547 361.48c-4.705 4.667-12.303 4.637-16.97-.068l-90.781-91.516c-4.667-4.705-4.637-12.303.069-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l59.792 60.277 141.352-140.216c4.705-4.667 12.303-4.637 16.97.068l22.536 22.718c4.667 4.706 4.637 12.304-.068 16.971z"/></svg> 石之海</p>
-</li>
-<li>
-<p><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm0 400H48V80h352v352zm-35.864-241.724L191.547 361.48c-4.705 4.667-12.303 4.637-16.97-.068l-90.781-91.516c-4.667-4.705-4.637-12.303.069-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l59.792 60.277 141.352-140.216c4.705-4.667 12.303-4.637 16.97.068l22.536 22.718c4.667 4.706 4.637 12.304-.068 16.971z"/></svg> 赛博朋克边缘行者</p>
-</li>
-<li>
-<p><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm0 400H48V80h352v352zm-35.864-241.724L191.547 361.48c-4.705 4.667-12.303 4.637-16.97-.068l-90.781-91.516c-4.667-4.705-4.637-12.303.069-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l59.792 60.277 141.352-140.216c4.705-4.667 12.303-4.637 16.97.068l22.536 22.718c4.667 4.706 4.637 12.304-.068 16.971z"/></svg> 误杀</p>
-</li>
-<li>
-<p><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V86c0-3.3 2.7-6 6-6h340c3.3 0 6 2.7 6 6v340c0 3.3-2.7 6-6 6z"/></svg> 犬夜叉</p>
-</li>
-<li>
-<p><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm0 400H48V80h352v352zm-35.864-241.724L191.547 361.48c-4.705 4.667-12.303 4.637-16.97-.068l-90.781-91.516c-4.667-4.705-4.637-12.303.069-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l59.792 60.277 141.352-140.216c4.705-4.667 12.303-4.637 16.97.068l22.536 22.718c4.667 4.706 4.637 12.304-.068 16.971z"/></svg> 我不是药神</p>
-</li>
-<li>
-<p><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm0 400H48V80h352v352zm-35.864-241.724L191.547 361.48c-4.705 4.667-12.303 4.637-16.97-.068l-90.781-91.516c-4.667-4.705-4.637-12.303.069-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l59.792 60.277 141.352-140.216c4.705-4.667 12.303-4.637 16.97.068l22.536 22.718c4.667 4.706 4.637 12.304-.068 16.971z"/></svg> 爱乐之城</p>
-</li>
-<li>
-<p><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm0 400H48V80h352v352zm-35.864-241.724L191.547 361.48c-4.705 4.667-12.303 4.637-16.97-.068l-90.781-91.516c-4.667-4.705-4.637-12.303.069-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l59.792 60.277 141.352-140.216c4.705-4.667 12.303-4.637 16.97.068l22.536 22.718c4.667 4.706 4.637 12.304-.068 16.971z"/></svg> 诡秘之主</p>
-</li>
-<li>
-<p><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V86c0-3.3 2.7-6 6-6h340c3.3 0 6 2.7 6 6v340c0 3.3-2.7 6-6 6z"/></svg> 不能说的秘密</p>
-</li>
-<li>
-<p><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm0 400H48V80h352v352zm-35.864-241.724L191.547 361.48c-4.705 4.667-12.303 4.637-16.97-.068l-90.781-91.516c-4.667-4.705-4.637-12.303.069-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l59.792 60.277 141.352-140.216c4.705-4.667 12.303-4.637 16.97.068l22.536 22.718c4.667 4.706 4.637 12.304-.068 16.971z"/></svg> 爆裂鼓手</p>
-</li>
-<li>
-<p><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm0 400H48V80h352v352zm-35.864-241.724L191.547 361.48c-4.705 4.667-12.303 4.637-16.97-.068l-90.781-91.516c-4.667-4.705-4.637-12.303.069-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l59.792 60.277 141.352-140.216c4.705-4.667 12.303-4.637 16.97.068l22.536 22.718c4.667 4.706 4.637 12.304-.068 16.971z"/></svg> 赛马娘</p>
-</li>
-<li>
-<p><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm0 400H48V80h352v352zm-35.864-241.724L191.547 361.48c-4.705 4.667-12.303 4.637-16.97-.068l-90.781-91.516c-4.667-4.705-4.637-12.303.069-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l59.792 60.277 141.352-140.216c4.705-4.667 12.303-4.637 16.97.068l22.536 22.718c4.667 4.706 4.637 12.304-.068 16.971z"/></svg> 阿凡达</p>
-</li>
-<li>
-<p><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V86c0-3.3 2.7-6 6-6h340c3.3 0 6 2.7 6 6v340c0 3.3-2.7 6-6 6z"/></svg> 未闻花名</p>
-</li>
-<li>
-<p><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V86c0-3.3 2.7-6 6-6h340c3.3 0 6 2.7 6 6v340c0 3.3-2.7 6-6 6z"/></svg> 爱、死亡、机器人</p>
-</li>
-<li>
-<p><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm0 400H48V80h352v352zm-35.864-241.724L191.547 361.48c-4.705 4.667-12.303 4.637-16.97-.068l-90.781-91.516c-4.667-4.705-4.637-12.303.069-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l59.792 60.277 141.352-140.216c4.705-4.667 12.303-4.637 16.97.068l22.536 22.718c4.667 4.706 4.637 12.304-.068 16.971z"/></svg> 银河补习班</p>
-</li>
-<li>
-<p><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm0 400H48V80h352v352zm-35.864-241.724L191.547 361.48c-4.705 4.667-12.303 4.637-16.97-.068l-90.781-91.516c-4.667-4.705-4.637-12.303.069-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l59.792 60.277 141.352-140.216c4.705-4.667 12.303-4.637 16.97.068l22.536 22.718c4.667 4.706 4.637 12.304-.068 16.971z"/></svg> 肖申克的救赎</p>
-</li>
-<li>
-<p><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M400 32H48C21.49 32 0 53.49 0 80v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V80c0-26.51-21.49-48-48-48zm0 400H48V80h352v352zm-35.864-241.724L191.547 361.48c-4.705 4.667-12.303 4.637-16.97-.068l-90.781-91.516c-4.667-4.705-4.637-12.303.069-16.971l22.719-22.536c4.705-4.667 12.303-4.637 16.97.069l59.792 60.277 141.352-140.216c4.705-4.667 12.303-4.637 16.97.068l22.536 22.718c4.667 4.706 4.637 12.304-.068 16.971z"/></svg> 五亿探长雷洛</p>]]></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>笔记 on 邪恶小卷毛</title><link>https://evilcurls.github.io/blog/categories/%E7%AC%94%E8%AE%B0/</link><description>Recent content in 笔记 on 邪恶小卷毛</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Thu, 13 Nov 2025 16:54:21 +0800</lastBuildDate><atom:link href="https://evilcurls.github.io/blog/categories/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>被问过的几个面试题</title><link>https://evilcurls.github.io/blog/posts/%E8%A2%AB%E9%97%AE%E8%BF%87%E7%9A%84%E5%87%A0%E4%B8%AA%E9%9D%A2%E8%AF%95%E9%A2%98/</link><pubDate>Thu, 13 Nov 2025 16:54:21 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/%E8%A2%AB%E9%97%AE%E8%BF%87%E7%9A%84%E5%87%A0%E4%B8%AA%E9%9D%A2%E8%AF%95%E9%A2%98/</guid><description>&lt;h2 id="1当矩阵是百万级规模时如何用概率论快速判断-ab--c">1.当矩阵是百万级规模时，如何用概率论快速判断 (AB = C)？&lt;/h2>
+&lt;p>在大规模矩阵计算的场景中（比如 (n = 10^6)），直接计算矩阵乘积 AB 再与 C 比较是完全不现实的 —— 毕竟 (n^3) 的复杂度会让超级计算机都望而却步。这时候，&lt;strong>概率论方法&lt;/strong>就能帮我们在可接受的时间内，以极高的概率完成判断。&lt;/p></description></item><item><title>Latex 用法</title><link>https://evilcurls.github.io/blog/posts/latex-%E7%94%A8%E6%B3%95/</link><pubDate>Wed, 05 Mar 2025 21:56:40 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/latex-%E7%94%A8%E6%B3%95/</guid><description>&lt;p>跟着B站视频[](&lt;a href="https://www.bilibili.com/video/BV1no4y1U7At/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=3ecda433bad27ee4e395ad1ffebdd84b">LaTeX公式保姆级教程 (以及其中的各种细节)_哔哩哔哩_bilibili&lt;/a>)练的&lt;/p>
+&lt;h2 id="希腊字母">希腊字母&lt;/h2>
+&lt;p>​	反斜杠+希腊字母的英文名&lt;/p>
+&lt;p>​	&lt;img src="https://raw.githubusercontent.com/Evilcurls/image4blog/main/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D.png" alt="">&lt;/p>
+&lt;h2 id="上下标">上下标&lt;/h2>
+&lt;p>​	与word一致&lt;/p>
+&lt;p>​		a^2 a_i 直立体写法：x_{\text i}&lt;/p></description></item><item><title>唐朝历史</title><link>https://evilcurls.github.io/blog/posts/%E5%94%90%E6%9C%9D%E5%8E%86%E5%8F%B2/</link><pubDate>Sat, 06 Jul 2024 13:53:26 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/%E5%94%90%E6%9C%9D%E5%8E%86%E5%8F%B2/</guid><description>&lt;h2 id="隋末到神龙政变">隋末到神龙政变&lt;/h2>
+&lt;h3 id="杨广">杨广&lt;/h3>
+&lt;p>后世争议不断的隋炀帝 他爹杨坚建国，他二代继承，也二代而亡。&lt;/p>
+&lt;p>史书中曾用“美姿仪，少聪慧”形容他的少年时期，典型的生于忧患死于安乐。按长子继承的传统本来轮不到他接他爹的班，但在身为皇子期间夹着尾巴做人，野心很大，心术不正，又诡于伎俩，觊觎他哥哥杨勇的皇位并取而代之对他来说是理所应当的事。&lt;/p></description></item><item><title>吸血鬼对线技巧总结</title><link>https://evilcurls.github.io/blog/posts/%E5%90%B8%E8%A1%80%E9%AC%BC%E5%AF%B9%E7%BA%BF%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</link><pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/%E5%90%B8%E8%A1%80%E9%AC%BC%E5%AF%B9%E7%BA%BF%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</guid><description>&lt;h2 id="吸血鬼对线技巧总结">吸血鬼对线技巧总结&lt;/h2>
+&lt;p>对线劫：同水平下换血劫是有优先权的，一些玩的很稳的劫基本不会给吸血鬼q的距离，并为吸血鬼在前压的时候是很容易被劫weq吃满。总结来说就是只要劫想，就可以在不被压太多补刀的同时避免被消耗，但是吸血鬼在补刀的大部分时间都有被劫消耗的风险，换血主动权是掌握在劫手上的。选择不主动换血 等劫qw或者能量空档期小压，6级前总体战术以保证自身补刀为主，因为这个时候吸血鬼的回复能力还顶不住劫的消耗。对线劫时在确保2v2次数很少时选择点燃换tp，度过六级危险期，天赋以打团为主。&lt;/p></description></item><item><title>想看的</title><link>https://evilcurls.github.io/blog/posts/%E6%83%B3%E7%9C%8B%E7%9A%84/</link><pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/%E6%83%B3%E7%9C%8B%E7%9A%84/</guid><description>&lt;h2 id="想看的">想看的&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;input checked="" disabled="" type="checkbox"> 石之海&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input checked="" disabled="" type="checkbox"> 赛博朋克边缘行者&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input checked="" disabled="" type="checkbox"> 误杀&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input disabled="" type="checkbox"> 犬夜叉&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input checked="" disabled="" type="checkbox"> 我不是药神&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input checked="" disabled="" type="checkbox"> 爱乐之城&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input checked="" disabled="" type="checkbox"> 诡秘之主&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input disabled="" type="checkbox"> 不能说的秘密&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input checked="" disabled="" type="checkbox"> 爆裂鼓手&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input checked="" disabled="" type="checkbox"> 赛马娘&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input checked="" disabled="" type="checkbox"> 阿凡达&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input disabled="" type="checkbox"> 未闻花名&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input disabled="" type="checkbox"> 爱、死亡、机器人&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input checked="" disabled="" type="checkbox"> 银河补习班&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input checked="" disabled="" type="checkbox"> 肖申克的救赎&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;input checked="" disabled="" type="checkbox"> 五亿探长雷洛&lt;/p></description></item></channel></rss>
