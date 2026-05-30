@@ -1,24 +1,24 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>ML - 标签 - 邪恶小卷毛</title>
-        <link>http://localhost:1313/tags/ml/</link>
+        <link>http://localhost:50052/tags/ml/</link>
         <description>ML - 标签 - 邪恶小卷毛</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 04 Oct 2025 14:18:49 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/ml/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 04 Oct 2025 14:18:49 &#43;0800</lastBuildDate><atom:link href="http://localhost:50052/tags/ml/" rel="self" type="application/rss+xml" /><item>
     <title>传统机器学习补漏</title>
-    <link>http://localhost:1313/posts/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%A1%A5%E6%BC%8F/</link>
+    <link>http://localhost:50052/posts/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%A1%A5%E6%BC%8F/</link>
     <pubDate>Sat, 04 Oct 2025 14:18:49 &#43;0800</pubDate><author>
         <name>evilcurls</name>
-    </author><guid>http://localhost:1313/posts/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%A1%A5%E6%BC%8F/</guid>
+    </author><guid>http://localhost:50052/posts/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%A1%A5%E6%BC%8F/</guid>
     <description><![CDATA[<h2 id="day-1-sklearn包与预处理数据" class="headerLink">
     <a href="#day-1-sklearn%e5%8c%85%e4%b8%8e%e9%a2%84%e5%a4%84%e7%90%86%e6%95%b0%e6%8d%ae" class="header-mark"></a>Day 1 Sklearn包与预处理数据</h2><p>回顾线性回归和逻辑回归的工作原理（L1/L2 正则化概念即可）。重点理解它们如何处理特征的权重。
 导入项目数据（如 Kaggle 的房屋数据），使用 Pandas 进行初步探索（.info(), .describe()）。	完成数据读取，识别缺失值和类别特征。
 使用 Scikit-learn 实现 LinearRegression 或 LogisticRegression（根据项目是回归或分类）。</p>]]></description>
 </item><item>
     <title>Machine Learning</title>
-    <link>http://localhost:1313/posts/machine-learning/</link>
+    <link>http://localhost:50052/posts/machine-learning/</link>
     <pubDate>Mon, 03 Mar 2025 22:15:15 &#43;0800</pubDate><author>
         <name>evilcurls</name>
-    </author><guid>http://localhost:1313/posts/machine-learning/</guid>
+    </author><guid>http://localhost:50052/posts/machine-learning/</guid>
     <description><![CDATA[<h2 id="基础" class="headerLink">
     <a href="#%e5%9f%ba%e7%a1%80" class="header-mark"></a>基础</h2><h3 id="目标" class="headerLink">
     <a href="#%e7%9b%ae%e6%a0%87" class="header-mark"></a>目标</h3><h3 id="一-机器学习的三要素" class="headerLink">
