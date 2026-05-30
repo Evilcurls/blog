@@ -45,7 +45,7 @@ mainSections = ["posts"]
           enable = true
           avatarURL = "/blog/images/avatar.jpg"
           title = "evilcurls"
-          subtitle = "hanhuangjiushishen"
+          subtitle = "chenqie yao gaofa xiguifei sitong, huiluanhougong,zuiburongzhu"
           typeit = true
           social = true
         [languages.zh-cn.params.home.posts]
