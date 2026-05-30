@@ -42,7 +42,7 @@ theme = "DoIt"
         rss = 10
         [languages.zh-cn.params.home.profile]
           enable = true
-          avatarURL = "/images/avatar.jpg"
+          avatarURL = "images/avatar.jpg"
           title = "evilcurls"
           subtitle = "hanhuangjiushishen"
           typeit = true
@@ -57,24 +57,24 @@ theme = "DoIt"
     [[languages.zh-cn.menu.main]]
       identifier = "posts"
       name = "文章"
-      url = "/posts/"
+      url = "posts/"
       weight = 1
     [[languages.zh-cn.menu.main]]
       identifier = "tags"
       name = "标签"
-      url = "/tags/"
+      url = "tags/"
       weight = 2
     [[languages.zh-cn.menu.main]]
       identifier = "categories"
       name = "分类"
-      url = "/categories/"
+      url = "categories/"
       weight = 3
 
 [params]
   version = "0.4.X"
   defaultTheme = "auto"
   dateFormat = "2006-01-02"
-  images = ["/images/avatar.jpg"]
+  images = ["images/avatar.jpg"]
   enablePWA = false
   license = '<a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a>'
 
@@ -83,7 +83,7 @@ theme = "DoIt"
 
   [params.author]
     name = "evilcurls"
-    avatar = "/images/avatar.jpg"
+    avatar = "images/avatar.jpg"
 
   [params.header]
     themeChangeMode = "switch"
