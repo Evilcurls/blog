@@ -1,2 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>博客 on 邪恶小卷毛</title><link>https://evilcurls.github.io/blog/tags/%E5%8D%9A%E5%AE%A2/</link><description>Recent content in 博客 on 邪恶小卷毛</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 30 May 2026 13:53:26 +0800</lastBuildDate><atom:link href="https://evilcurls.github.io/blog/tags/%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml"/><item><title>博客二次实现，我会怀念Docsify的</title><link>https://evilcurls.github.io/blog/posts/%E5%8D%9A%E5%AE%A2%E4%BA%8C%E6%AC%A1%E5%AE%9E%E7%8E%B0%E6%88%91%E4%BC%9A%E6%80%80%E5%BF%B5docsify%E7%9A%84/</link><pubDate>Sat, 30 May 2026 13:53:26 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/%E5%8D%9A%E5%AE%A2%E4%BA%8C%E6%AC%A1%E5%AE%9E%E7%8E%B0%E6%88%91%E4%BC%9A%E6%80%80%E5%BF%B5docsify%E7%9A%84/</guid><description>&lt;hr>
-&lt;p>起因是在网上搜MedicalGPT的时候看到了一个哥们使用DoIT主题贼炫酷，然后赶紧clone code让Antigravity给我原来的移植，没想到做的很成功但是部署到Github Pages上难点重重。我打算先写我学到的东西，然后再讲困难。&lt;/p></description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>博客 - 标签 - 邪恶小卷毛</title>
+        <link>http://localhost:1313/blog/tags/%E5%8D%9A%E5%AE%A2/</link>
+        <description>博客 - 标签 - 邪恶小卷毛</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 30 May 2026 13:53:26 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/%E5%8D%9A%E5%AE%A2/" rel="self" type="application/rss+xml" /><item>
+    <title>博客二次实现，我会怀念Docsify的</title>
+    <link>http://localhost:1313/blog/posts/%E5%8D%9A%E5%AE%A2%E4%BA%8C%E6%AC%A1%E5%AE%9E%E7%8E%B0%E6%88%91%E4%BC%9A%E6%80%80%E5%BF%B5docsify%E7%9A%84/</link>
+    <pubDate>Sat, 30 May 2026 13:53:26 &#43;0800</pubDate><author>
+        <name>evilcurls</name>
+    </author><guid>http://localhost:1313/blog/posts/%E5%8D%9A%E5%AE%A2%E4%BA%8C%E6%AC%A1%E5%AE%9E%E7%8E%B0%E6%88%91%E4%BC%9A%E6%80%80%E5%BF%B5docsify%E7%9A%84/</guid>
+    <description><![CDATA[<hr>
+<p>起因是在网上搜MedicalGPT的时候看到了一个哥们使用DoIT主题贼炫酷，然后赶紧clone code让Antigravity给我原来的移植，没想到做的很成功但是部署到Github Pages上难点重重。我打算先写我学到的东西，然后再讲困难。</p>]]></description>
+</item></channel>
+</rss>

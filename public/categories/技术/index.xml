@@ -1,30 +1,214 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>技术 on 邪恶小卷毛</title><link>https://evilcurls.github.io/blog/categories/%E6%8A%80%E6%9C%AF/</link><description>Recent content in 技术 on 邪恶小卷毛</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 30 May 2026 13:53:26 +0800</lastBuildDate><atom:link href="https://evilcurls.github.io/blog/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>博客二次实现，我会怀念Docsify的</title><link>https://evilcurls.github.io/blog/posts/%E5%8D%9A%E5%AE%A2%E4%BA%8C%E6%AC%A1%E5%AE%9E%E7%8E%B0%E6%88%91%E4%BC%9A%E6%80%80%E5%BF%B5docsify%E7%9A%84/</link><pubDate>Sat, 30 May 2026 13:53:26 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/%E5%8D%9A%E5%AE%A2%E4%BA%8C%E6%AC%A1%E5%AE%9E%E7%8E%B0%E6%88%91%E4%BC%9A%E6%80%80%E5%BF%B5docsify%E7%9A%84/</guid><description>&lt;hr>
-&lt;p>起因是在网上搜MedicalGPT的时候看到了一个哥们使用DoIT主题贼炫酷，然后赶紧clone code让Antigravity给我原来的移植，没想到做的很成功但是部署到Github Pages上难点重重。我打算先写我学到的东西，然后再讲困难。&lt;/p></description></item><item><title>MedicalGPT分析</title><link>https://evilcurls.github.io/blog/posts/medicalgpt%E5%88%86%E6%9E%90/</link><pubDate>Tue, 03 Mar 2026 22:15:15 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/medicalgpt%E5%88%86%E6%9E%90/</guid><description>&lt;h2 id="项目介绍">项目介绍&lt;/h2>
-&lt;p>是一个通过PT+SFT+RL在基座模型上对于垂直领域（医疗）的能力进行强化的案例，采用了30w的医疗百科数据与通用数据进行混合以及Lora的训练方法防止灾难性遗忘，RL阶段采用了GRPO PPO 以及DPO三种算法，使用Ceval测试集配合Opencompass框架完成自动化测试同步在飞书上进行播报。可以尝试寻找数据将其迁移到其余垂直领域如法律交通等。&lt;/p></description></item><item><title>传统机器学习补漏</title><link>https://evilcurls.github.io/blog/posts/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%A1%A5%E6%BC%8F/</link><pubDate>Sat, 04 Oct 2025 14:18:49 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%A1%A5%E6%BC%8F/</guid><description>&lt;h2 id="day-1-sklearn包与预处理数据">Day 1 Sklearn包与预处理数据&lt;/h2>
-&lt;p>回顾线性回归和逻辑回归的工作原理（L1/L2 正则化概念即可）。重点理解它们如何处理特征的权重。
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>技术 - 分类 - 邪恶小卷毛</title>
+        <link>http://localhost:1313/blog/categories/%E6%8A%80%E6%9C%AF/</link>
+        <description>技术 - 分类 - 邪恶小卷毛</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 30 May 2026 13:53:26 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/blog/categories/%E6%8A%80%E6%9C%AF/" rel="self" type="application/rss+xml" /><item>
+    <title>博客二次实现，我会怀念Docsify的</title>
+    <link>http://localhost:1313/blog/posts/%E5%8D%9A%E5%AE%A2%E4%BA%8C%E6%AC%A1%E5%AE%9E%E7%8E%B0%E6%88%91%E4%BC%9A%E6%80%80%E5%BF%B5docsify%E7%9A%84/</link>
+    <pubDate>Sat, 30 May 2026 13:53:26 &#43;0800</pubDate><author>
+        <name>evilcurls</name>
+    </author><guid>http://localhost:1313/blog/posts/%E5%8D%9A%E5%AE%A2%E4%BA%8C%E6%AC%A1%E5%AE%9E%E7%8E%B0%E6%88%91%E4%BC%9A%E6%80%80%E5%BF%B5docsify%E7%9A%84/</guid>
+    <description><![CDATA[<hr>
+<p>起因是在网上搜MedicalGPT的时候看到了一个哥们使用DoIT主题贼炫酷，然后赶紧clone code让Antigravity给我原来的移植，没想到做的很成功但是部署到Github Pages上难点重重。我打算先写我学到的东西，然后再讲困难。</p>]]></description>
+</item><item>
+    <title>MedicalGPT分析</title>
+    <link>http://localhost:1313/blog/posts/medicalgpt%E5%88%86%E6%9E%90/</link>
+    <pubDate>Tue, 03 Mar 2026 22:15:15 &#43;0800</pubDate><author>
+        <name>evilcurls</name>
+    </author><guid>http://localhost:1313/blog/posts/medicalgpt%E5%88%86%E6%9E%90/</guid>
+    <description><![CDATA[<h2 id="项目介绍" class="headerLink">
+    <a href="#%e9%a1%b9%e7%9b%ae%e4%bb%8b%e7%bb%8d" class="header-mark"></a>项目介绍</h2><p>是一个通过PT+SFT+RL在基座模型上对于垂直领域（医疗）的能力进行强化的案例，采用了30w的医疗百科数据与通用数据进行混合以及Lora的训练方法防止灾难性遗忘，RL阶段采用了GRPO  PPO  以及DPO三种算法，使用Ceval测试集配合Opencompass框架完成自动化测试同步在飞书上进行播报。可以尝试寻找数据将其迁移到其余垂直领域如法律交通等。</p>]]></description>
+</item><item>
+    <title>传统机器学习补漏</title>
+    <link>http://localhost:1313/blog/posts/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%A1%A5%E6%BC%8F/</link>
+    <pubDate>Sat, 04 Oct 2025 14:18:49 &#43;0800</pubDate><author>
+        <name>evilcurls</name>
+    </author><guid>http://localhost:1313/blog/posts/%E4%BC%A0%E7%BB%9F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%A1%A5%E6%BC%8F/</guid>
+    <description><![CDATA[<h2 id="day-1-sklearn包与预处理数据" class="headerLink">
+    <a href="#day-1-sklearn%e5%8c%85%e4%b8%8e%e9%a2%84%e5%a4%84%e7%90%86%e6%95%b0%e6%8d%ae" class="header-mark"></a>Day 1 Sklearn包与预处理数据</h2><p>回顾线性回归和逻辑回归的工作原理（L1/L2 正则化概念即可）。重点理解它们如何处理特征的权重。
 导入项目数据（如 Kaggle 的房屋数据），使用 Pandas 进行初步探索（.info(), .describe()）。	完成数据读取，识别缺失值和类别特征。
-使用 Scikit-learn 实现 LinearRegression 或 LogisticRegression（根据项目是回归或分类）。&lt;/p></description></item><item><title>使用Hugging face</title><link>https://evilcurls.github.io/blog/posts/%E4%BD%BF%E7%94%A8hugging-face/</link><pubDate>Sat, 04 Oct 2025 14:18:49 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/%E4%BD%BF%E7%94%A8hugging-face/</guid><description>&lt;p>这是一个使用别人提供的训练好的现成模型的网站，就算是我要修改也只能微调，但是这应该符合我的方向，从头训练一个模型太大了，不如选用别人预训练完的模型，在特定任务上微调。&lt;/p></description></item><item><title>Paper I</title><link>https://evilcurls.github.io/blog/posts/paper-i/</link><pubDate>Fri, 18 Jul 2025 14:18:05 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/paper-i/</guid><description>&lt;p>记录一下论文的一点碎碎念，和未来自己可能重复利用的经验。&lt;/p>
-&lt;p>&lt;img src="https://raw.githubusercontent.com/Evilcurls/image4blog/main/photo.png" alt="">&lt;/p>
-&lt;h2 id="写">写&lt;/h2>
-&lt;p>这是我之前抄的一个图，我感觉在工科论文里还是普遍适用的，而比较犯难的就是写下第一段话，所谓“完成比完美重要” 后面还可以再改，重要的是踏出第一步，能新建一个论文的word文档就已经很了不起了，可以奖励自己玩两把炉石了。&lt;/p></description></item><item><title>Machine Learning</title><link>https://evilcurls.github.io/blog/posts/machine-learning/</link><pubDate>Mon, 03 Mar 2025 22:15:15 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/machine-learning/</guid><description>&lt;h2 id="基础">基础&lt;/h2>
-&lt;h3 id="目标">目标&lt;/h3>
-&lt;h3 id="一-机器学习的三要素">一、 机器学习的三要素&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>模型 (Model)：&lt;/strong> 用于拟合输入与输出关系的函数表达式 $f(x, \theta)$。&lt;/li>
-&lt;li>&lt;strong>学习准则 (Learning Criterion)：&lt;/strong> 衡量模型预测值与真实值之间差异的评价标准（通常指损失函数或目标函数）。&lt;/li>
-&lt;li>&lt;strong>优化算法 (Optimization Algorithm)：&lt;/strong> 用于寻找最优模型参数 $\theta$ 的具体计算方法（如梯度下降法）。&lt;/li>
-&lt;/ul>
-&lt;h3 id="二-三种主要学习算法">二、 三种主要学习算法&lt;/h3>
-&lt;h4 id="1-监督学习-supervised-learning">1. 监督学习 (Supervised Learning)&lt;/h4>
-&lt;p>利用带有明确“标签”的数据进行训练，让模型学会输入到输出的映射。根据标签数据的类型，可分为：&lt;/p></description></item><item><title>声频</title><link>https://evilcurls.github.io/blog/posts/%E5%A3%B0%E9%A2%91/</link><pubDate>Mon, 21 Oct 2024 22:10:15 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/%E5%A3%B0%E9%A2%91/</guid><description>&lt;p>声音是波，描述其有多种指标：&lt;/p>
-&lt;p>声强：单位时间内通过单位界面的波的能量流&lt;/p>
-&lt;p>声压：波在传播的时候介质中压强的变化&lt;/p>
-&lt;p>人是万物之灵，声音在给人听的时候主观感受并不是成线性关系的，所以取对数声压级作为指标，也就是常说的db&lt;/p></description></item><item><title>Blog实现</title><link>https://evilcurls.github.io/blog/posts/blog%E5%AE%9E%E7%8E%B0/</link><pubDate>Wed, 26 Jun 2024 01:30:52 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/blog%E5%AE%9E%E7%8E%B0/</guid><description>&lt;p>好记性不如烂笔头，好多碎碎念的东西过了两天就忘得一干二净了属实可惜。&lt;/p>
-&lt;h2 id="docsify">docsify&lt;/h2>
-&lt;h3 id="是啥">是啥&lt;/h3>
-&lt;p>网页是随着主人的意愿制作而成的如同一栋房屋，html是其中的骨架，而docsify是装修公司，他能按照主人的意愿完成房屋的装饰过程。 其实就是把你的一堆markdown文档渲染成一个网页了啦。&lt;/p></description></item><item><title>Java的几种设计模式</title><link>https://evilcurls.github.io/blog/posts/java%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link><pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/java%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid><description>&lt;h1 id="单例模式">单例模式&lt;/h1>
-&lt;p>此篇整理了几种常见的单例模式代码示例，再有面试官让手撕单例模式，便能心中有码，下笔有神。&lt;/p>
-&lt;h3 id="为什么要有单例模式">为什么要有单例模式&lt;/h3>
-&lt;p>实际编程应用场景中，有一些对象其实我们只需要一个，比如线程池对象、缓存、系统全局配置对象等。这样可以就保证一个在全局使用的类不被频繁地创建与销毁，节省系统资源。&lt;/p></description></item><item><title>Spring框架</title><link>https://evilcurls.github.io/blog/posts/spring%E6%A1%86%E6%9E%B6/</link><pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/spring%E6%A1%86%E6%9E%B6/</guid><description>&lt;p>Spring是一个轻量级的企业级的Java开发框架。主要是用来替代原来更加重量级的企业级Java技术，比如EJB(Enterprise JavaBean)、Java数据对象（Java Data Object）等。Spring的出现极大简化了Java开发。&lt;/p></description></item><item><title>制作课题组主页和音色评价网站</title><link>https://evilcurls.github.io/blog/posts/%E5%88%B6%E4%BD%9C%E8%AF%BE%E9%A2%98%E7%BB%84%E4%B8%BB%E9%A1%B5%E5%92%8C%E9%9F%B3%E8%89%B2%E8%AF%84%E4%BB%B7%E7%BD%91%E7%AB%99/</link><pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/%E5%88%B6%E4%BD%9C%E8%AF%BE%E9%A2%98%E7%BB%84%E4%B8%BB%E9%A1%B5%E5%92%8C%E9%9F%B3%E8%89%B2%E8%AF%84%E4%BB%B7%E7%BD%91%E7%AB%99/</guid><description>&lt;h1 id="一般化的网页建立">一般化的网页建立&lt;/h1>
-&lt;h2 id="从服务器到域名">从服务器到域名&lt;/h2>
-&lt;p>​	当然凡事都有快捷的方法，站在巨人的肩膀上，比如直接将网页布置在第三方网站比如某某博客，githubpages上面，是方便但是受限也不少，比如自定义程度差，网页不设立cdn能不能访问纯是抽奖。以下说的是流程基本靠自己的方法：&lt;/p></description></item></channel></rss>
+使用 Scikit-learn 实现 LinearRegression 或 LogisticRegression（根据项目是回归或分类）。</p>]]></description>
+</item><item>
+    <title>使用Hugging face</title>
+    <link>http://localhost:1313/blog/posts/%E4%BD%BF%E7%94%A8hugging-face/</link>
+    <pubDate>Sat, 04 Oct 2025 14:18:49 &#43;0800</pubDate><author>
+        <name>evilcurls</name>
+    </author><guid>http://localhost:1313/blog/posts/%E4%BD%BF%E7%94%A8hugging-face/</guid>
+    <description><![CDATA[<p>这是一个使用别人提供的训练好的现成模型的网站，就算是我要修改也只能微调，但是这应该符合我的方向，从头训练一个模型太大了，不如选用别人预训练完的模型，在特定任务上微调。</p>]]></description>
+</item><item>
+    <title>Paper I</title>
+    <link>http://localhost:1313/blog/posts/paper-i/</link>
+    <pubDate>Fri, 18 Jul 2025 14:18:05 &#43;0800</pubDate><author>
+        <name>evilcurls</name>
+    </author><guid>http://localhost:1313/blog/posts/paper-i/</guid>
+    <description><![CDATA[<p>记录一下论文的一点碎碎念，和未来自己可能重复利用的经验。</p>
+<p><img class="tw:inline" loading="lazy" src='https://raw.githubusercontent.com/Evilcurls/image4blog/main/photo.png'     ></p>
+<h2 id="写" class="headerLink">
+    <a href="#%e5%86%99" class="header-mark"></a>写</h2><p>这是我之前抄的一个图，我感觉在工科论文里还是普遍适用的，而比较犯难的就是写下第一段话，所谓“完成比完美重要” 后面还可以再改，重要的是踏出第一步，能新建一个论文的word文档就已经很了不起了，可以奖励自己玩两把炉石了。</p>]]></description>
+</item><item>
+    <title>Machine Learning</title>
+    <link>http://localhost:1313/blog/posts/machine-learning/</link>
+    <pubDate>Mon, 03 Mar 2025 22:15:15 &#43;0800</pubDate><author>
+        <name>evilcurls</name>
+    </author><guid>http://localhost:1313/blog/posts/machine-learning/</guid>
+    <description><![CDATA[<h2 id="基础" class="headerLink">
+    <a href="#%e5%9f%ba%e7%a1%80" class="header-mark"></a>基础</h2><h3 id="目标" class="headerLink">
+    <a href="#%e7%9b%ae%e6%a0%87" class="header-mark"></a>目标</h3><h3 id="一-机器学习的三要素" class="headerLink">
+    <a href="#%e4%b8%80-%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e7%9a%84%e4%b8%89%e8%a6%81%e7%b4%a0" class="header-mark"></a>一、 机器学习的三要素</h3><ul>
+<li><strong>模型 (Model)：</strong> 用于拟合输入与输出关系的函数表达式 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">f(x, \theta)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span><span class="mclose">)</span></span></span></span>。</li>
+<li><strong>学习准则 (Learning Criterion)：</strong> 衡量模型预测值与真实值之间差异的评价标准（通常指损失函数或目标函数）。</li>
+<li><strong>优化算法 (Optimization Algorithm)：</strong> 用于寻找最优模型参数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">θ</span></span></span></span> 的具体计算方法（如梯度下降法）。</li>
+</ul>
+<h3 id="二-三种主要学习算法" class="headerLink">
+    <a href="#%e4%ba%8c-%e4%b8%89%e7%a7%8d%e4%b8%bb%e8%a6%81%e5%ad%a6%e4%b9%a0%e7%ae%97%e6%b3%95" class="header-mark"></a>二、 三种主要学习算法</h3><h4 id="1-监督学习-supervised-learning" class="headerLink">
+    <a href="#1-%e7%9b%91%e7%9d%a3%e5%ad%a6%e4%b9%a0-supervised-learning" class="header-mark"></a>1. 监督学习 (Supervised Learning)</h4><p>利用带有明确“标签”的数据进行训练，让模型学会输入到输出的映射。根据标签数据的类型，可分为：</p>]]></description>
+</item><item>
+    <title>声频</title>
+    <link>http://localhost:1313/blog/posts/%E5%A3%B0%E9%A2%91/</link>
+    <pubDate>Mon, 21 Oct 2024 22:10:15 &#43;0800</pubDate><author>
+        <name>evilcurls</name>
+    </author><guid>http://localhost:1313/blog/posts/%E5%A3%B0%E9%A2%91/</guid>
+    <description><![CDATA[<p>声音是波，描述其有多种指标：</p>
+<p>声强：单位时间内通过单位界面的波的能量流</p>
+<p>声压：波在传播的时候介质中压强的变化</p>
+<p>人是万物之灵，声音在给人听的时候主观感受并不是成线性关系的，所以取对数声压级作为指标，也就是常说的db</p>]]></description>
+</item><item>
+    <title>Blog实现</title>
+    <link>http://localhost:1313/blog/posts/blog%E5%AE%9E%E7%8E%B0/</link>
+    <pubDate>Wed, 26 Jun 2024 01:30:52 &#43;0800</pubDate><author>
+        <name>evilcurls</name>
+    </author><guid>http://localhost:1313/blog/posts/blog%E5%AE%9E%E7%8E%B0/</guid>
+    <description><![CDATA[<p>好记性不如烂笔头，好多碎碎念的东西过了两天就忘得一干二净了属实可惜。</p>
+<h2 id="docsify" class="headerLink">
+    <a href="#docsify" class="header-mark"></a>docsify</h2><h3 id="是啥" class="headerLink">
+    <a href="#%e6%98%af%e5%95%a5" class="header-mark"></a>是啥</h3><p>网页是随着主人的意愿制作而成的如同一栋房屋，html是其中的骨架，而docsify是装修公司，他能按照主人的意愿完成房屋的装饰过程。 其实就是把你的一堆markdown文档渲染成一个网页了啦。</p>
+<p>抄了个介绍，优点轻/易/主题多</p>]]></description>
+</item><item>
+    <title>Java的几种设计模式</title>
+    <link>http://localhost:1313/blog/posts/java%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+    <pubDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</pubDate><author>
+        <name>evilcurls</name>
+    </author><guid>http://localhost:1313/blog/posts/java%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+    <description><![CDATA[<h2 id="单例模式" class="headerLink">
+    <a href="#%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f" class="header-mark"></a>单例模式</h2><p>此篇整理了几种常见的单例模式代码示例，再有面试官让手撕单例模式，便能心中有码，下笔有神。</p>
+<h3 id="为什么要有单例模式" class="headerLink">
+    <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e6%9c%89%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f" class="header-mark"></a>为什么要有单例模式</h3><p>实际编程应用场景中，有一些对象其实我们只需要一个，比如线程池对象、缓存、系统全局配置对象等。这样可以就保证一个在全局使用的类不被频繁地创建与销毁，节省系统资源。</p>
+<h3 id="实现单例模式的几个要点" class="headerLink">
+    <a href="#%e5%ae%9e%e7%8e%b0%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f%e7%9a%84%e5%87%a0%e4%b8%aa%e8%a6%81%e7%82%b9" class="header-mark"></a>实现单例模式的几个要点</h3><ol>
+<li>首先要确保全局只有一个类的实例。<br>
+要保证这一点，至少类的构造器要私有化。</li>
+<li>单例的类只能自己创建自己的实例。<br>
+因为，构造器私有了，但是还要有一个实例，只能自己创建咯！</li>
+<li>单例类必须能够提供自己的唯一实例给其他类<br>
+就是要有一个公共的方法能返回该单例类的唯一实例。</li>
+</ol>
+<h3 id="单例模式的6种实现" class="headerLink">
+    <a href="#%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f%e7%9a%846%e7%a7%8d%e5%ae%9e%e7%8e%b0" class="header-mark"></a>单例模式的6种实现</h3><h4 id="1饿汉式静态常量方式线程安全" class="headerLink">
+    <a href="#1%e9%a5%bf%e6%b1%89%e5%bc%8f%e9%9d%99%e6%80%81%e5%b8%b8%e9%87%8f%e6%96%b9%e5%bc%8f%e7%ba%bf%e7%a8%8b%e5%ae%89%e5%85%a8" class="header-mark"></a>1、饿汉式—静态常量方式（线程安全）</h4><div class="code-block highlight is-open show-line-numbers  tw:group tw:my-2">
+  <div class="
+    
+    tw:flex 
+    tw:flex-row
+    tw:flex-1 
+    tw:justify-between 
+    tw:w-full tw:bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        code-block-button
+        tw:mx-2 
+        tw:flex
+        tw:flex-row
+        tw:flex-1"
+      aria-hidden="true">
+          <span class="tw:group-[.is-open]:rotate-90 tw:transition-[transform] tw:duration-500 tw:ease-in-out tw:print:hidden! tw:w-min tw:h-min tw:my-1 tw:mx-1"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></span>
+          <span class="tw:select-none tw:my-1! tw:block">java</span>
+      </button>
+
+   <div class="tw:flex">
+      <button 
+        class="
+          line-number-button
+          tw:mx-2 
+          tw:hidden 
+          tw:group-[.is-open]:block 
+          tw:group-[.show-line-numbers]:text-fgColor-link 
+          tw:print:hidden!" 
+        title="Toggle line numbers"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+
+      <button 
+        class="
+          wrap-code-button
+          tw:select-none 
+          tw:mx-2 
+          tw:hidden 
+          tw:group-[.is-open]:block 
+          tw:group-[.is-wrap]:text-fgColor-link 
+          tw:print:hidden!" 
+        title="Toggle code wrap"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+      
+      <button 
+        class="
+          copy-code-button
+          tw:select-none
+          tw:mx-2 
+          tw:hidden
+          tw:group-[.is-open]:block
+          tw:hover:text-fgColor-link 
+          tw:print:hidden!"
+        title="Copy code">
+          <span class="copy-icon tw:block"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
+          <span class="check-icon tw:hidden"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+      </button>
+        
+      <button 
+        class="
+          tw:select-none 
+          tw:mx-2 
+          tw:block 
+          tw:group-[.is-open]:hidden 
+          tw:print:hidden!" 
+        disabled
+        aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
+    </div>
+  </div>
+  <pre style="counter-reset: codeblock;" class="tw:block tw:m-0 tw:p-0"><code 
+    id="codeblock-id-1" 
+    class="
+      chroma 
+      tw:block! 
+      tw:p-0
+      tw:m-0
+      tw:transition-[max-height] 
+      tw:duration-500 
+      tw:ease-in-out 
+      tw:group-[.is-closed]:max-h-0! 
+      tw:group-[.is-wrap]:text-wrap
+      tw:overflow-y-hidden
+      tw:overflow-x-auto
+      tw:scrollbar-thin
+      "><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Singleton</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Singleton</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Singleton</span><span class="p">();</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="nf">Singleton</span><span class="w"> </span><span class="p">(){}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">Singleton</span><span class="w"> </span><span class="nf">getInstance</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">instance</span><span class="p">;</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre>
+</div>
+<p>类加载时就初始化实例，避免了多线程同步问题。天然线程安全。</p>]]></description>
+</item><item>
+    <title>Spring框架</title>
+    <link>http://localhost:1313/blog/posts/spring%E6%A1%86%E6%9E%B6/</link>
+    <pubDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</pubDate><author>
+        <name>evilcurls</name>
+    </author><guid>http://localhost:1313/blog/posts/spring%E6%A1%86%E6%9E%B6/</guid>
+    <description><![CDATA[<p>Spring是一个轻量级的企业级的Java开发框架。主要是用来替代原来更加重量级的企业级Java技术，比如EJB(Enterprise JavaBean)、Java数据对象（Java Data Object）等。Spring的出现极大简化了Java开发。</p>]]></description>
+</item></channel>
+</rss>

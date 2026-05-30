@@ -90,7 +90,7 @@ mainSections = ["posts"]
   [params.header]
     themeChangeMode = "switch"
     [params.header.title]
-      name = "邪恶小卷毛"
+      name = "宫规森严祺贵人不得信口雌黄"
       typeit = false
 
   [params.footer]
