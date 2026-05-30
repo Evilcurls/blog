@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>音频 - 标签 - 邪恶小卷毛</title>
-        <link>http://localhost:50052/tags/%E9%9F%B3%E9%A2%91/</link>
+        <link>http://localhost:50052/blog/tags/%E9%9F%B3%E9%A2%91/</link>
         <description>音频 - 标签 - 邪恶小卷毛</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 21 Oct 2024 22:10:15 &#43;0800</lastBuildDate><atom:link href="http://localhost:50052/tags/%E9%9F%B3%E9%A2%91/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 21 Oct 2024 22:10:15 &#43;0800</lastBuildDate><atom:link href="http://localhost:50052/blog/tags/%E9%9F%B3%E9%A2%91/" rel="self" type="application/rss+xml" /><item>
     <title>声频</title>
-    <link>http://localhost:50052/posts/%E5%A3%B0%E9%A2%91/</link>
+    <link>http://localhost:50052/blog/posts/%E5%A3%B0%E9%A2%91/</link>
     <pubDate>Mon, 21 Oct 2024 22:10:15 &#43;0800</pubDate><author>
         <name>evilcurls</name>
-    </author><guid>http://localhost:50052/posts/%E5%A3%B0%E9%A2%91/</guid>
+    </author><guid>http://localhost:50052/blog/posts/%E5%A3%B0%E9%A2%91/</guid>
     <description><![CDATA[<p>声音是波，描述其有多种指标：</p>
 <p>声强：单位时间内通过单位界面的波的能量流</p>
 <p>声压：波在传播的时候介质中压强的变化</p>

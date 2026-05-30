@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Java - 标签 - 邪恶小卷毛</title>
-        <link>http://localhost:50052/tags/java/</link>
+        <link>http://localhost:50052/blog/tags/java/</link>
         <description>Java - 标签 - 邪恶小卷毛</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</lastBuildDate><atom:link href="http://localhost:50052/tags/java/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</lastBuildDate><atom:link href="http://localhost:50052/blog/tags/java/" rel="self" type="application/rss+xml" /><item>
     <title>Java的几种设计模式</title>
-    <link>http://localhost:50052/posts/java%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+    <link>http://localhost:50052/blog/posts/java%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
     <pubDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</pubDate><author>
         <name>evilcurls</name>
-    </author><guid>http://localhost:50052/posts/java%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+    </author><guid>http://localhost:50052/blog/posts/java%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
     <description><![CDATA[<h1 id="单例模式" class="headerLink">
     <a href="#%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f" class="header-mark"></a>单例模式</h1><p>此篇整理了几种常见的单例模式代码示例，再有面试官让手撕单例模式，便能心中有码，下笔有神。</p>
 <h3 id="为什么要有单例模式" class="headerLink">
@@ -124,10 +124,10 @@
 <p>类加载时就初始化实例，避免了多线程同步问题。天然线程安全。</p>]]></description>
 </item><item>
     <title>Spring框架</title>
-    <link>http://localhost:50052/posts/spring%E6%A1%86%E6%9E%B6/</link>
+    <link>http://localhost:50052/blog/posts/spring%E6%A1%86%E6%9E%B6/</link>
     <pubDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</pubDate><author>
         <name>evilcurls</name>
-    </author><guid>http://localhost:50052/posts/spring%E6%A1%86%E6%9E%B6/</guid>
+    </author><guid>http://localhost:50052/blog/posts/spring%E6%A1%86%E6%9E%B6/</guid>
     <description><![CDATA[<p>Spring是一个轻量级的企业级的Java开发框架。主要是用来替代原来更加重量级的企业级Java技术，比如EJB(Enterprise JavaBean)、Java数据对象（Java Data Object）等。Spring的出现极大简化了Java开发。</p>]]></description>
 </item></channel>
 </rss>

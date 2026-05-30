@@ -1,4 +1,4 @@
-baseURL = "https://evilcurls.github.io/"
+baseURL = "https://evilcurls.github.io/blog/"
 defaultContentLanguage = "zh-cn"
 title = "邪恶小卷毛"
 enableRobotsTXT = true

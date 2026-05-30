@@ -1,23 +1,23 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>随笔 - 分类 - 邪恶小卷毛</title>
-        <link>http://localhost:50052/categories/%E9%9A%8F%E7%AC%94/</link>
+        <link>http://localhost:50052/blog/categories/%E9%9A%8F%E7%AC%94/</link>
         <description>随笔 - 分类 - 邪恶小卷毛</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</lastBuildDate><atom:link href="http://localhost:50052/categories/%E9%9A%8F%E7%AC%94/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</lastBuildDate><atom:link href="http://localhost:50052/blog/categories/%E9%9A%8F%E7%AC%94/" rel="self" type="application/rss+xml" /><item>
     <title>《火车》读后感</title>
-    <link>http://localhost:50052/posts/%E7%81%AB%E8%BD%A6%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
+    <link>http://localhost:50052/blog/posts/%E7%81%AB%E8%BD%A6%E8%AF%BB%E5%90%8E%E6%84%9F/</link>
     <pubDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</pubDate><author>
         <name>evilcurls</name>
-    </author><guid>http://localhost:50052/posts/%E7%81%AB%E8%BD%A6%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
+    </author><guid>http://localhost:50052/blog/posts/%E7%81%AB%E8%BD%A6%E8%AF%BB%E5%90%8E%E6%84%9F/</guid>
     <description><![CDATA[<h2 id="火车读后感" class="headerLink">
     <a href="#%e7%81%ab%e8%bd%a6%e8%af%bb%e5%90%8e%e6%84%9f" class="header-mark"></a>《火车》读后感</h2><p>“耳鬓厮磨”和”你侬我侬”，是老师在讲《倾城之恋》时常出现的两个词，这两个词一度让我认为张爱玲是位像杜拉斯一样吹捧“情欲孵化着青春，也推动着它的死亡”的纯正爱情作家。</p>
 <p>但当我去真正去阅读《倾城之恋》和《沉香屑》时，摘自网上的这段评论及其贴切地写出了我的感受“<em>张爱玲的文字之精密奇绝，使得她的作品很像微雕，能在掌心大的逼仄格局内工笔勾出繁复写实的花样来，将人物与故事复制至极玲珑小巧的道场内，做工还极为牢固，经得起最无情的放大和最刁钻的分解</em>”。这让我不禁想起另外一位在业内以刻画细腻而扬名，在我心中社会派推理小说界登峰造极的女作家--宫部美雪。</p>]]></description>
 </item><item>
     <title>本科毕业论文致谢</title>
-    <link>http://localhost:50052/posts/%E6%9C%AC%E7%A7%91%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E8%87%B4%E8%B0%A2/</link>
+    <link>http://localhost:50052/blog/posts/%E6%9C%AC%E7%A7%91%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E8%87%B4%E8%B0%A2/</link>
     <pubDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</pubDate><author>
         <name>evilcurls</name>
-    </author><guid>http://localhost:50052/posts/%E6%9C%AC%E7%A7%91%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E8%87%B4%E8%B0%A2/</guid>
+    </author><guid>http://localhost:50052/blog/posts/%E6%9C%AC%E7%A7%91%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87%E8%87%B4%E8%B0%A2/</guid>
     <description><![CDATA[<p>​	   逝者如斯夫！ 不舍昼夜。盛夏不重来，一日难再晨，对于我人生旅途中无法再来的四载本科光阴已走到了尾声。</p>
 <p>​	   从剑湖之畔到浮山之麓，承载着我对于青岛大学的种种回忆，回首四年往昔，有“白日放歌须纵酒”的畅快时刻。会发出“自是 人生长恨水长东”的遗憾感慨，体会到“拔剑四顾心茫然”的迷茫心境，但最多的 感受，还是感谢与怀念。</p>]]></description>
 </item></channel>

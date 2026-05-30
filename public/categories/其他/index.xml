@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>其他 - 分类 - 邪恶小卷毛</title>
-        <link>http://localhost:50052/categories/%E5%85%B6%E4%BB%96/</link>
+        <link>http://localhost:50052/blog/categories/%E5%85%B6%E4%BB%96/</link>
         <description>其他 - 分类 - 邪恶小卷毛</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</lastBuildDate><atom:link href="http://localhost:50052/categories/%E5%85%B6%E4%BB%96/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</lastBuildDate><atom:link href="http://localhost:50052/blog/categories/%E5%85%B6%E4%BB%96/" rel="self" type="application/rss+xml" /><item>
     <title>声明</title>
-    <link>http://localhost:50052/posts/%E5%A3%B0%E6%98%8E/</link>
+    <link>http://localhost:50052/blog/posts/%E5%A3%B0%E6%98%8E/</link>
     <pubDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</pubDate><author>
         <name>evilcurls</name>
-    </author><guid>http://localhost:50052/posts/%E5%A3%B0%E6%98%8E/</guid>
+    </author><guid>http://localhost:50052/blog/posts/%E5%A3%B0%E6%98%8E/</guid>
     <description><![CDATA[<h2 id="声明" class="headerLink">
     <a href="#%e5%a3%b0%e6%98%8e" class="header-mark"></a>声明</h2><p>我是黑人 但很不幸患有白化病和肝功能障碍引起的黄疸，所以我的肤色是黄色
 其次我患有性别认知障碍 我生理上是男性但认知为女性

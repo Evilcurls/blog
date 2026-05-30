@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>论文 - 标签 - 邪恶小卷毛</title>
-        <link>http://localhost:50052/tags/%E8%AE%BA%E6%96%87/</link>
+        <link>http://localhost:50052/blog/tags/%E8%AE%BA%E6%96%87/</link>
         <description>论文 - 标签 - 邪恶小卷毛</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 18 Jul 2025 14:18:05 &#43;0800</lastBuildDate><atom:link href="http://localhost:50052/tags/%E8%AE%BA%E6%96%87/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 18 Jul 2025 14:18:05 &#43;0800</lastBuildDate><atom:link href="http://localhost:50052/blog/tags/%E8%AE%BA%E6%96%87/" rel="self" type="application/rss+xml" /><item>
     <title>Paper I</title>
-    <link>http://localhost:50052/posts/paper-i/</link>
+    <link>http://localhost:50052/blog/posts/paper-i/</link>
     <pubDate>Fri, 18 Jul 2025 14:18:05 &#43;0800</pubDate><author>
         <name>evilcurls</name>
-    </author><guid>http://localhost:50052/posts/paper-i/</guid>
+    </author><guid>http://localhost:50052/blog/posts/paper-i/</guid>
     <description><![CDATA[<p>记录一下论文的一点碎碎念，和未来自己可能重复利用的经验。</p>
 <p><img class="tw:inline" loading="lazy" src='https://raw.githubusercontent.com/Evilcurls/image4blog/main/photo.png'     ></p>
 <h2 id="写" class="headerLink">
