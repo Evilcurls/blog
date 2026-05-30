@@ -191,4 +191,4 @@ theme = "DoIt"
   taxonomy = ["HTML", "RSS"]
 
 [permalinks]
-  posts = ":contentbasename"
+  posts = "/posts/:title/"

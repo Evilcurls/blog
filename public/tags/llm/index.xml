@@ -1,24 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>LLM on 邪恶小卷毛</title>
-		<link>http://localhost:1313/tags/llm/</link>
-		<description>Recent content in LLM on 邪恶小卷毛</description>
-		<generator>Hugo</generator>
-		<language>zh-CN</language>
-		
-		
-		
-		
-			<lastBuildDate>Sat, 04 Oct 2025 14:18:49 +0800</lastBuildDate>
-		
-			<atom:link href="http://localhost:1313/tags/llm/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>使用Hugging face</title>
-				<link>http://localhost:1313/llm-kaggle-huggingface/</link>
-				<pubDate>Sat, 04 Oct 2025 14:18:49 +0800</pubDate>
-				<guid>http://localhost:1313/llm-kaggle-huggingface/</guid>
-				<description>&lt;p&gt;这是一个使用别人提供的训练好的现成模型的网站，就算是我要修改也只能微调，但是这应该符合我的方向，从头训练一个模型太大了，不如选用别人预训练完的模型，在特定任务上微调。&lt;/p&gt;</description>
-			</item>
-	</channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>LLM - 标签 - 邪恶小卷毛</title>
+        <link>http://localhost:1313/tags/llm/</link>
+        <description>LLM - 标签 - 邪恶小卷毛</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 04 Oct 2025 14:18:49 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/llm/" rel="self" type="application/rss+xml" /><item>
+    <title>使用Hugging face</title>
+    <link>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8hugging-face/</link>
+    <pubDate>Sat, 04 Oct 2025 14:18:49 &#43;0800</pubDate><author>
+        <name>evilcurls</name>
+    </author><guid>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8hugging-face/</guid>
+    <description><![CDATA[<p>这是一个使用别人提供的训练好的现成模型的网站，就算是我要修改也只能微调，但是这应该符合我的方向，从头训练一个模型太大了，不如选用别人预训练完的模型，在特定任务上微调。</p>]]></description>
+</item></channel>
 </rss>

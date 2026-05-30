@@ -1,24 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>历史 on 邪恶小卷毛</title>
-		<link>http://localhost:1313/tags/%E5%8E%86%E5%8F%B2/</link>
-		<description>Recent content in 历史 on 邪恶小卷毛</description>
-		<generator>Hugo</generator>
-		<language>zh-CN</language>
-		
-		
-		
-		
-			<lastBuildDate>Sat, 06 Jul 2024 13:53:26 +0800</lastBuildDate>
-		
-			<atom:link href="http://localhost:1313/tags/%E5%8E%86%E5%8F%B2/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>唐朝历史</title>
-				<link>http://localhost:1313/tang-dynasty-history/</link>
-				<pubDate>Sat, 06 Jul 2024 13:53:26 +0800</pubDate>
-				<guid>http://localhost:1313/tang-dynasty-history/</guid>
-				<description>&lt;h2 id=&#34;隋末到神龙政变&#34;&gt;隋末到神龙政变&lt;/h2&gt;&#xA;&lt;h3 id=&#34;杨广&#34;&gt;杨广&lt;/h3&gt;&#xA;&lt;p&gt;后世争议不断的隋炀帝 他爹杨坚建国，他二代继承，也二代而亡。&lt;/p&gt;&#xA;&lt;p&gt;史书中曾用“美姿仪，少聪慧”形容他的少年时期，典型的生于忧患死于安乐。按长子继承的传统本来轮不到他接他爹的班，但在身为皇子期间夹着尾巴做人，野心很大，心术不正，又诡于伎俩，觊觎他哥哥杨勇的皇位并取而代之对他来说是理所应当的事。&lt;/p&gt;</description>
-			</item>
-	</channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>历史 - 标签 - 邪恶小卷毛</title>
+        <link>http://localhost:1313/tags/%E5%8E%86%E5%8F%B2/</link>
+        <description>历史 - 标签 - 邪恶小卷毛</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 06 Jul 2024 13:53:26 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%8E%86%E5%8F%B2/" rel="self" type="application/rss+xml" /><item>
+    <title>唐朝历史</title>
+    <link>http://localhost:1313/posts/%E5%94%90%E6%9C%9D%E5%8E%86%E5%8F%B2/</link>
+    <pubDate>Sat, 06 Jul 2024 13:53:26 &#43;0800</pubDate><author>
+        <name>evilcurls</name>
+    </author><guid>http://localhost:1313/posts/%E5%94%90%E6%9C%9D%E5%8E%86%E5%8F%B2/</guid>
+    <description><![CDATA[<h2 id="隋末到神龙政变" class="headerLink">
+    <a href="#%e9%9a%8b%e6%9c%ab%e5%88%b0%e7%a5%9e%e9%be%99%e6%94%bf%e5%8f%98" class="header-mark"></a>隋末到神龙政变</h2><h3 id="杨广" class="headerLink">
+    <a href="#%e6%9d%a8%e5%b9%bf" class="header-mark"></a>杨广</h3><p>后世争议不断的隋炀帝 他爹杨坚建国，他二代继承，也二代而亡。</p>
+<p>史书中曾用“美姿仪，少聪慧”形容他的少年时期，典型的生于忧患死于安乐。按长子继承的传统本来轮不到他接他爹的班，但在身为皇子期间夹着尾巴做人，野心很大，心术不正，又诡于伎俩，觊觎他哥哥杨勇的皇位并取而代之对他来说是理所应当的事。</p>]]></description>
+</item></channel>
 </rss>
