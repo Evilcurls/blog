@@ -75,6 +75,230 @@ graph TD
 
 ---
 
+## 面试速记：PT / SFT / RM / PPO / DPO / GRPO 怎么讲
+
+如果面试官问大模型训练和对齐流程，不要一上来背技术名。先按一条主线讲：
+
+```text
+PT / 预训练：学语言和领域知识
+SFT / 监督微调：学会按指令回答
+偏好数据：告诉模型同一个问题下哪个回答更好
+Reward Model：把回答质量变成一个标量分数
+PPO / DPO / GRPO：让模型更偏向高质量回答，完成对齐
+```
+
+一句话总括可以这样说：
+
+> PT 让模型有知识，SFT 让模型会对话，Reward Model 学会打分，PPO、DPO、GRPO 则是在不同资源和数据条件下把模型往人类偏好或任务奖励上对齐。
+
+### 1. PT：预训练 / 增量预训练
+
+PT 的目标是 **next-token prediction**，也就是给定前面的 token，预测下一个 token：
+
+$$P_\theta(x_t \mid x_{<t})$$
+
+损失函数是标准交叉熵 / 负对数似然：
+
+$$\mathcal{L}_{\text{PT}} = -\sum_t \log P_\theta(x_t \mid x_{<t})$$
+
+在 MedicalGPT 里，增量预训练就是继续用医学语料训练这个目标，让 Qwen 这类通用基座模型补充医疗领域知识。它不是教模型怎么回答用户，而是让模型先把医学术语、疾病描述、问诊表达这些分布学进去。
+
+面试口径：
+
+> 预训练本质上是因果语言模型的 next-token prediction。增量预训练是在通用模型基础上继续用领域语料训练同样的 CLM loss，让模型补充领域知识，但它还不能保证模型按照指令稳定回答。
+
+### 2. SFT：监督微调
+
+SFT 使用指令-答案数据，让模型模仿高质量回答。数据通常长这样：
+
+```text
+prompt: 请解释高血压的常见原因
+answer: 高血压可能与遗传、饮食、肥胖、压力等因素有关...
+```
+
+损失函数依然是 token-level 交叉熵，但通常只在 assistant answer 部分计算 loss：
+
+$$\mathcal{L}_{\text{SFT}} = -\sum_t \log P_\theta(y_t \mid x, y_{<t})$$
+
+如果把用户输入部分 mask 掉，可以写成：
+
+$$\mathcal{L}_{\text{SFT}} = -\sum_t \mathbb{1}[t \in \text{assistant}] \log P_\theta(x_t \mid x_{<t})$$
+
+面试口径：
+
+> SFT 可以理解成行为克隆。它用高质量指令-答案对让 base model 学会遵循指令、保持回答格式和对话风格。它的问题是只学习 chosen answer 本身，不知道两个回答之间谁更好，所以后面还需要偏好对齐。
+
+### 3. 偏好数据和 Reward Model
+
+偏好数据不是单个标准答案，而是一组三元组：
+
+```text
+x: prompt
+y_w: chosen / winner / 更好的回答
+y_l: rejected / loser / 更差的回答
+```
+
+Reward Model 输入 `prompt + response`，输出一个标量分数：
+
+$$r_\phi(x, y) \in \mathbb{R}$$
+
+训练目标是让 chosen 的分数高于 rejected。常用 Bradley-Terry pairwise loss：
+
+$$\mathcal{L}_{\text{RM}} = -\log \sigma(r_\phi(x, y_w) - r_\phi(x, y_l))$$
+
+直觉很简单：
+
+```text
+如果 r(chosen) 明显大于 r(rejected)，loss 小。
+如果 r(rejected) 反而更高，loss 大。
+```
+
+模型结构上，Reward Model 往往是一个预训练 / SFT backbone 加一个 scalar reward head，不再输出词表概率，而是输出一个分数。
+
+面试口径：
+
+> Reward Model 是用 chosen/rejected 偏好对训练出来的评分模型。它输入 prompt 和 response，输出一个标量 reward，训练时用 pairwise ranking loss 让 chosen 的分数高于 rejected。训练好后，它可以作为 PPO 里的奖励函数，评价当前 policy 生成的回答。
+
+### 4. PPO：经典 RLHF
+
+PPO 是传统 RLHF 中最经典的一条路线。它通常包含四个模型：
+
+| 模型 | 作用 |
+|------|------|
+| Policy / Actor | 要训练的大模型，负责生成回答 |
+| Reference Model | 冻结的 SFT 模型，用 KL 约束 policy 不要跑偏 |
+| Reward Model | 冻结的评分模型，给回答打分 |
+| Value / Critic | 估计状态价值，用来计算 advantage |
+
+流程是：
+
+```text
+1. 从 prompt 数据集中采样问题 x
+2. policy model 生成回答 y
+3. reward model 给回答打分 r(x, y)
+4. 加上 KL 惩罚，避免模型偏离 reference model
+5. 用 PPO clipped objective 更新 policy
+```
+
+实际奖励通常写成：
+
+$$R = r_{\text{RM}}(x, y) - \beta \mathrm{KL}(\pi_\theta(y \mid x) \parallel \pi_{\text{ref}}(y \mid x))$$
+
+PPO 的核心目标是 clipped objective：
+
+$$\mathcal{L}_{\text{PPO}} = -\mathbb{E}\left[\min\left(\rho_t A_t, \mathrm{clip}(\rho_t, 1-\epsilon, 1+\epsilon) A_t\right)\right]$$
+
+其中：
+
+$$\rho_t = \frac{\pi_\theta(a_t \mid s_t)}{\pi_{\text{old}}(a_t \mid s_t)}$$
+
+这里的 `ratio` 表示新策略相对旧策略变化了多少，`advantage` 表示这个动作比预期好不好，`clip` 用来限制每次更新幅度，避免策略一步改太猛。
+
+面试口径：
+
+> PPO 里 policy 负责生成回答，Reward Model 负责评价回答，Value Model 估计 advantage，Reference Model 用 KL 惩罚限制模型不要偏离 SFT 模型太远。PPO 的核心是根据奖励模型的分数更新 policy，同时用 clipped objective 保证训练稳定。
+
+在这个项目里需要注意一点：文件名是 `ppo_training.py`，但当前文章分析到的具体实现更接近 RLOO。面试讲理论时可以讲 PPO 的标准 RLHF 框架；讲项目实现时再补一句“我也关注了 RLOO 这种去掉 value model 的简化策略”。
+
+### 5. DPO：直接偏好优化
+
+DPO 的目标是简化 PPO。它不显式训练 Reward Model，也不需要在线 RL 和 Value Model，只需要：
+
+```text
+1. Policy Model：要训练的模型
+2. Reference Model：冻结的 SFT 模型
+3. Preference Pair：chosen / rejected 偏好数据
+```
+
+DPO 的核心思想是：如果 chosen 比 rejected 好，那么当前模型应该比 reference model 更倾向 chosen，而不是 rejected。
+
+损失函数：
+
+$$\mathcal{L}_{\text{DPO}} = -\log \sigma\left(\beta\left[(\log \pi_\theta(y_w \mid x) - \log \pi_{\text{ref}}(y_w \mid x)) - (\log \pi_\theta(y_l \mid x) - \log \pi_{\text{ref}}(y_l \mid x))\right]\right)$$
+
+其中：
+
+```text
+πθ：当前训练模型
+πref：冻结参考模型
+β：控制偏离 reference model 的强度
+```
+
+面试口径：
+
+> DPO 是一种直接从偏好数据优化策略模型的方法。它绕过了显式 Reward Model 和 PPO 的复杂强化学习过程，直接提高 chosen response 的相对概率，降低 rejected response 的相对概率，同时通过 reference model 控制模型不要偏离 SFT 模型太远。
+
+它和 SFT、PPO 的区别可以这么说：
+
+| 方法 | 核心区别 |
+|------|----------|
+| SFT | 只学 chosen answer，不看 rejected |
+| DPO | 同时看 chosen 和 rejected，学习相对偏好 |
+| PPO | 先训练 Reward Model，再用 RL 优化 policy |
+
+### 6. GRPO：组内相对策略优化
+
+GRPO 可以理解成 PPO 的一种简化。它的关键点是：
+
+```text
+不用单独的 Value Model / Critic。
+对同一个 prompt 采样多个回答。
+用这一组回答的相对奖励计算 advantage。
+```
+
+流程：
+
+```text
+1. 给同一个问题 x，让模型生成 G 个回答
+2. 每个回答得到一个 reward
+3. 在组内计算均值和标准差
+4. 高于组内平均的回答 advantage 为正
+5. 低于组内平均的回答 advantage 为负
+6. 用类似 PPO 的 clipped objective 更新模型
+```
+
+组内 advantage 常写成：
+
+$$A_i = \frac{R_i - \mathrm{mean}(\{R_j\}_{j=1}^{G})}{\mathrm{std}(\{R_j\}_{j=1}^{G})}$$
+
+GRPO 的目标函数可以粗略理解为：
+
+$$\mathcal{L}_{\text{GRPO}} = -\mathbb{E}\left[\min\left(\rho_i A_i, \mathrm{clip}(\rho_i, 1-\epsilon, 1+\epsilon)A_i\right) - \beta \mathrm{KL}(\pi_\theta \parallel \pi_{\text{ref}})\right]$$
+
+面试口径：
+
+> GRPO 和 PPO 类似，都是策略优化方法，但 GRPO 不额外训练 value model，而是对同一个 prompt 采样多个回答，通过组内 reward 的均值和方差计算相对 advantage。这样可以降低训练成本，尤其适合数学、代码、推理这类可以用规则或结果验证打分的任务。
+
+GRPO 的 reward 可以来自规则验证、Reward Model、格式奖励或人工偏好。在推理任务中，常见做法是同时给准确性奖励和格式奖励，例如答案是否正确、是否按 `<think>` 和 `<answer>` 格式输出。
+
+### 7. 一张表背下来
+
+| 阶段 | 数据 | 训练目标 | 是否需要 RM | 是否需要参考模型 | 面试关键词 |
+|------|------|----------|--------------|------------------|------------|
+| PT | 无标注文本 | next-token prediction | 否 | 否 | 学知识、学语言分布 |
+| SFT | prompt-answer | 模仿标准答案 | 否 | 否 | 指令跟随、格式学习 |
+| RM | chosen/rejected | 好回答分数高于坏回答 | 本身就是 RM | 否 | Bradley-Terry、pairwise loss |
+| PPO | prompt + RM reward | 最大化 reward，KL 约束 | 是 | 是 | actor、critic、reward、reference |
+| DPO | chosen/rejected | 直接优化偏好概率 | 否 | 是 | 直接偏好优化、离线对齐 |
+| GRPO | prompt + 多个采样回答 | 组内相对 reward 优化 | 可选 | 通常需要 | 无 critic、组内 advantage |
+
+### 8. 最好背的类比
+
+```text
+PT：读大量书，学语言和知识。
+SFT：看标准答案，学怎么回答。
+Reward Model：学会当评分老师。
+PPO：学生写答案，评分老师打分，学生按分数改，但不能改太离谱。
+DPO：不用评分老师，直接告诉学生 A 答案比 B 答案好。
+GRPO：同一道题写多个答案，在这一组里比较谁更好，再强化好的答案。
+```
+
+如果明天只讲一段，可以这样说：
+
+> 大模型对齐一般先 PT，再 SFT，再做偏好对齐。PT 用 next-token loss 学语言和知识；SFT 用指令-答案数据做监督学习，让模型学会按指令回答。传统 RLHF 会先用 chosen/rejected 偏好对训练 Reward Model，loss 是 $-\log\sigma(r_w-r_l)$，再用 PPO 根据奖励模型分数更新 policy，同时用 reference model 做 KL 约束、value model 估计 advantage。DPO 则不显式训练 Reward Model，而是直接在偏好对上提高 chosen 相对 rejected 的概率。GRPO 和 PPO 类似，但不训练 value model，而是对同一个 prompt 采样多个回答，用组内相对奖励计算 advantage，所以资源成本更低，也更适合推理类任务。
+
+---
+
 ## 1. `template.py` — 对话模板系统
 
 > [!IMPORTANT]

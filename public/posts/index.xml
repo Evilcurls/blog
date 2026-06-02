@@ -9,15 +9,20 @@
     <pubDate>Sat, 30 May 2026 16:24:25 &#43;0800</pubDate><author>
         <name>evilcurls</name>
     </author><guid>http://localhost:1313/blog/posts/mathematical-principles-in-reinforcement-learning/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[<h3 id="强化学习背后的数学原理" class="headerLink">
+    <a href="#%e5%bc%ba%e5%8c%96%e5%ad%a6%e4%b9%a0%e8%83%8c%e5%90%8e%e7%9a%84%e6%95%b0%e5%ad%a6%e5%8e%9f%e7%90%86" class="header-mark"></a>强化学习背后的数学原理</h3><p>研究中的焦虑大部分来自于对于时间速成的胡乱分配，说一天看完论文，可能一天Intro都看不完，但是稳扎稳打可能两三天就看完了。</p>
+<p>Time:course 10h  其他基础和编程加起来大概40小时</p>
+<h3 id="lecture-i--basic-concept-in-reinforcement-learning" class="headerLink">
+    <a href="#lecture-i--basic-concept-in-reinforcement-learning" class="header-mark"></a>Lecture I  basic concept in reinforcement learning</h3><p>1.state:status of agent with respect to  environment</p>
+<p>2.state space : set of state （空间是定义了规则的集合）</p>
+<p>3.Action：</p>]]></description>
 </item><item>
     <title>博客二次实现，我会怀念Docsify的</title>
     <link>http://localhost:1313/blog/posts/%E5%8D%9A%E5%AE%A2%E4%BA%8C%E6%AC%A1%E5%AE%9E%E7%8E%B0%E6%88%91%E4%BC%9A%E6%80%80%E5%BF%B5docsify%E7%9A%84/</link>
     <pubDate>Sat, 30 May 2026 13:53:26 &#43;0800</pubDate><author>
         <name>evilcurls</name>
     </author><guid>http://localhost:1313/blog/posts/%E5%8D%9A%E5%AE%A2%E4%BA%8C%E6%AC%A1%E5%AE%9E%E7%8E%B0%E6%88%91%E4%BC%9A%E6%80%80%E5%BF%B5docsify%E7%9A%84/</guid>
-    <description><![CDATA[<hr>
-<p>起因是在网上搜MedicalGPT的时候看到了一个哥们使用DoIT主题贼炫酷，然后赶紧clone code让Antigravity给我原来的移植，没想到做的很成功但是部署到Github Pages上难点重重。我打算先写我学到的东西，然后再讲困难。</p>]]></description>
+    <description><![CDATA[<p>起因是在网上搜MedicalGPT的时候看到了一个哥们使用DoIT主题贼炫酷，然后赶紧clone code让Antigravity给我原来的移植，没想到做的很成功但是部署到Github Pages上难点重重。我打算先写我学到的东西，然后再讲困难。</p>]]></description>
 </item><item>
     <title>MedicalGPT分析</title>
     <link>http://localhost:1313/blog/posts/medicalgpt%E5%88%86%E6%9E%90/</link>

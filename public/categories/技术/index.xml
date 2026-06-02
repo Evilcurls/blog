@@ -9,8 +9,7 @@
     <pubDate>Sat, 30 May 2026 13:53:26 &#43;0800</pubDate><author>
         <name>evilcurls</name>
     </author><guid>http://localhost:1313/blog/posts/%E5%8D%9A%E5%AE%A2%E4%BA%8C%E6%AC%A1%E5%AE%9E%E7%8E%B0%E6%88%91%E4%BC%9A%E6%80%80%E5%BF%B5docsify%E7%9A%84/</guid>
-    <description><![CDATA[<hr>
-<p>起因是在网上搜MedicalGPT的时候看到了一个哥们使用DoIT主题贼炫酷，然后赶紧clone code让Antigravity给我原来的移植，没想到做的很成功但是部署到Github Pages上难点重重。我打算先写我学到的东西，然后再讲困难。</p>]]></description>
+    <description><![CDATA[<p>起因是在网上搜MedicalGPT的时候看到了一个哥们使用DoIT主题贼炫酷，然后赶紧clone code让Antigravity给我原来的移植，没想到做的很成功但是部署到Github Pages上难点重重。我打算先写我学到的东西，然后再讲困难。</p>]]></description>
 </item><item>
     <title>MedicalGPT分析</title>
     <link>http://localhost:1313/blog/posts/medicalgpt%E5%88%86%E6%9E%90/</link>
