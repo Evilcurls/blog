@@ -1,17 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>音频 - 标签 - 邪恶小卷毛</title>
-        <link>http://localhost:1313/blog/tags/%E9%9F%B3%E9%A2%91/</link>
-        <description>音频 - 标签 - 邪恶小卷毛</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 21 Oct 2024 22:10:15 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/%E9%9F%B3%E9%A2%91/" rel="self" type="application/rss+xml" /><item>
-    <title>声频</title>
-    <link>http://localhost:1313/blog/posts/%E5%A3%B0%E9%A2%91/</link>
-    <pubDate>Mon, 21 Oct 2024 22:10:15 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:1313/blog/posts/%E5%A3%B0%E9%A2%91/</guid>
-    <description><![CDATA[<p>声音是波，描述其有多种指标：</p>
-<p>声强：单位时间内通过单位界面的波的能量流</p>
-<p>声压：波在传播的时候介质中压强的变化</p>
-<p>人是万物之灵，声音在给人听的时候主观感受并不是成线性关系的，所以取对数声压级作为指标，也就是常说的db</p>]]></description>
-</item></channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>音频 on 邪恶小卷毛</title><link>https://evilcurls.github.io/blog/tags/%E9%9F%B3%E9%A2%91/</link><description>Recent content in 音频 on 邪恶小卷毛</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 30 May 2026 11:48:35 +0800</lastBuildDate><atom:link href="https://evilcurls.github.io/blog/tags/%E9%9F%B3%E9%A2%91/index.xml" rel="self" type="application/rss+xml"/><item><title>声频</title><link>https://evilcurls.github.io/blog/posts/%E5%A3%B0%E9%A2%91/</link><pubDate>Mon, 21 Oct 2024 22:10:15 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/%E5%A3%B0%E9%A2%91/</guid><description>&lt;p>声音是波，描述其有多种指标：&lt;/p>
+&lt;p>声强：单位时间内通过单位界面的波的能量流&lt;/p>
+&lt;p>声压：波在传播的时候介质中压强的变化&lt;/p>
+&lt;p>人是万物之灵，声音在给人听的时候主观感受并不是成线性关系的，所以取对数声压级作为指标，也就是常说的db&lt;/p></description></item></channel></rss>

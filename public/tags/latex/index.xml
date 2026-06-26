@@ -1,16 +1,7 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>LaTeX - 标签 - 邪恶小卷毛</title>
-        <link>http://localhost:1313/blog/tags/latex/</link>
-        <description>LaTeX - 标签 - 邪恶小卷毛</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 05 Mar 2025 21:56:40 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/latex/" rel="self" type="application/rss+xml" /><item>
-    <title>Latex 用法</title>
-    <link>http://localhost:1313/blog/posts/latex-%E7%94%A8%E6%B3%95/</link>
-    <pubDate>Wed, 05 Mar 2025 21:56:40 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:1313/blog/posts/latex-%E7%94%A8%E6%B3%95/</guid>
-    <description><![CDATA[<p>跟着B站视频[](<a href="https://www.bilibili.com/video/BV1no4y1U7At/?spm_id_from=333.337.search-card.all.click&amp;vd_source=3ecda433bad27ee4e395ad1ffebdd84b" target="_blank" rel="noopener noreferrer">LaTeX公式保姆级教程 (以及其中的各种细节)_哔哩哔哩_bilibili</a>)练的</p>
-<h2 id="希腊字母" class="headerLink">
-    <a href="#%e5%b8%8c%e8%85%8a%e5%ad%97%e6%af%8d" class="header-mark"></a>希腊字母</h2><p>​	反斜杠+希腊字母的英文名</p>]]></description>
-</item></channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LaTeX on 邪恶小卷毛</title><link>https://evilcurls.github.io/blog/tags/latex/</link><description>Recent content in LaTeX on 邪恶小卷毛</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 30 May 2026 11:48:35 +0800</lastBuildDate><atom:link href="https://evilcurls.github.io/blog/tags/latex/index.xml" rel="self" type="application/rss+xml"/><item><title>Latex 用法</title><link>https://evilcurls.github.io/blog/posts/latex-%E7%94%A8%E6%B3%95/</link><pubDate>Wed, 05 Mar 2025 21:56:40 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/latex-%E7%94%A8%E6%B3%95/</guid><description>&lt;p>跟着B站视频[](&lt;a href="https://www.bilibili.com/video/BV1no4y1U7At/?spm_id_from=333.337.search-card.all.click&amp;amp;vd_source=3ecda433bad27ee4e395ad1ffebdd84b">LaTeX公式保姆级教程 (以及其中的各种细节)_哔哩哔哩_bilibili&lt;/a>)练的&lt;/p>
+&lt;h2 id="希腊字母">希腊字母&lt;/h2>
+&lt;p>​	反斜杠+希腊字母的英文名&lt;/p>
+&lt;p>​	&lt;img src="https://raw.githubusercontent.com/Evilcurls/image4blog/main/%E5%B8%8C%E8%85%8A%E5%AD%97%E6%AF%8D.png" alt="">&lt;/p>
+&lt;h2 id="上下标">上下标&lt;/h2>
+&lt;p>​	与word一致&lt;/p>
+&lt;p>​		a^2 a_i 直立体写法：x_{\text i}&lt;/p></description></item></channel></rss>

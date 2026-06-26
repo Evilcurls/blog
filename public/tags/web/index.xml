@@ -1,26 +1,5 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Web - 标签 - 邪恶小卷毛</title>
-        <link>http://localhost:1313/blog/tags/web/</link>
-        <description>Web - 标签 - 邪恶小卷毛</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 26 Jun 2024 01:30:52 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/web/" rel="self" type="application/rss+xml" /><item>
-    <title>Blog实现</title>
-    <link>http://localhost:1313/blog/posts/blog%E5%AE%9E%E7%8E%B0/</link>
-    <pubDate>Wed, 26 Jun 2024 01:30:52 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:1313/blog/posts/blog%E5%AE%9E%E7%8E%B0/</guid>
-    <description><![CDATA[<p>好记性不如烂笔头，好多碎碎念的东西过了两天就忘得一干二净了属实可惜。</p>
-<h2 id="docsify" class="headerLink">
-    <a href="#docsify" class="header-mark"></a>docsify</h2><h3 id="是啥" class="headerLink">
-    <a href="#%e6%98%af%e5%95%a5" class="header-mark"></a>是啥</h3><p>网页是随着主人的意愿制作而成的如同一栋房屋，html是其中的骨架，而docsify是装修公司，他能按照主人的意愿完成房屋的装饰过程。 其实就是把你的一堆markdown文档渲染成一个网页了啦。</p>
-<p>抄了个介绍，优点轻/易/主题多</p>]]></description>
-</item><item>
-    <title>制作课题组主页和音色评价网站</title>
-    <link>http://localhost:1313/blog/posts/%E5%88%B6%E4%BD%9C%E8%AF%BE%E9%A2%98%E7%BB%84%E4%B8%BB%E9%A1%B5%E5%92%8C%E9%9F%B3%E8%89%B2%E8%AF%84%E4%BB%B7%E7%BD%91%E7%AB%99/</link>
-    <pubDate>Tue, 25 Jun 2024 20:43:41 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:1313/blog/posts/%E5%88%B6%E4%BD%9C%E8%AF%BE%E9%A2%98%E7%BB%84%E4%B8%BB%E9%A1%B5%E5%92%8C%E9%9F%B3%E8%89%B2%E8%AF%84%E4%BB%B7%E7%BD%91%E7%AB%99/</guid>
-    <description><![CDATA[<h2 id="从服务器到域名" class="headerLink">
-    <a href="#%e4%bb%8e%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%88%b0%e5%9f%9f%e5%90%8d" class="header-mark"></a>从服务器到域名</h2><p>​	当然凡事都有快捷的方法，站在巨人的肩膀上，比如直接将网页布置在第三方网站比如某某博客，githubpages上面，是方便但是受限也不少，比如自定义程度差，网页不设立cdn能不能访问纯是抽奖。以下说的是流程基本靠自己的方法：</p>]]></description>
-</item></channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on 邪恶小卷毛</title><link>https://evilcurls.github.io/blog/tags/web/</link><description>Recent content in Web on 邪恶小卷毛</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 30 May 2026 16:25:23 +0800</lastBuildDate><atom:link href="https://evilcurls.github.io/blog/tags/web/index.xml" rel="self" type="application/rss+xml"/><item><title>Blog实现</title><link>https://evilcurls.github.io/blog/posts/blog%E5%AE%9E%E7%8E%B0/</link><pubDate>Wed, 26 Jun 2024 01:30:52 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/blog%E5%AE%9E%E7%8E%B0/</guid><description>&lt;p>好记性不如烂笔头，好多碎碎念的东西过了两天就忘得一干二净了属实可惜。&lt;/p>
+&lt;h2 id="docsify">docsify&lt;/h2>
+&lt;h3 id="是啥">是啥&lt;/h3>
+&lt;p>网页是随着主人的意愿制作而成的如同一栋房屋，html是其中的骨架，而docsify是装修公司，他能按照主人的意愿完成房屋的装饰过程。 其实就是把你的一堆markdown文档渲染成一个网页了啦。&lt;/p></description></item><item><title>制作课题组主页和音色评价网站</title><link>https://evilcurls.github.io/blog/posts/%E5%88%B6%E4%BD%9C%E8%AF%BE%E9%A2%98%E7%BB%84%E4%B8%BB%E9%A1%B5%E5%92%8C%E9%9F%B3%E8%89%B2%E8%AF%84%E4%BB%B7%E7%BD%91%E7%AB%99/</link><pubDate>Tue, 25 Jun 2024 20:43:41 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/%E5%88%B6%E4%BD%9C%E8%AF%BE%E9%A2%98%E7%BB%84%E4%B8%BB%E9%A1%B5%E5%92%8C%E9%9F%B3%E8%89%B2%E8%AF%84%E4%BB%B7%E7%BD%91%E7%AB%99/</guid><description>&lt;h2 id="从服务器到域名">从服务器到域名&lt;/h2>
+&lt;p>​	当然凡事都有快捷的方法，站在巨人的肩膀上，比如直接将网页布置在第三方网站比如某某博客，githubpages上面，是方便但是受限也不少，比如自定义程度差，网页不设立cdn能不能访问纯是抽奖。以下说的是流程基本靠自己的方法：&lt;/p></description></item></channel></rss>

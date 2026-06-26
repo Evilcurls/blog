@@ -1,15 +1,2 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>面试 - 标签 - 邪恶小卷毛</title>
-        <link>http://localhost:1313/blog/tags/%E9%9D%A2%E8%AF%95/</link>
-        <description>面试 - 标签 - 邪恶小卷毛</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 13 Nov 2025 16:54:21 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/blog/tags/%E9%9D%A2%E8%AF%95/" rel="self" type="application/rss+xml" /><item>
-    <title>被问过的几个面试题</title>
-    <link>http://localhost:1313/blog/posts/%E8%A2%AB%E9%97%AE%E8%BF%87%E7%9A%84%E5%87%A0%E4%B8%AA%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
-    <pubDate>Thu, 13 Nov 2025 16:54:21 &#43;0800</pubDate><author>
-        <name>evilcurls</name>
-    </author><guid>http://localhost:1313/blog/posts/%E8%A2%AB%E9%97%AE%E8%BF%87%E7%9A%84%E5%87%A0%E4%B8%AA%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
-    <description><![CDATA[<h2 id="1当矩阵是百万级规模时如何用概率论快速判断-ab--c" class="headerLink">
-    <a href="#1%e5%bd%93%e7%9f%a9%e9%98%b5%e6%98%af%e7%99%be%e4%b8%87%e7%ba%a7%e8%a7%84%e6%a8%a1%e6%97%b6%e5%a6%82%e4%bd%95%e7%94%a8%e6%a6%82%e7%8e%87%e8%ae%ba%e5%bf%ab%e9%80%9f%e5%88%a4%e6%96%ad-ab--c" class="header-mark"></a>1.当矩阵是百万级规模时，如何用概率论快速判断 (AB = C)？</h2><p>在大规模矩阵计算的场景中（比如 (n = 10^6)），直接计算矩阵乘积 AB 再与 C 比较是完全不现实的 —— 毕竟 (n^3) 的复杂度会让超级计算机都望而却步。这时候，<strong>概率论方法</strong>就能帮我们在可接受的时间内，以极高的概率完成判断。</p>]]></description>
-</item></channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>面试 on 邪恶小卷毛</title><link>https://evilcurls.github.io/blog/tags/%E9%9D%A2%E8%AF%95/</link><description>Recent content in 面试 on 邪恶小卷毛</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Sat, 30 May 2026 11:48:35 +0800</lastBuildDate><atom:link href="https://evilcurls.github.io/blog/tags/%E9%9D%A2%E8%AF%95/index.xml" rel="self" type="application/rss+xml"/><item><title>被问过的几个面试题</title><link>https://evilcurls.github.io/blog/posts/%E8%A2%AB%E9%97%AE%E8%BF%87%E7%9A%84%E5%87%A0%E4%B8%AA%E9%9D%A2%E8%AF%95%E9%A2%98/</link><pubDate>Thu, 13 Nov 2025 16:54:21 +0800</pubDate><guid>https://evilcurls.github.io/blog/posts/%E8%A2%AB%E9%97%AE%E8%BF%87%E7%9A%84%E5%87%A0%E4%B8%AA%E9%9D%A2%E8%AF%95%E9%A2%98/</guid><description>&lt;h2 id="1当矩阵是百万级规模时如何用概率论快速判断-ab--c">1.当矩阵是百万级规模时，如何用概率论快速判断 (AB = C)？&lt;/h2>
+&lt;p>在大规模矩阵计算的场景中（比如 (n = 10^6)），直接计算矩阵乘积 AB 再与 C 比较是完全不现实的 —— 毕竟 (n^3) 的复杂度会让超级计算机都望而却步。这时候，&lt;strong>概率论方法&lt;/strong>就能帮我们在可接受的时间内，以极高的概率完成判断。&lt;/p></description></item></channel></rss>
