@@ -7,6 +7,9 @@ enableEmoji = true
 theme = "DoIt"
 mainSections = ["posts"]
 
+[frontmatter]
+  lastmod = [":fileModTime", "lastmod", ":default"]
+
 [languages]
   [languages.zh-cn]
     weight = 1
