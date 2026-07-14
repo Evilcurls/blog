@@ -3,7 +3,7 @@ title: "质量评估笔记"
 date: 2026-06-12T16:00:53+08:00
 draft: false
 categories: ["笔记"]
-tags: ["质量评估"]["视频质量评估"]["音频质量评估"]
+tags: ["质量评估","视频质量评估","音频质量评估"]
 lightgallery: true
 ---
 
