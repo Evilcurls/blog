@@ -21,7 +21,7 @@ lightgallery: true
 
 介绍UGC视频的意义，以ACM2023的论文：《A Deep Learning based No-reference Quality Assessment Model
 
-for UGC Videos》为切入点开始介绍：在广义上$$Q = f(C, S, D)$$，其中**$Q$ (Quality)**: 视频质量，**$C$ (Content)**: 视频内容（或内容丰富度/复杂度），**$S$ (Stability)**: 视频稳定性，**$D$​ (Distortion)**: 视频失真程度，视频质量由这些所决定
+for UGC Videos》为切入点开始介绍：在广义上$$Q = f(C, S, D)$$，其中$Q$ (Quality)**: 视频质量，**$C$ (Content)**: 视频内容（或内容丰富度/复杂度），**$S$ (Stability)**: 视频稳定性，**$D$​ (Distortion): 视频失真程度，视频质量由这些所决定
 
 该论文针对时间-空间进行建模 完成评价，突出特点在于对于UCG视频，传统的视频评估中叫做有参考，也就是把压缩到流媒体上的视频和原视频进行比对，但是UCG视频天生就不存在完美的原版，所以引入了无参考的方式进行评价。
 
@@ -190,3 +190,13 @@ for UGC Videos》为切入点开始介绍：在广义上$$Q = f(C, S, D)$$，其
 ![](https://raw.githubusercontent.com/Evilcurls/image4blog/main/20260714114023614.png)
 
 接下来计划两个方向，第一个呢，是将搜集到的数据集交由两个方法都测，然后找出不一致的点，发现原因  第二个，是将两个串联在一起，缝合出一个新的评测系统。
+
+目前找到的数据集:
+
+| 时间 | 数据集 | 评价对象与监督单位 | 主要标签 / 字段 | 一条数据大致包含 | 适合用途 | 下载入口 |
+|---|---|---|---|---|---|---|
+| 2021 | **NISQA** | 单条退化语音；utterance-level 主观评分 | `MOS`、`Noisiness`、`Discontinuity`、`Coloration`、`Loudness` | 音频路径 `filepath_deg` + 总体 MOS + 4 个退化维度分数 | 传统语音质量评价 baseline；通信失真、网络编码、丢包和噪声研究 | [GitHub：代码与数据下载说明](https://github.com/gabrielmittag/NISQA) |
+| 2022 | **BVCC / VoiceMOS 2022** | TTS/VC 系统生成的单条语音；utterance-level MOS | `System ID`、音频路径、`MOS` | `system_utterance.wav` + 生成系统标识 + 1–5 分 MOS | MOS predictor 训练；比较不同 TTS/VC 系统；经典生成语音质量 baseline | [Zenodo 官方数据](https://zenodo.org/records/10691660)；[Hugging Face 社区加载页](https://huggingface.co/datasets/sarulab-speech/bvcc-voicemos2022) |
+| 2025 | **Audiobox Aesthetics** | speech、music、sound 音频片段；每个维度保留多位标注者评分 | `Production Quality`、`Production Complexity`、`Content Enjoyment`、`Content Usefulness` | 音频标识 + 4 个审美维度 + 每个维度的标注者原始分 / 均值 | 生成式音频审美评价；分析制作质量与内容体验 | [Hugging Face 官方仓库](https://huggingface.co/facebook/audiobox-aesthetics) |
+| 2025 | **QualiSpeech** | 单条语音；数值评分与自然语言 reasoning 联合标注 | `Noise`、`Distortion`、`Speed`、`Continuity`、`Naturalness`、`Listening effort`、`Overall`，以及低层描述和总体解释 | `audio_path` + 7 个分数 + 噪声/失真/语速/连续性描述 + voice feeling + reasoning | 研究“为什么质量不好”；训练可解释语音质量评价模型 | [Hugging Face 数据集](https://huggingface.co/datasets/tsinghua-ee/QualiSpeech) |
+| 2025 | **SpeechEval** | 单条或成对语音；自然语言任务标注 | 8 个质量维度：Overall Quality、Intelligibility、Distortion、Speech Rate、Dynamic Range、Emotional Impact、Artistic Expression、Subjective Experience | 音频 + 任务指令 + 多维判断 + 自然语言解释；也包含比较、改进建议和 deepfake 检测任务 | Speech LLM / LLM-as-Judge 训练；多任务、可解释质量评价 | [Hugging Face 数据集](https://huggingface.co/datasets/Hui519/SpeechEval) |
