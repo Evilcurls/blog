@@ -11,43 +11,95 @@ lightgallery: true
 
 鉴于未来课题组的方向原有的传承是视频质量评估，我打算靠着在暑假留校的时间，完成整个体系的入门工作，我对我自己的要求就是能说出自己的合理最小闭环
 
-### 视频质量评估
+### 质量评估基本功
 
-#### 初学乍练
+> [!TIP]
+>
+> 质量评估在现阶段的本质就是训练出一个模型，这个模型能够在特定的任务上拟合人类的喜好。
 
-选择了两个小短视频进行入门![](https://raw.githubusercontent.com/Evilcurls/image4blog/main/20260706170831443.png)
+但如何评价我们这个模型拟合的效果呢,通用的判断方法是判断他是不是线性的 ，比如PLCC(Person Linear Correlation Coeffient)
 
-##### 传知播客-视频质量评价SimpleVQA
+![](https://raw.githubusercontent.com/Evilcurls/image4blog/main/20260813114556365.png)
 
-介绍UGC视频的意义，以ACM2023的论文：《A Deep Learning based No-reference Quality Assessment Model
+PLCC是通过判断两串样本的线性关系确定两串样本的近似程度如何，往往是用**模型的预测结果** 和**Groud Truth** 进行比较，以人工评价作为金标准，越接近人工评价的越好。
 
-for UGC Videos》为切入点开始介绍：在广义上$$Q = f(C, S, D)$$，其中$Q$ (Quality)**: 视频质量，**$C$ (Content)**: 视频内容（或内容丰富度/复杂度），**$S$ (Stability)**: 视频稳定性，**$D$​ (Distortion): 视频失真程度，视频质量由这些所决定
+由于PLCC在本质上就是衡量线性标准的，所以在音频领域省略**Linear** 叫做 **PCC**
 
-该论文针对时间-空间进行建模 完成评价，突出特点在于对于UCG视频，传统的视频评估中叫做有参考，也就是把压缩到流媒体上的视频和原视频进行比对，但是UCG视频天生就不存在完美的原版，所以引入了无参考的方式进行评价。
+但是，PCC的缺点在于 面对 单调，但是非线性的关系时衡量的程度不够 ，所以人们在后续使用了**SRCC** (Spearman rank correlation coeffient)
 
-![](https://raw.githubusercontent.com/Evilcurls/image4blog/main/20260612103106706.png)
+来与PCC互补来评价拟合的质量：
 
-方法如下：
+![](https://raw.githubusercontent.com/Evilcurls/image4blog/main/20260817213622130.png) 
 
-先将输入的视频进行切块，把切块的视频片段分为，1.每秒的第一帧作为关键帧，然后一共8张，输入到空间流，2.整个视频的所有帧，但是要进行压缩，输入到时间流
+一句话概括SRCC的计算方式，就是将两串样本中的每一个样本从原来的**分数 ** 变成 **在各自样本里的排名**，对两串排名计算PLCC
 
-在时间流方面，判断的是失真 所以需要对相邻的多帧进行判断，对分辨率不敏感，所以选用了视频的所有帧作为输入，使用3D CNN获得了时间上的特征向量
+>  [!IMPORTANT]      
+>
+>  SRCC不在意你预测有多少分，在意的是你排名对不对
 
-在空间流方面，判断的是单帧画面中是否出现光点/伪影/噪声/模糊问题，对时间不敏感，所以变成了八张关键帧图片进行判断（每秒取第一帧），使用Resnet50，获得了空间上的特征向量
 
-将两向量拼接在一起，输入MLP进行评分，获得了单视频块的得分，将多个视频块进行时间平均池化，得到了最终的质量得分
 
-作者为拓展工作量，针对不同视频在多分辨率的屏幕下的得分也进行了考量，（比如在4k分辨率下看1080的视频就觉得一般，在1080p分辨率下看1080就觉得还可以，距离是人要是离屏幕太远就只看低频信息）作者限定了距离和尺寸，这样不同分辨率的视频在当前情况下能看到的最高频率就可以计算，然后比如540p 720p 1080p，能看到的最高频率分别是a1 a2 a3，那么将这些频率带入，引入心理学的CSF函数积分，获得了权重比例，将这些权重比例用于几何加权获得最终质量评分
+### 主观评价实验
 
-#### 小红书REDtech来了 | 无参考视频质量评估算法研发及落地实践
+> [!NOTE]
+>
+> 2026年7月30日 面试字节跳动DATA语音实习生  面试官问了相当多的主观评价相关的问题：怎么设计 判断数据可靠程度 置信区间等
 
-不看  基于业务的太多了 我日了
+> “ 你会怎么设计一个主观评价实验？”
 
-#### 初窥门径
+``` text 
+1.刺激源：要尽可能控制每一个不同系统的文本/参考说话人/采样率相同；每一个系统内的说的文本要多样，说话人要多样，保证数据的泛化性
+2.听众：要对应于实验的音频的母语人士，在数量方面，p808标准每条音频至少要有8个有效的分，每个系统至少要有96个有效得分。
+3.环境：要保证测试条件的一致性，比如耳机，场地的安静
+4.实验中：需要保证盲测，听众不能知道来源于哪个系统，顺序是什么，且要设置陷阱题/重复题保证数据的可靠性
+5.实验后，先剔除无效得分，再计算听众间一致性，例如 ICC，同时检查重复样本一致性。对于系统 MOS，不只报告均值，还要报告有效票数、标准差和 95% 置信区间；
+```
 
-选择看两篇综述类论文《VIDEOSCORE: Building Automatic Metrics to Simulate Fine-grained HumanFeedback for Video Generation》 对于AI生成视频，使用自动化指标完成评估  
 
-《EvalCrafter: Benchmarking and Evaluating Large Video Generation Models》
+
+ok，上述是一个还算良好的回答，有一个很关键的点在于，怎么判断这个数据的可靠程度，我需要对这个指标进行介绍
+
+**ICC** (Intraclass correlation coeffient)
+
+![](https://raw.githubusercontent.com/Evilcurls/image4blog/main/20260817220912224.png)
+
+
+
+是用来判断"**多人主观评分得到的 Ground Truth 是否具有足够的评分一致性。**
+
+ICC分为两个维度 A（Absolute Agreement)和 C （Consistency)Consistency
+
+Consistency 主要要求相对趋势一致：
+
+> 张三整体比李四低 1 分没关系，只要两个人对样本的相对判断一样就行。
+
+Absolute Agreement 认为评分者一个爱打高分，一个爱打低分，也属于不一致。
+
+所以  /epo rater 也会进行惩罚
+
+![](https://raw.githubusercontent.com/Evilcurls/image4blog/main/20260817224245956.png)
+
+
+
+ICC还有另外一套分类方式
+
+![](https://raw.githubusercontent.com/Evilcurls/image4blog/main/20260817224700384.png)
+
+
+
+具体的计算示例 
+
+![](https://raw.githubusercontent.com/Evilcurls/image4blog/main/20260817224953217.png)
+
+
+
+####  两个系统A比B高多少分置信区间怎么计算？
+
+如果比较系统 A 和 B，而且同一批人分别给两者打 MOS，我会直接构造差值 di=Bi−Ai，对差值均值计算 95% 置信区间，公式是 dˉ±tsd/n。如果整个区间大于 0，说明 B 相对 A 有稳定优势。
+
+如果是 A/B preference，则统计选择 B 的比例及其置信区间；如果是 CCR，则使用 -3 到 +3 的相对评分计算 CMOS，如果定义正值代表 B 更好，而 CMOS 的 95% CI 整体大于 0，则说明 B 显著优于 A。
+
+
 
 ### 音频质量评估
 
@@ -200,3 +252,45 @@ for UGC Videos》为切入点开始介绍：在广义上$$Q = f(C, S, D)$$，其
 | 2025 | **Audiobox Aesthetics** | speech、music、sound 音频片段；每个维度保留多位标注者评分 | `Production Quality`、`Production Complexity`、`Content Enjoyment`、`Content Usefulness` | 音频标识 + 4 个审美维度 + 每个维度的标注者原始分 / 均值 | 生成式音频审美评价；分析制作质量与内容体验 | [Hugging Face 官方仓库](https://huggingface.co/facebook/audiobox-aesthetics) |
 | 2025 | **QualiSpeech** | 单条语音；数值评分与自然语言 reasoning 联合标注 | `Noise`、`Distortion`、`Speed`、`Continuity`、`Naturalness`、`Listening effort`、`Overall`，以及低层描述和总体解释 | `audio_path` + 7 个分数 + 噪声/失真/语速/连续性描述 + voice feeling + reasoning | 研究“为什么质量不好”；训练可解释语音质量评价模型 | [Hugging Face 数据集](https://huggingface.co/datasets/tsinghua-ee/QualiSpeech) |
 | 2025 | **SpeechEval** | 单条或成对语音；自然语言任务标注 | 8 个质量维度：Overall Quality、Intelligibility、Distortion、Speech Rate、Dynamic Range、Emotional Impact、Artistic Expression、Subjective Experience | 音频 + 任务指令 + 多维判断 + 自然语言解释；也包含比较、改进建议和 deepfake 检测任务 | Speech LLM / LLM-as-Judge 训练；多任务、可解释质量评价 | [Hugging Face 数据集](https://huggingface.co/datasets/Hui519/SpeechEval) |
+
+
+
+
+
+### 视频质量评估
+
+#### 初学乍练
+
+选择了两个小短视频进行入门![](https://raw.githubusercontent.com/Evilcurls/image4blog/main/20260706170831443.png)
+
+##### 传知播客-视频质量评价SimpleVQA
+
+介绍UGC视频的意义，以ACM2023的论文：《A Deep Learning based No-reference Quality Assessment Model
+
+for UGC Videos》为切入点开始介绍：在广义上$$Q = f(C, S, D)$$，其中$Q$ (Quality)**: 视频质量，**$C$ (Content)**: 视频内容（或内容丰富度/复杂度），**$S$ (Stability)**: 视频稳定性，**$D$​ (Distortion): 视频失真程度，视频质量由这些所决定
+
+该论文针对时间-空间进行建模 完成评价，突出特点在于对于UCG视频，传统的视频评估中叫做有参考，也就是把压缩到流媒体上的视频和原视频进行比对，但是UCG视频天生就不存在完美的原版，所以引入了无参考的方式进行评价。
+
+![](https://raw.githubusercontent.com/Evilcurls/image4blog/main/20260612103106706.png)
+
+方法如下：
+
+先将输入的视频进行切块，把切块的视频片段分为，1.每秒的第一帧作为关键帧，然后一共8张，输入到空间流，2.整个视频的所有帧，但是要进行压缩，输入到时间流
+
+在时间流方面，判断的是失真 所以需要对相邻的多帧进行判断，对分辨率不敏感，所以选用了视频的所有帧作为输入，使用3D CNN获得了时间上的特征向量
+
+在空间流方面，判断的是单帧画面中是否出现光点/伪影/噪声/模糊问题，对时间不敏感，所以变成了八张关键帧图片进行判断（每秒取第一帧），使用Resnet50，获得了空间上的特征向量
+
+将两向量拼接在一起，输入MLP进行评分，获得了单视频块的得分，将多个视频块进行时间平均池化，得到了最终的质量得分
+
+作者为拓展工作量，针对不同视频在多分辨率的屏幕下的得分也进行了考量，（比如在4k分辨率下看1080的视频就觉得一般，在1080p分辨率下看1080就觉得还可以，距离是人要是离屏幕太远就只看低频信息）作者限定了距离和尺寸，这样不同分辨率的视频在当前情况下能看到的最高频率就可以计算，然后比如540p 720p 1080p，能看到的最高频率分别是a1 a2 a3，那么将这些频率带入，引入心理学的CSF函数积分，获得了权重比例，将这些权重比例用于几何加权获得最终质量评分
+
+#### 小红书REDtech来了 | 无参考视频质量评估算法研发及落地实践
+
+不看  基于业务的太多了 我日了
+
+#### 初窥门径
+
+选择看两篇综述类论文《VIDEOSCORE: Building Automatic Metrics to Simulate Fine-grained HumanFeedback for Video Generation》 对于AI生成视频，使用自动化指标完成评估  
+
+《EvalCrafter: Benchmarking and Evaluating Large Video Generation Models》
